@@ -5,30 +5,28 @@ import { route } from '../../i18n/routes';
 import { AUTHOR_NAME, AUTHOR_DESC, CONTACT_EMAIL } from '../../data/site-config';
 import { srcLink } from '../../lib/helpers';
 import { HOME } from '../../content/home';
-import { KIT as K } from '../../lib/kit';
 import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
 const lang = 'fr';
 const path = route('about', lang);
-const F = K.fr, Y = K.YEAR;
-const title = `Mon CELI REER ${Y} : qui publie ce site et pourquoi`;
-const description = `Mon CELI REER est publié par Radif Partners : droits CELI, plafond REER et CELIAPP ${Y} recalculés sur les sources de canada.ca, sans courriel ni vente.`;
+const title = 'Prix à la pompe Canada 2026 : qui publie ce site et pourquoi';
+const description = 'Prix à la pompe Canada est publié par Radif Partners : moyennes officielles 2026 de l’essence par ville, estimation du lendemain avec son écart, ni application ni compte.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'À propos', path }])]} breadcrumbs={[{ label: 'À propos' }]}>
   <article class="prose prose-slate max-w-none">
-    <h1>À propos de Mon CELI REER</h1>
+    <h1>À propos de Prix à la pompe Canada</h1>
     <p>{AUTHOR_DESC.fr}</p>
     <h2>Pourquoi ce site existe</h2>
-    <p>Une personne qui se demande combien elle peut verser à son CELI ou si un REER vaut la peine trouve surtout deux sortes de pages. Les pages officielles de l'Agence du revenu du Canada expliquent les règles avec exactitude, mais ne font pas le calcul : il faut additionner soi-même dix-huit plafonds annuels et trouver ses tranches d'imposition dans un autre document. Les pages des banques, des assureurs et des comparateurs font parfois le calcul, mais certaines affichent encore le plafond d'une année passée, donnent des totaux qui se contredisent d'un paragraphe à l'autre ou renvoient vers un produit à acheter.</p>
+    <p>Qui cherche le prix de l’essence de demain trouve surtout trois sortes de pages. Les sites d’information reprennent une phrase d’un prévisionniste (« une baisse de 2 cents est prévue ») sans méthode ni historique. Les applications de prix montrent ce que les usagers ont signalé, sans dire de quand date chaque signalement, et demandent souvent d’installer quelque chose ou de s’inscrire. Les sources officielles publient des moyennes solides, mais en tableaux ou en PDF, à la semaine ou au mois, sans coût du plein ni idée du lendemain.</p>
     <p><strong>{HOME.fr.valeur}</strong></p>
     <h2>Qui le publie</h2>
-    <p>Le site est publié par {AUTHOR_NAME}, une société qui construit des simulateurs à partir de règles publiques. Ce n'est pas un organisme public et il n'a aucun lien avec l'Agence du revenu du Canada, Revenu Québec, un gouvernement provincial, une banque, un assureur ou un courtier. Il ne vend aucun produit financier, ne touche aucune commission, ne recommande aucune institution et ne demande ni nom ni courriel. Les pages ne portent aucun lien d'affiliation.</p>
+    <p>Le site est publié par {AUTHOR_NAME}, une société qui conçoit des simulateurs à partir de données publiques. Ce n’est pas un organisme public et il n’a aucun lien avec un gouvernement, une régie de l’énergie, une pétrolière ou une chaîne de stations. Il ne vend rien, ne touche aucune commission, ne met aucune station en avant et ne demande ni nom ni courriel. Les pages ne portent aucun lien d’affiliation.</p>
     <LegalIdentity lang={lang} />
-    <h2>Sur quoi reposent les chiffres</h2>
-    <p>Pour le CELI : le <Fragment set:html={s('cra_limits', 'tableau des plafonds publié sur canada.ca')} /> et les <Fragment set:html={s('rc4466', 'pages CELI de l’Agence du revenu du Canada')} /> (droits, retraits, excédents, non-résidents). Pour le REER : les plafonds en dollars de {Y - 4} à {Y + 1}, les règles sur les cotisations excédentaires, les dates limites, les retenues à la source et le REER de conjoint, sur canada.ca. Pour le CELIAPP, le RAP et le REEP : les pages de l'Agence sur l'ouverture, les droits de participation, la fermeture, les retraits et les remboursements. Pour l'impôt : la <Fragment set:html={s('cra_rates_2026', 'page des taux d’impôt ' + Y)} /> et le guide T4127 de juillet {Y}, qui donnent les tranches, les taux et les montants personnels de base du fédéral et des provinces, et l'abattement de 16,5 % du Québec. Les tranches du Québec viennent de Revenu Québec.</p>
+    <h2>D’où viennent les chiffres</h2>
+    <p>Le <Fragment set:html={s('ontario-retail', 'relevé hebdomadaire du gouvernement de l’Ontario')} />, le <Fragment set:html={s('regie', 'relevé quotidien de la Régie de l’énergie du Québec')} />, les prix maximaux fixés par les régulateurs de la <Fragment set:html={s('nseb', 'Nouvelle-Écosse')} />, du <Fragment set:html={s('nbeub', 'Nouveau-Brunswick')} /> et de <Fragment set:html={s('pubnl', 'Terre-Neuve-et-Labrador')} />, le <Fragment set:html={s('statcan', 'tableau 18-10-0001-01 de Statistique Canada')} />, les <Fragment set:html={s('ontario-rack', 'prix de gros de l’Ontario')} />, et les taux de taxe publiés par Finances Canada et chaque province. La <a href={route('method', lang)}>page Méthode</a> donne chaque règle et l’écart mesuré pour chaque ville ; la <a href={route('editorial', lang)}>politique éditoriale</a> explique comment les corrections sont faites.</p>
     <h2>Ce que le site ne fait pas</h2>
-    <p>Il ne connaît pas votre dossier : vos droits officiels figurent dans Mon dossier et sur votre avis de cotisation. Il ne calcule pas les crédits d'impôt autres que le montant personnel de base, ni l'impôt minimum de remplacement, ni la fiscalité des dividendes et des gains en capital. Il ne remplace pas un conseil fiscal ou financier. La <a href={route('method', lang)}>méthode de calcul</a> donne chaque formule et chaque limite ; la <a href={route('editorial', lang)}>politique éditoriale</a> explique comment les corrections sont faites.</p>
-    <h2>Écrire</h2>
-    <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, pour signaler une erreur ou une source. Nous répondons aux questions sur une règle ou un chiffre, pas sur votre situation personnelle.</p>
+    <p>Il ne connaît pas le prix d’une station donnée et ne prédit pas ce qu’un détaillant affichera. Son estimation du lendemain est une moyenne de ville déplacée par le marché de gros et par les taxes datées, montrée avec son écart passé. C’est une information, pas l’assurance d’un prix.</p>
+    <h2>Nous écrire</h2>
+    <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, pour signaler une erreur ou une source.</p>
   </article>
 </PageLayout>

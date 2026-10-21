@@ -77,6 +77,8 @@ const salesRate = (prov: string): number => P.taxes.provinces[prov].sales.rate;
 const freshness = (date: string, kind: Kind) => (kind === 'month' ? `${date}-28` : date);
 
 const out: Record<string, any> = {};
+/** Historique court (sources ouvertes seulement) : lu au build par les pages, jamais envoyé au navigateur. */
+const HIST: Record<string, Record<string, Obs[]>> = {};
 for (const c of CITIES) {
   const fuels: Record<string, any> = {};
   for (const fuel of FUELS) {
@@ -109,13 +111,13 @@ for (const c of CITIES) {
     const scs = sc && best.src !== 'statcan' ? seriesOf('statcan', sc.key, fuel) : null;
     // Sans écart mesurable sur la source du jour (relevés trop récents), on publie celui de la série mensuelle.
     const btMonthly = !bt && scs?.length ? backtest(scs, rack, 'month', rate, '2023-09', steps, fuel, { skip: EVENTS }) : null;
+    if (hist.length) (HIST[c.id] ??= {})[fuel] = hist as Obs[];
     fuels[fuel] = {
       latest: { value: best.value, date: best.date, kind: best.kind, src: best.src, key: best.key },
       est: { value: round1(e.value), target: TOMORROW, rackDelta: round1(e.rackDelta), sigDelta: round1(e.sigDelta), sigFrom: e.sigFrom, sigTo: e.sigTo, taxDelta: round1(e.taxDelta), rackNowLast: e.rackNowLast, rackRef: e.rackRef === null ? null : round1(e.rackRef), rackNow: e.rackNow === null ? null : round1(e.rackNow) },
       bt: bt ? { ...bt, kind: best.kind } : btMonthly ? { ...btMonthly, kind: 'month' } : null,
       isMax: best.src === 'atlantic',
       regChangesTomorrow: reg ? changes : null,
-      hist,
       monthly: scs?.length ? { date: scs[scs.length - 1][0], value: scs[scs.length - 1][1] } : null,
     };
   }
@@ -135,5 +137,9 @@ const snapshot = {
   cities: out,
 };
 writeFileSync(join(ROOT, 'src/data/snapshot.json'), JSON.stringify(snapshot, null, 1) + '\n');
+writeFileSync(join(ROOT, 'src/data/snapshot-hist.json'), JSON.stringify(HIST) + '\n');
+// La date de mise à jour affichée par le site est celle de la dernière lecture des sources.
+const CFG = join(ROOT, 'src/data/site-config.ts');
+writeFileSync(CFG, readFileSync(CFG, 'utf8').replace(/export const LAST_UPDATED = '[0-9-]+';/, `export const LAST_UPDATED = '${TODAY}';`));
 const n = Object.values(out).filter((c: any) => c.fuels.regular).length;
 console.log(`snapshot : ${n} villes avec un prix de l'essence ordinaire, estimation pour le ${TOMORROW}`);

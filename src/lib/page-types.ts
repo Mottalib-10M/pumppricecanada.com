@@ -22,10 +22,16 @@ export interface Helpers extends Kit {
   /** Mini-simulateur bâti sur un calculateur de tool-specs.ts. */
   mini: (kind: string, opts?: MiniOpts) => string;
   /** Formats de la langue de la page : montant, taux, nombre, taux officiel, date. */
-  m: (x: number) => string; p: (x: number, d?: number) => string; n: (x: number) => string; r: (x: number) => string; day: (iso: string) => string;
+  m: (x: number) => string; p: (x: number, d?: number) => string; n: (x: number, d?: number) => string; r: (x: number) => string; day: (iso: string) => string;
+  /** Formats propres au carburant : ¢/L, écart en ¢, dollars à deux décimales. */
+  cpl: (x: number, d?: number) => string; cents: (x: number, d?: number) => string; usd: (x: number, d?: number) => string;
+  /** Nom d'une ville dans la langue. */
+  cn: (id: string) => string;
+  /** Date d'un relevé en clair (« relevé du lundi 19 octobre 2026 », « moyenne de septembre 2026 »). */
+  when: (f: import('./data').FuelData) => string;
 }
 
-export type Group = 'celi' | 'reer' | 'maison' | 'impot' | 'prov';
+export type Group = 'outils' | 'on' | 'qc' | 'ouest' | 'atl';
 
 export interface LangPage {
   /** Segment d'URL, minuscules et tirets, sans accent. */
@@ -49,6 +55,9 @@ export interface GuideDef {
   related: string[];
   /** Clés de params-2026.json > sources. */
   sources: string[];
-  fr: LangPage; en: LangPage;
+  /** Version française facultative : la page n'existe alors qu'en anglais (routes partielles). */
+  fr?: LangPage; en: LangPage;
+  /** Ville que décrit la page (pages de ville). */
+  city?: string;
 }
 export const defineGuide = (p: GuideDef): GuideDef => p;

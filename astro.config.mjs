@@ -17,7 +17,9 @@ export default defineConfig({
       item.lastmod = new Date(LAST_UPDATED);
       const p = new URL(item.url).pathname;
       const pair = ROUTES.find((r) => LOCALES.some((l) => r.paths[l] === p));
-      if (pair && LOCALES.length > 1) item.links = [...LOCALES.map((l) => ({ lang: l, url: `${SITE_URL}${pair.paths[l]}` })), { lang: 'x-default', url: `${SITE_URL}${pair.paths[DEFAULT_LOCALE]}` }];
+      const langs = pair ? LOCALES.filter((l) => pair.paths[l]) : [];
+      // Routes partielles : hreflang seulement vers les traductions qui existent, et seulement s'il y en a deux.
+      if (pair && langs.length > 1) item.links = [...langs.map((l) => ({ lang: l, url: `${SITE_URL}${pair.paths[l]}` })), { lang: 'x-default', url: `${SITE_URL}${pair.paths[DEFAULT_LOCALE] ?? pair.paths[langs[0]]}` }];
       return item;
     },
   })],

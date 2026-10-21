@@ -4,7 +4,7 @@ import ContentPage from '../../components/ContentPage.astro';
 import { GUIDES } from '../../lib/pages';
 import type { GuideDef } from '../../lib/page-types';
 export function getStaticPaths() {
-  return GUIDES.map((page) => ({ params: { slug: page.fr.slug }, props: { page } }));
+  return GUIDES.filter((page) => page.fr).map((page) => ({ params: { slug: page.fr!.slug }, props: { page } }));
 }
 const { page } = Astro.props as { page: GuideDef };
 ---

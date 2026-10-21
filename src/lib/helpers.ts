@@ -31,5 +31,7 @@ export function helpers(lang: Lang): Helpers {
     table: (hd, rows, cap, al) => table(hd, rows, cap, al, lang),
     src: (key, text) => srcLink(key, lang, text), ext, box, mini,
     m: f.m, p: f.p, n: f.n, r: f.r, day: f.day,
+    cpl: (x, d) => KIT.cpl(x, lang, d), cents: (x, d) => KIT.cents(x, lang, d), usd: (x, d) => KIT.dollars(x, lang, d),
+    cn: (id) => KIT.cityName(id, lang), when: (fd) => KIT.when(fd, lang),
   };
 }

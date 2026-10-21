@@ -8,7 +8,9 @@
   },
   "scripts": {
     "dev": "astro dev --port 5650",
-    "build": "astro build && node scripts/typo-nbsp.mjs && python3 scripts/check-snippets.py dist",
+    "snapshot": "node scripts/build-snapshot.ts",
+    "update-data": "python3 scripts/update-data.py && node scripts/build-snapshot.ts",
+    "build": "node scripts/build-snapshot.ts && astro build && node scripts/typo-nbsp.mjs && python3 scripts/check-snippets.py dist",
     "preview": "astro preview --port 5650",
     "astro": "astro",
     "test": "vitest run",

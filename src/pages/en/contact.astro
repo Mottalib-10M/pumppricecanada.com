@@ -6,22 +6,21 @@ import { route } from '../../i18n/routes';
 import { contactPageSchema } from '../../lib/seo';
 const lang = 'en';
 const path = route('contact', lang);
-const description = 'Write to the publisher of TFSA or RRSP about a 2026 limit, a tax rule or a source. Email only, no advice on your own situation and no product to sell.';
+const description = 'Write to the publisher of Pump Price Canada about a 2026 price, a tax rate or a source. Email only, no form, no account, and no station or product to sell to you.';
 ---
-<PageLayout title="Contact TFSA or RRSP 2026: corrections and sources" description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path, lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+<PageLayout title="Contact Pump Price Canada 2026: corrections and sources" description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path, lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
   <div class="prose prose-slate max-w-none">
     <h1>Contact</h1>
     <p>Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. There is no form, no phone line and no account: one address, read by the people who keep the calculators up to date.</p>
     <h2>Messages that help</h2>
     <ul>
-      <li>A limit, bracket or rate that differs from the official publication: give the year, the province and the link to the source.</li>
-      <li>A calculator result that does not match your notice of assessment: say what you entered and the official figure.</li>
-      <li>A rule you read differently in a Canada Revenue Agency or Revenu Québec guide.</li>
-      <li>A new official figure (the 2027 TFSA limit, 2027 brackets) that we have not entered yet.</li>
-      <li>Embedding a calculator on an association site or a blog: the code is on the <a href={route('widget', lang)}>embed page</a>.</li>
+      <li>A price or a date that differs from the official publication: give the city, the fuel and the link to the source.</li>
+      <li>A tax rate that has changed (a provincial budget, the federal excise schedule, Alberta's quarterly rate).</li>
+      <li>An official source we do not use yet for your city.</li>
+      <li>Embedding the calculator on a community site or a blog: the code is on the <a href={route('widget', lang)}>embed page</a>.</li>
     </ul>
     <h2>What we cannot do</h2>
-    <p>We cannot see your tax file, confirm your official room or tell you which account to use. Those questions are for the Canada Revenue Agency, Revenu Québec or a professional of your choice. We are not a public body.</p>
+    <p>We do not know the price at a given station and cannot tell you where to buy. We are not a regulator or a public body: complaints about a station's price go to your province's consumer protection office or, in the Atlantic provinces, to the price regulator.</p>
     <h2>Publisher</h2>
     <LegalIdentity lang={lang} />
   </div>

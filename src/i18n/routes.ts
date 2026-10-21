@@ -1,9 +1,10 @@
 import { makeRouter, type RouteDef } from './routes-core';
 import { GUIDES } from '../lib/pages';
-/** Français d'abord (Québécois et francophones des autres provinces), puis anglais. */
-export const LOCALES = ['fr', 'en'] as const;
+/** Anglais d'abord (la plupart des recherches), français pour le Québec et les francophones : pages traduites
+ *  seulement là où la recherche existe en français (routes partielles, hreflang limité aux paires réelles). */
+export const LOCALES = ['en', 'fr'] as const;
 export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = 'fr';
+export const DEFAULT_LOCALE: Locale = 'en';
 const R = (id: string, fr: string, en: string, noindex = false) => ({ id, paths: { fr: `/fr/${fr}/`, en: `/en/${en}/` }, ...(noindex ? { noindex } : {}) });
 const CORE: RouteDef<Locale>[] = [
   { id: 'home', paths: { fr: '/fr/', en: '/en/' } },
@@ -16,5 +17,6 @@ const CORE: RouteDef<Locale>[] = [
   R('terms', 'mentions-legales', 'legal-notice', true),
   R('cookies', 'cookies', 'cookies', true),
 ];
-export const ROUTES: RouteDef<Locale>[] = [CORE[0], ...GUIDES.map((g) => R(g.id, g.fr.slug, g.en.slug)), ...CORE.slice(1)];
+const G = (g: (typeof GUIDES)[number]): RouteDef<Locale> => ({ id: g.id, paths: { en: `/en/${g.en.slug}/`, ...(g.fr ? { fr: `/fr/${g.fr.slug}/` } : {}) } });
+export const ROUTES: RouteDef<Locale>[] = [CORE[0], ...GUIDES.map(G), ...CORE.slice(1)];
 export const { NOINDEX_PATHS, route, hasRoute, altPaths } = makeRouter(LOCALES, ROUTES);

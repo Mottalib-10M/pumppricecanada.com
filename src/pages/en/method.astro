@@ -1,5 +1,5 @@
 ---
-/** Method: data, formulas, checks and limits. Every figure from the kit. */
+/** Method: data, estimate, error measured, taxes, limits. Every figure from the kit. */
 import PageLayout from '../../layouts/PageLayout.astro';
 import { route } from '../../i18n/routes';
 import { KIT as K } from '../../lib/kit';
@@ -7,38 +7,44 @@ import { srcLink, table } from '../../lib/helpers';
 import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
 const lang = 'en';
 const path = route('method', lang);
-const P = K.P, E = K.en, Y = K.YEAR;
-const title = `TFSA, RRSP and tax method ${Y}: sources and formulas`;
-const description = `How the ${Y} TFSA, RRSP and FHSA calculators work: limits and TFSA rules from canada.ca, T4127 brackets, the Quebec abatement, what is left out and the tests.`;
+const E = K.en, S = K.SNAP;
+const title = 'Gas price estimate method 2026: sources and error';
+const description = 'How the 2026 gas price figures are built: official surveys by city, the estimate for tomorrow, its error measured on past weeks, the taxes per litre and the limits.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
-const jrows = K.PROVS.map((p) => { const j = K.jur(p); return [K.prov(p, 'en'), j.rates.map((r) => E.r(r)).join(' · '), j.brackets.map((b) => E.m(b)).join(' · '), j.bpaFederal ? 'same as federal' : E.m(j.bpa ?? 0)]; });
-const ex = K.tfsaRoom({ birthYear: 1998, arrival: 2019, contribBefore: 20000, withdrawBefore: 5000, contribThisYear: 3000, withdrawThisYear: 0 });
-const t = (hd: string[], r: Array<Array<string | number>>, c: string, a: Array<'l' | 'r'>) => table(hd, r, c, a, lang);
+const c = (x: number) => K.cpl(x, 'en');
+const rows = K.PRICED_IDS.flatMap((id) => (['regular', 'diesel'] as const).filter((f) => K.fuelOf(id, f)).map((f) => {
+  const d = K.fuelOf(id, f)!;
+  return [`${K.cityName(id, 'en')}, ${f}`, K.srcName(d, 'en'), d.bt ? E.n(d.bt.n) : '', d.bt ? c(d.bt.mae) : '', d.bt ? c(d.bt.maeNaive) : '', d.bt ? ({ day: 'day', week: 'week', month: 'month' })[d.bt.kind] : 'too few surveys'];
+}));
+const t = (hd: string[], r: Array<Array<string | number>>, cap: string, a: Array<'l' | 'r'>) => table(hd, r, cap, a, lang);
+const tor = K.fuelOf('toronto', 'regular')!;
 ---
-<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'How we calculate', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'How we calculate', path }])]} breadcrumbs={[{ label: 'How we calculate' }]}>
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Method', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Method', path }])]} breadcrumbs={[{ label: 'Method' }]}>
   <article class="prose prose-slate max-w-none">
-    <h1>How we calculate</h1>
-    <p>Every calculator on the site runs in your browser on one engine and one parameter file. Each rule and amount in it carries the link to the official text it comes from and the date it was read ({E.day(P.retrieved_at)} for this edition). Nothing you type leaves your browser. This page sets out the data, the formulas, the checks and what is deliberately left out.</p>
-    <h2>TFSA room</h2>
-    <p>Your first year of room is the latest of three: 2009, the year you turned 18, the year you became a resident of Canada. For each year from then to {Y}, the calculator adds the limit published in the <Fragment set:html={s('cra_limits', 'table of limits on canada.ca')} />, with no proration, then removes the limits of any full calendar years of non-residence you enter (the most recent ones before {Y}, by convention). It subtracts your contributions and adds back your withdrawals from earlier years, as set out in the <Fragment set:html={s('rc4466', 'Canada Revenue Agency TFSA pages')} />. Withdrawals made in {Y} only come back on January 1, {Y + 1}. A negative balance is an excess, taxed at 1% a month.</p>
-    <p>Example: someone born in 1998 who arrived in 2019, contributed {E.m(20000)} and withdrew {E.m(5000)} before {Y}, then contributed {E.m(3000)} this year, has {E.m(ex.accrued)} of accumulated limits, {E.m(ex.roomJan1)} of room on January 1 and {E.m(ex.available)} available today.</p>
-    <h2>RRSP</h2>
-    <p>New room for a year is 18% of the previous year's earned income, up to the dollar limit ({E.m(K.rrspLimit(Y))} in {Y}, {E.m(K.rrspLimit(Y + 1))} in {Y + 1}), minus the pension adjustment. The calculator adds the unused room you enter. It does not compute the pension adjustment reversal or the past service pension adjustment, which appear on your notice of assessment. The {E.m(P.rrsp.overCushion)} cushion and the 1% monthly tax on the part above it follow the agency's page on excess contributions. Withholding on a withdrawal uses the 10, 20 and 30% rates (5, 10 and 15% federal in Quebec) by withdrawal amount.</p>
-    <h2>FHSA, HBP and LLP</h2>
-    <p>FHSA room starts in the year you open your first account: {E.m(P.fhsa.annual)} in the first year, then {E.m(P.fhsa.annual)} plus the previous year's unused part, capped at {E.m(P.fhsa.carryMax)}, within the {E.m(P.fhsa.lifetime)} lifetime limit. Taxable withdrawals and designated transfers are not handled. The HBP applies the {E.m(P.hbp.limit)} limit, repayment over {P.hbp.repayYears} years and the start deferred to the fifth year for a first withdrawal from {P.hbp.reliefFrom} to {P.hbp.reliefTo}. The LLP applies {E.m(P.llp.annual)} a year, {E.m(P.llp.total)} in total and repayment over {P.llp.repayYears} years.</p>
-    <h2>{Y} income tax</h2>
-    <p>Federal tax uses the brackets on the <Fragment set:html={s('cra_rates_2026', Y + ' rates page')} /> and a 14% credit on the basic personal amount, reduced from {E.m(P.federal.bpaMax)} to {E.m(P.federal.bpaMin)} between {E.m(P.federal.brackets[2])} and {E.m(P.federal.brackets[3])} of income. For a Quebec resident, basic federal tax is reduced by 16.5% (Quebec abatement, <Fragment set:html={s('t4127_jul', 'July ' + Y + ' T4127')} />). Provincial tax applies each jurisdiction's brackets and a credit at its lowest rate, the Ontario surtax and Manitoba's reduction of the basic amount. The marginal rate shown is the extra tax on the next $100; the saving from a deduction is tax before minus tax after.</p>
-    <Fragment set:html={t(['Jurisdiction', 'Rates', 'Bracket thresholds', 'Basic amount'], jrows, `${Y} tax tables used by the calculators.`, ['l', 'l', 'l', 'r'])} />
-    <h2>Two points still to confirm</h2>
-    <p>Quebec: the rates and bracket thresholds were re-read on the <Fragment set:html={s('rq_rates', 'Revenu Québec income tax rates page')} />, and the basic personal amount of {E.m(K.jur('QC').bpa ?? 0)} on <Fragment set:html={s('rq_changes_2026', 'Revenu Québec\'s main changes for 2026')} />.</p>
-    <p>Manitoba: the canada.ca rates page shows indexed thresholds, while the T4127 guide and the Manitoba government state that brackets have not been indexed since 2025. The site uses the unindexed thresholds of {E.m(K.jur('MB').brackets[0])} and {E.m(K.jur('MB').brackets[1])}.</p>
-    <h2>RRSP vs TFSA</h2>
-    <p>The calculator compares equal effort. You enter what you can save out of pocket; in the TFSA, that amount is invested as is. In the RRSP, the contribution is the amount that costs the same once the refund arrives: it is grossed up by iteration until contribution minus tax saved equals your saving. Both accounts grow at the same real return. The RRSP is then drawn in equal parts over the number of years you choose, each part taxed on top of your retirement income with the {Y} tables, in today's dollars. The calculator flags the Guaranteed Income Supplement range and the Old Age Security recovery without building them into the result.</p>
-    <h2>Benefits</h2>
-    <p>Canada child benefit: thresholds and reduction rates for {P.benefits.ccb.period.en}, applied to family net income before and after the deduction. Old Age Security: 15% of net income above {E.m(P.benefits.oas.threshold['2026'])} for {Y} income. Guaranteed Income Supplement: the {E.m(P.benefits.gis.singleMax)} threshold for a single person, used as a flag only.</p>
+    <h1>How the figures are built</h1>
+    <p>Every price on this site starts from an official publication, read by a script that runs every day ({E.day(S.today)} for this edition). Nothing is reported by users, nothing is copied from another price site, and nothing you type in a calculator leaves your browser. This page sets out the sources, the estimate for tomorrow, how its error is measured, how taxes are rebuilt and what is left out.</p>
+    <h2>The official sources</h2>
+    <ul>
+      <li><Fragment set:html={s('ontario-retail', 'Government of Ontario weekly survey')} />: self-serve averages of regular, premium and diesel in 14 markets, collected on Mondays (latest {E.day(S.sources.ontario.latest)}). Toronto is the mean of Toronto West and Toronto East; Mississauga and Brampton use Toronto West, Oshawa Toronto East, and Hamilton, Kitchener-Waterloo and Barrie the southern Ontario average, because Ontario publishes no figure of their own. Open Government Licence – Ontario.</li>
+      <li><Fragment set:html={s('regie', 'Régie de l’énergie du Québec daily survey')} />: average posted price of regular gasoline by region and sub-region, every weekday morning (latest {E.day(S.sources.regie.latest)}). The Régie publishes no reuse licence, so the site shows one dated figure per city with its source and never reproduces the table.</li>
+      <li>Atlantic regulators: maximum self-serve prices set by the <Fragment set:html={s('nseb', 'Nova Scotia Energy Board')} /> (Zone 1 for Halifax), the <Fragment set:html={s('nbeub', 'New Brunswick Energy and Utilities Board')} /> (one maximum for the province) and the <Fragment set:html={s('pubnl', 'Newfoundland and Labrador Board of Commissioners of Public Utilities')} /> (Zone 1 for St. John's). These are public orders, quoted with their effective date.</li>
+      <li><Fragment set:html={s('statcan', 'Statistics Canada table 18-10-0001-01')} />: monthly average pump prices in 18 cities (latest {K.month(S.sources.statcan.latest, 'en')}), used for the West, for premium and diesel in Quebec and the Atlantic, and as a monthly reference. Open Government Licence – Canada.</li>
+      <li><Fragment set:html={s('ontario-rack', 'Government of Ontario wholesale prices')} />: daily rack prices for Toronto, Thunder Bay and Edmonton, published with about a week of delay (latest {E.day(S.racks.toronto?.date ?? S.today)}).</li>
+      <li><Fragment set:html={s('nrcan-fcr', 'Natural Resources Canada 2026 fuel consumption ratings')} />: median combined consumption by vehicle class, for the budget calculator.</li>
+    </ul>
+    <p>Natural Resources Canada's weekly city averages are not used: its <Fragment set:html={s('nrcan-weekly', 'price pages')} /> are covered by terms that forbid commercial redistribution without written permission.</p>
+    <h2>The estimate for tomorrow</h2>
+    <p>Estimate = latest official price + market movement since that price × (1 + sales tax rate) + dated tax changes between the two dates, sales tax included.</p>
+    <p>Market movement has two parts. First, the change in the rack price of the region (Toronto for Ontario, Quebec and the Atlantic, Edmonton for the Prairies and British Columbia) between the days before the survey and the last three days published before tomorrow. Because Ontario publishes rack prices about a week late, this part is usually empty for a weekly or daily survey. Second, for gasoline in Ontario, Quebec and the Atlantic, the change since then in the Régie de l'énergie's Montréal-region survey once GST, QST, Quebec fuel tax, the regional transit tax and the federal excise tax are removed: a pre-tax market signal published every morning. Diesel has no daily open signal, so its estimate moves only with rack prices.</p>
+    <p>For a monthly Statistics Canada average, the reference is the month's average rack price, and the dated tax changes include those since mid-month: Alberta's September price, which included 13 cents of provincial fuel tax, is brought down by 13 cents plus GST from October 1, 2026. For an Atlantic maximum price, nothing moves on a day when the regulator does not reset it (Fridays in Nova Scotia and New Brunswick; every day for now in Newfoundland and Labrador).</p>
+    <h2>The error, measured</h2>
+    <p>For each city and fuel, the method is replayed over past surveys: from each survey it estimates the next one using only what was published the day before, rack prices with a week's delay included, and the absolute gap with the actual figure is averaged. The same is done for a naive "no change" guess. Weeks or months that straddle a tax change the method does not model (the end of the federal carbon charge on April 1, 2025, for instance) are left out of both measures. In Toronto, over {tor.bt?.n} weeks, the method missed by {c(tor.bt?.mae ?? 0)} on average, the naive guess by {c(tor.bt?.maeNaive ?? 0)}.</p>
+    <Fragment set:html={t(['City and fuel', 'Source', 'Surveys', 'Method', 'No change', 'Step'], rows, `Average absolute error of the estimate, recomputed at each update (${E.day(S.today)}).`, ['l', 'l', 'r', 'r', 'r', 'l'])} />
+    <h2>Taxes per litre</h2>
+    <p>The provincial fuel tax and any regional tax come from each province's official page (<Fragment set:html={s('tax-on', 'Ontario')} />, <Fragment set:html={s('regie-faq', 'Quebec')} />, <Fragment set:html={s('tax-bc', 'British Columbia')} />, <Fragment set:html={s('tax-ab', 'Alberta')} />, <Fragment set:html={s('tax-nl', 'Newfoundland and Labrador')} />, <Fragment set:html={s('tax-ns', 'Nova Scotia')} />) and from <Fragment set:html={s('nrcan-levies', 'Natural Resources Canada’s table of fuel levies')} />. The federal excise schedule comes from <Fragment set:html={s('excise', 'Finance Canada')} /> and its <Fragment set:html={s('excise-draft', 'September 2026 draft legislation')} />. GST, HST or GST plus QST applies to the price including those taxes, so the price before sales tax is the pump price divided by one plus the rate. What is left after all taxes is the refined product, transport and margins.</p>
     <h2>What is left out</h2>
-    <p>Non-refundable credits other than the basic amount (CPP or QPP, EI, Canada employment amount, age, pension), the low-income tax reductions of Ontario and British Columbia, the Ontario Health Premium, the alternative minimum tax, dividends and capital gains, Quebec's Family Allowance, and provincial income-tested benefits. The {Y + 1} TFSA limit is not published: it is neither estimated nor shown.</p>
-    <h2>Tests</h2>
-    <p>Before each release, automated tests check the TFSA total ({E.m(K.tfsaCum(Y))}), the start of room by age and arrival, withdrawals added back, the RRSP cushion, withholding, FHSA room and carry-forward, the HBP and LLP repayment dates, marginal rates worked out by hand (Ontario, Quebec, Alberta, British Columbia) and the RRSP and TFSA tie when rates are equal.</p>
+    <p>Single stations: the site shows averages and ceilings, never a price at a given station. Kelowna and other cities with no official average of their own: their page gives the taxes and a calculator for the price you see. Full-serve, mid-grade and delivery charges in New Brunswick. Taxes in the territories, which no city page covers. Quebec's lower fuel tax near the borders is applied to Gatineau only (6 cents within 15 km of Ontario, per the Régie's zone indicators of February 24, 2026).</p>
+    <h2>Checks</h2>
+    <p>Before each release, automated tests check the excise calendar, the estimate on worked examples, the Alberta tax pause, the exclusion of unmodelled tax changes from the error measure, the tax breakdown and the fill-up and budget arithmetic. The data script stops a source that returns an outage page instead of data and keeps its previous file, so a page always shows the last date actually read.</p>
   </article>
 </PageLayout>

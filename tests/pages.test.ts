@@ -13,7 +13,7 @@ import type { FAQ } from '../src/lib/page-types';
 import { HOME } from '../src/content/home';
 import { PLANNED_IDS } from '../src/lib/planned';
 
-const BANNED_ALL = [/—/, /–/, /canadanetpay|myeicanada|mycanadabenefits/i];
+const BANNED_ALL = [/—/, /–/, /canadanetpay|myeicanada|mycanadabenefits|moncelireer|gasbuddy\.com|gaswizard\.ca/i, /prix garanti|guaranteed price/i];
 const BANNED_EN = [/it'?s important to note/i, /dive into/i, /\bdelve/i, /whether you'?re/i, /navigate the/i, /\bMoreover\b/, /\bAdditionally\b/, /\bFurthermore\b/, /game.?changer/i, /\bunlock/i, /in today'?s world/i, /\bguaranteed\b(?![ -]income)/i, /\$ ?\d+(?:,\d{3})* ?\$/];
 const BANNED_FR = [/il est important de noter/i, /\bplongeons\b/i, /\bn'hésitez pas\b/i, /\ben outre\b/i, /\bde plus,/i, /\bpar ailleurs\b/i, /\$\d/];
 const words = (s: string) => s.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
@@ -22,13 +22,13 @@ const only = (process.env.PAGE_FILES ?? '').split(',').map((x) => x.trim()).filt
 const keep = (id: string) => !only.length || only.includes(id);
 
 interface Item { id: string; lang: 'fr' | 'en'; title: string; description: string; intro: string; resume: string; body: string; faqs: FAQ[]; related: string[]; minBody: number }
-const items: Item[] = GUIDES.flatMap((g) => (['fr', 'en'] as const).map((l) => ({ id: g.id, lang: l, title: g[l].title, description: g[l].description, intro: g[l].intro, resume: g[l].resume, body: g[l].body(helpers(l)), faqs: g[l].faqs, related: g.related, minBody: 520 })));
+const items: Item[] = GUIDES.flatMap((g) => (['fr', 'en'] as const).filter((l) => g[l]).map((l) => ({ id: g.id, lang: l, title: g[l]!.title, description: g[l]!.description, intro: g[l]!.intro, resume: g[l]!.resume, body: g[l]!.body(helpers(l)), faqs: g[l]!.faqs, related: g.related, minBody: g.city ? 400 : 520 })));
 
 const allQ = new Map<string, string[]>();
 for (const it of [...items, { id: 'home', lang: 'fr', faqs: HOME.fr.faqs } as Item, { id: 'home', lang: 'en', faqs: HOME.en.faqs } as Item]) for (const f of it.faqs) { const k = f.q.trim().toLowerCase(); allQ.set(k, [...(allQ.get(k) ?? []), `${it.id}/${it.lang}`]); }
 const titles = new Map<string, number>(), descs = new Map<string, number>(), slugs = new Map<string, number>();
 for (const it of items) { titles.set(it.title, (titles.get(it.title) ?? 0) + 1); descs.set(it.description, (descs.get(it.description) ?? 0) + 1); }
-for (const g of GUIDES) for (const l of ['fr', 'en'] as const) slugs.set(`${l}/${g[l].slug}`, (slugs.get(`${l}/${g[l].slug}`) ?? 0) + 1);
+for (const g of GUIDES) for (const l of ['fr', 'en'] as const) if (g[l]) slugs.set(`${l}/${g[l]!.slug}`, (slugs.get(`${l}/${g[l]!.slug}`) ?? 0) + 1);
 
 describe('fichiers de contenu', () => {
   for (const x of items.filter((y) => keep(y.id))) {

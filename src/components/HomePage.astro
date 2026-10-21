@@ -1,22 +1,19 @@
 ---
 /**
- * Accueil, dans son ordre à lui : le bilan des trois comptes, le bandeau des plafonds de l'année, la
- * réponse repliée, la phrase de valeur ajoutée, la même cotisation REER dans les 13 provinces et
- * territoires, la prose sur le choix, les familles de pages, les textes longs en accordéons, la FAQ.
- * Texte : src/content/home.ts.
+ * Accueil : le simulateur de ville, les repères du jour, la réponse repliée, la phrase de valeur ajoutée, le
+ * tableau de toutes les villes, la prose sur les données, les familles de pages, les textes longs en accordéons,
+ * la FAQ. Texte : src/content/home.ts ; chiffres : instantané du jour.
  */
 import PageLayout from '../layouts/PageLayout.astro';
 import Clamp from './Clamp.astro';
 import Tool from './Tool.astro';
 import Body from './Body.astro';
 import { HOME } from '../content/home';
-import { route, ROUTES, type Locale } from '../i18n/routes';
+import { route, hasRoute, type Locale } from '../i18n/routes';
 import { GROUPS } from '../i18n/nav';
 import { helpers, sourceList } from '../lib/helpers';
 import { GUIDES } from '../lib/pages';
 import { KIT as K } from '../lib/kit';
-import { LANG_TAGS, LAST_UPDATED } from '../data/site-config';
-import { displayDate } from '../lib/format';
 import { faqSchema, organizationSchema, websiteSchema, webPageSchema, webApplicationSchema } from '../lib/seo';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -26,41 +23,44 @@ const h = helpers(lang);
 const sources = sourceList(HOME.sources, lang);
 const jsonLd = [websiteSchema(lang), organizationSchema(lang), webPageSchema({ name: x.h1, description: x.description, path, lang }), webApplicationSchema({ name: x.h1, description: x.description, path, lang }), faqSchema(x.faqs, lang)];
 const fr = lang === 'fr';
-const provPage = (p: string) => GUIDES.find((g) => g.group === 'prov' && g.toolArg?.pr === p);
-const incomes = [50000, 75000, 100000, 150000];
-const rows = K.PROVS.map((p) => {
-  const g = provPage(p);
-  const name = K.prov(p, lang);
-  return [g && ROUTES.some((r) => r.id === g.id) ? `<a href="${route(g.id, lang)}">${name}</a>` : name, ...incomes.map((i) => h.p(K.marginal(i, p))), h.m(K.saving(75000, 5000, p))];
+const ids = K.PRICED_IDS.filter((id) => !K.city(id).proxy).sort((a, b) => K.headline(K.fuelOf(a, 'regular')!).value - K.headline(K.fuelOf(b, 'regular')!).value);
+const cityLink = (id: string) => (hasRoute(id, lang) ? `<a href="${route(id, lang)}">${K.cityName(id, lang)}</a>` : (GUIDES.some((g) => g.id === id) ? `<a href="${route(id, 'en')}" hreflang="en">${K.cityName(id, lang)}</a>` : K.cityName(id, lang)));
+const rows = ids.map((id) => {
+  const r = K.fuelOf(id, 'regular')!, d = K.fuelOf(id, 'diesel');
+  const hr = K.headline(r);
+  return [cityLink(id), h.cpl(hr.value), d ? h.cpl(K.headline(d).value) : '', hr.isEstimate ? (fr ? `estimation (${h.when(r)})` : `estimate (${h.when(r)})`) : h.when(r), h.cpl(r.est.value)];
 });
 ---
 <PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} sources={sources}>
   <header class="mb-4">
     <h1 class="text-[1.7rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
     <p class="mt-2 text-base text-navy-700 sm:text-lg">{x.intro}</p>
-    <p class="mt-1 text-sm text-navy-600"><a href={route('method', lang)} class="underline">{fr ? 'Méthode de calcul' : 'How we calculate'}</a> · <a href={route('about', lang)} class="underline">{fr ? 'Qui publie ce site' : 'Who publishes this site'}</a></p>
+    <p class="mt-1 text-sm text-navy-600"><a href={route('method', lang)} class="underline">{fr ? 'Méthode et écart mesuré' : 'Method and measured error'}</a> · <a href={route('about', lang)} class="underline">{fr ? 'Qui publie ce site' : 'Who publishes this site'}</a></p>
   </header>
-  <div data-outil data-chrome><Tool kind="bilan" lang={lang} idPrefix="home" /></div>
+  <div data-outil data-chrome><Tool kind="ville" lang={lang} arg={{ v: fr ? 'montreal' : 'toronto' }} idPrefix="home" /></div>
   <dl data-chrome class="limits my-6 text-sm">
     {x.facts.map((f) => <div><dt>{f.k}</dt><dd>{f.v}</dd></div>)}
   </dl>
   <Clamp text={x.resume} lang={lang} id="clamp-home" class="my-8" />
   <p class="my-6 border-l-4 border-accent-500 pl-4 text-navy-800"><strong>{x.valeur}</strong></p>
   <section class="mt-10">
-    <h2 class="text-2xl font-bold text-navy-900">{fr ? 'Le même REER dans les 13 provinces et territoires' : 'The same RRSP in all 13 provinces and territories'}</h2>
+    <h2 class="text-2xl font-bold text-navy-900">{fr ? 'Toutes les villes, de la moins chère à la plus chère' : 'Every city, cheapest first'}</h2>
     <p class="mt-2 text-navy-700">{x.tableIntro}</p>
-    <div data-chrome><Fragment set:html={h.table([fr ? 'Province ou territoire' : 'Province or territory', ...incomes.map((i) => (fr ? `Taux à ${h.m(i)}` : `Rate at ${h.m(i)}`)), fr ? 'Économie, 5 000 $ à 75 000 $' : 'Saved, $5,000 at $75,000'], rows, fr ? 'Taux marginal combiné 2026 (fédéral et provincial) sur le revenu ordinaire, et baisse d’impôt d’une cotisation de 5 000 $ pour un revenu imposable de 75 000 $.' : '2026 combined marginal rate (federal and provincial) on ordinary income, and the tax saved by a $5,000 contribution on $75,000 of taxable income.', ['l', 'r', 'r', 'r', 'r', 'r'])} /></div>
+    <div data-chrome><Fragment set:html={h.table([fr ? 'Ville' : 'City', fr ? 'Ordinaire' : 'Regular', 'Diesel', fr ? 'Chiffre' : 'Figure', fr ? `Ordinaire, ${h.day(K.TOMORROW)}` : `Regular, ${h.day(K.TOMORROW)}`], rows, fr ? 'Prix en cents par litre, libre-service, taxes comprises.' : 'Prices in cents per litre, self-serve, taxes included.', ['l', 'r', 'r', 'l', 'r'])} /></div>
   </section>
   <section class="mt-10"><Body html={x.why(h)} path={path} lang={lang} /></section>
   <section class="mt-10" data-chrome>
-    {GROUPS.filter((g) => g.id !== 'prov').map((g) => (
-      <div class="mb-6">
-        <h2 class="text-xl font-bold text-navy-900">{g.label[lang]}</h2>
-        <ul class="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
-          {GUIDES.filter((p) => p.group === g.id).map((p) => <li><a href={route(p.id, lang)} class="font-medium text-accent-700 underline-offset-2 hover:underline">{p[lang].nav}</a><span class="block text-navy-600">{p[lang].card}</span></li>)}
-        </ul>
-      </div>
-    ))}
+    {GROUPS.map((g) => {
+      const list = GUIDES.filter((p) => p.group === g.id && hasRoute(p.id, lang));
+      return list.length > 0 && (
+        <div class="mb-6">
+          <h2 class="text-xl font-bold text-navy-900">{g.label[lang]}</h2>
+          <ul class="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {list.map((p) => <li><a href={route(p.id, lang)} class="font-medium text-accent-700 underline-offset-2 hover:underline">{p[lang]!.nav}</a><span class="block text-navy-600">{p[lang]!.card}</span></li>)}
+          </ul>
+        </div>
+      );
+    })}
   </section>
   <section class="mt-10">
     <h2 class="text-2xl font-bold text-navy-900">{x.foldTitle}</h2>

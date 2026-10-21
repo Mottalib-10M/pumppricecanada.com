@@ -8,7 +8,7 @@ Sources lues (aucune clé d'API, aucun site concurrent) :
   statcan   Statistique Canada, tableau 18-10-0001-01 (prix de détail mensuels), CSV complet zippé,
             Licence du gouvernement ouvert – Canada.
   ontario   Ontario, ministère de l'Énergie : « Fuels price survey information » (prix hebdomadaires de
-            10 marchés) et « Wholesale fuel prices » (prix de gros quotidiens Toronto, Thunder Bay,
+            14 marchés) et « Wholesale fuel prices » (prix de gros quotidiens Toronto, Thunder Bay,
             Edmonton, port de New York), Licence du gouvernement ouvert – Ontario.
   regie     Régie de l'énergie du Québec : relevé quotidien des prix (rqe.pdf, essence ordinaire par
             région et sous-région) et prix minimaux à la rampe de Montréal (rampe.pdf). PDF lus avec

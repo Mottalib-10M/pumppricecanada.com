@@ -4,7 +4,9 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Clamp from './Clamp.astro';
 import Tool from './Tool.astro';
 import Body from './Body.astro';
-import { route, ROUTES, type Locale } from '../i18n/routes';
+import { route, hasRoute, type Locale } from '../i18n/routes';
+import { TODAY, SNAP } from '../lib/data';
+import { displayDate } from '../lib/format';
 import { label, GROUPS } from '../i18n/nav';
 import { t } from '../i18n/ui';
 import { helpers, sourceList } from '../lib/helpers';
@@ -14,15 +16,16 @@ import type { GuideDef } from '../lib/page-types';
 import { guideById } from '../lib/pages';
 interface Props { page: GuideDef; lang: Locale }
 const { page, lang } = Astro.props;
-const x = page[lang];
+const x = page[lang]!;
 const ui = t(lang);
 const path = route(page.id, lang);
 const group = GROUPS.find((g) => g.id === page.group)!;
 const jsonLd = [webApplicationSchema({ name: x.h1, description: x.description, path, lang }), articleSchema({ title: x.h1, description: x.description, path, lang }), webPageSchema({ name: x.h1, description: x.description, path, lang }), breadcrumbSchema([{ name: ui.breadcrumbHome, path: route('home', lang) }, { name: x.nav, path }])];
 if (x.faqs.length) jsonLd.push(faqSchema(x.faqs, lang));
-const related = page.related.filter((id) => ROUTES.some((r) => r.id === id)).map((id) => ({ href: route(id, lang), name: label(id, lang), description: guideById(id)?.[lang].card ?? '' }));
+const related = page.related.filter((id) => hasRoute(id, lang)).map((id) => ({ href: route(id, lang), name: label(id, lang), description: guideById(id)?.[lang]?.card ?? '' }));
 const sources = sourceList(page.sources, lang);
-const read = lang === 'fr' ? 'plafonds et barèmes lus sur canada.ca · estimation, pas un avis de cotisation' : 'limits and tax tables read on canada.ca · estimates only, not a notice of assessment';
+const tag = lang === 'fr' ? 'fr-CA' : 'en-CA';
+const read = lang === 'fr' ? `sources officielles lues le ${displayDate(TODAY, tag)} · estimation pour le ${displayDate(SNAP.tomorrow, tag)}, méthode publiée` : `official sources read on ${displayDate(TODAY, tag)} · estimate for ${displayDate(SNAP.tomorrow, tag)}, published method`;
 ---
 <PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} related={related} sources={sources} breadcrumbs={[{ label: group.label[lang] }, { label: x.nav }]}>
   <article>
