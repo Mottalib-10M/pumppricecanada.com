@@ -1,0 +1,78 @@
+import { defineGuide } from '../../lib/page-types';
+import { KIT as K } from '../../lib/kit';
+
+const reg = (id: string) => K.fuelOf(id, 'regular')!;
+const tor = reg('toronto'), mtl = reg('montreal'), cal = reg('calgary'), hal = reg('halifax'), ott = reg('ottawa');
+const moves = K.PRICED_IDS.filter((id) => !K.city(id).proxy).map((id) => ({ id, d: reg(id).est.value - reg(id).latest.value, kind: reg(id).latest.kind }));
+const down = moves.filter((m) => m.kind !== 'month' && m.d < -0.05).length, up = moves.filter((m) => m.kind !== 'month' && m.d > 0.05).length;
+const flat = moves.filter((m) => m.kind !== 'month' && Math.abs(m.d) <= 0.05).length;
+const E = K.en, F = K.fr;
+const ce = (x: number) => K.cpl(x, 'en'), cf = (x: number) => K.cpl(x, 'fr');
+const gain = tor.bt ? 1 - tor.bt.mae / tor.bt.maeNaive : 0;
+const N = K.PRICED_IDS.length;
+const wkE = K.weekday(K.TOMORROW, 'en'), wkF = K.weekday(K.TOMORROW, 'fr');
+
+export default defineGuide({
+  id: 'tomorrow', group: 'outils', order: 1,
+  tool: 'demain', toolArg: { v: 'toronto' },
+  related: ['forecast', 'toronto', 'montreal', 'calgary', 'cheapest'],
+  sources: ['ontario-retail', 'regie', 'ontario-rack', 'statcan', 'nseb', 'excise'],
+  en: {
+    slug: 'gas-price-tomorrow',
+    nav: 'Gas price tomorrow', card: 'Estimate for tomorrow in every city, with its past error',
+    title: 'Gas Price Tomorrow in Canada: Estimate by City, 2026',
+    description: `Gas price tomorrow in 2026 for ${N} Canadian cities: the latest official figure moved by wholesale prices and dated taxes, with the error measured on past weeks.`,
+    h1: 'Gas price tomorrow, city by city',
+    intro: `For ${wkE}, ${E.day(K.TOMORROW)}: regular is estimated at ${ce(tor.est.value)} in Toronto and ${ce(mtl.est.value)} in Montreal.`,
+    resume: `Tomorrow's gas price is not published anywhere officially, so this page estimates it from what is. For each city it takes the latest official figure (a weekly Ontario survey, the Régie de l'énergie's daily Quebec survey, an Atlantic regulator's maximum, or a Statistics Canada monthly average), adds the change in wholesale prices published since, multiplied by one plus the sales tax rate, and adds any tax change already dated for tomorrow. For ${E.day(K.TOMORROW)}, that gives ${ce(tor.est.value)} for regular in Toronto, against ${ce(tor.latest.value)} at the ${E.day(tor.latest.date)} survey, and ${ce(cal.est.value)} in Calgary, where the September average still included the Alberta fuel tax suspended on October 1. Among cities with a daily or weekly figure, ${down} point down, ${up} up and ${flat} unchanged. Replayed over ${tor.bt?.n ?? 0} past weeks in Toronto, the method missed by ${ce(tor.bt?.mae ?? 0)} on average, against ${ce(tor.bt?.maeNaive ?? 0)} for repeating the last price.`,
+    faqs: [
+      { q: 'At what time do gas prices change for tomorrow?', a: 'There is no single time. Many stations reprice overnight after their supplier updates the wholesale rack price, and Atlantic regulators make new maximums take effect at 12:01 a.m., usually on Fridays. The estimate on this page is rebuilt every day from the sources published that morning, so it describes tomorrow as a whole rather than a given hour.' },
+      { q: 'Why does the estimate sometimes equal today’s price?', a: 'When no wholesale price newer than the latest official survey has been published, or when a regulated maximum is not reset tomorrow, there is nothing to move the figure with. The page then shows the official price unchanged and says why, rather than inventing a rise or a fall that no source supports.' },
+      { q: 'Can I trust a one-day gas price prediction?', a: `Treat it as a well-informed estimate with a known error. For Toronto regular gasoline, the published method has missed the next weekly survey by ${ce(tor.bt?.mae ?? 0)} on average, ${E.p(gain, 0)} less than guessing no change. For diesel it is no better than no change, which each city page shows. No method knows what one station will post.` },
+      { q: 'Does the estimate include the return of the federal excise tax?', a: 'Yes. The schedule of the federal excise tax is entered with its dates: zero until January 31, 2027, half rate on February 1, 2027 and full rate on April 1, 2027 under the draft legislation. On the eve of each date, the estimate for the next day adds the change, sales tax included, in every province.' },
+    ],
+    body: (h) => `
+<h2>What the estimate is made of</h2>
+<p>Three things can move a pump price between one official figure and tomorrow: the price of gasoline on the wholesale market, the margins of wholesalers and retailers, and taxes. Margins are not published, so the method assumes they stay where they were at the last survey. Wholesale prices and taxes are published, and the method uses both.</p>
+<p>For wholesale prices, the Government of Ontario publishes daily rack prices for Toronto, Thunder Bay and Edmonton, but about a week late. That is enough to bring a Statistics Canada monthly average up to date, but it rarely says anything about the days after a Monday survey. For those days the method reads the Régie de l'énergie du Québec, whose survey of posted prices in the Montréal region comes out every weekday morning. Once GST, QST, the Quebec fuel tax, the transit levy and the federal excise tax are taken out, the rest moves with the wholesale market that supplies Ontario, Quebec and the Atlantic provinces. The change in that pre-tax figure since the last survey, times one plus the local sales tax, is the market part of the estimate.</p>
+<p>Taxes are simpler: they change on dates set by law. The federal excise tax, Alberta's quarterly fuel tax rate and Prince Edward Island's suspension are all entered with their dates, so the estimate for the day a change takes effect includes it to the cent.</p>
+${h.mini('demain', { p: ['v'], d: { v: 'ottawa' }, t: 'Tomorrow in another city' })}
+<h2>Three kinds of starting point</h2>
+<p>In Ontario the starting point is the Monday survey: Ottawa's was ${h.cpl(ott.latest.value)} on ${h.day(ott.latest.date)}. In Quebec it is the morning survey of the Régie, already a figure for today, so the estimate for tomorrow can only add a tax change; Montreal stands at ${h.cpl(mtl.latest.value)}. In the Atlantic provinces it is a legal maximum that changes on known days: Halifax's ceiling of ${h.cpl(hal.latest.value)} has applied since ${h.day(hal.latest.date)} and stays until the next Friday reset unless the Nova Scotia Energy Board intervenes mid-week. In the West, where no open daily or weekly source exists, the starting point is the Statistics Canada average for ${K.month(cal.latest.date, 'en')}, brought forward by Edmonton rack prices.</p>
+<h2>How good the estimate has been</h2>
+<p>The method is replayed on the past for every city and fuel: from each survey it estimates the next one using only what had been published the day before, including the week of delay on rack prices, then compares with what was actually published. Each city page prints the average miss next to the miss of a "no change" guess. When the method does not beat that guess, as for diesel, the page says so. The complete table is on the ${h.a('method', 'method page')}.</p>
+<p>The error is measured on official averages. A single station can sit several cents away from the average of its city, in either direction, and can change its sign at any hour: the estimate tells you where the average is heading, not what one forecourt will post.</p>
+<h2>Using it to decide when to fill up</h2>
+<p>Compare the gap between today's figure and tomorrow's estimate with the method's usual miss for your city. A gap well above that miss is a market move the sources already show; a gap below it is within the noise, and the two days are effectively the same. On a 55-litre fill-up, each cent is 55 cents: in Toronto, the gap between the last survey and tomorrow's estimate is worth ${h.usd(Math.abs(tor.est.value - tor.latest.value) * 0.55)}. For the price trend beyond tomorrow, which no source can tell, see what is already scheduled on the ${h.a('forecast', 'gas price forecast page')}.</p>
+`,
+  },
+  fr: {
+    slug: 'prix-essence-demain',
+    nav: 'Prix de l’essence demain', card: 'Estimation du lendemain dans chaque ville, avec son écart passé',
+    title: 'Prix essence demain au Canada : estimation par ville, 2026',
+    description: `Prix de l’essence demain en 2026 dans ${N} villes : dernier chiffre officiel ajusté par le prix de gros et les taxes datées, avec l’écart mesuré sur le passé.`,
+    h1: 'Prix de l’essence demain, ville par ville',
+    intro: `Pour ${wkF} ${F.day(K.TOMORROW)} : l’ordinaire est estimée à ${cf(mtl.est.value)} à Montréal et à ${cf(tor.est.value)} à Toronto.`,
+    resume: `Le prix de l’essence de demain n’est publié nulle part officiellement : cette page l’estime à partir de ce qui l’est. Pour chaque ville, elle prend le dernier chiffre officiel (relevé quotidien de la Régie de l’énergie au Québec, relevé hebdomadaire de l’Ontario, prix maximal d’un régulateur de l’Atlantique ou moyenne mensuelle de Statistique Canada), ajoute la variation du prix de gros publiée depuis, multipliée par un plus le taux de taxe de vente, puis tout changement de taxe déjà daté pour demain. Pour le ${F.day(K.TOMORROW)}, cela donne ${cf(mtl.est.value)} pour l’ordinaire à Montréal, où le relevé de la Régie du ${F.day(mtl.latest.date)} est déjà celui du jour, et ${cf(tor.est.value)} à Toronto, contre ${cf(tor.latest.value)} au relevé du ${F.day(tor.latest.date)}. Parmi les villes qui ont un chiffre quotidien ou hebdomadaire, ${down} sont orientées à la baisse, ${up} à la hausse et ${flat} sans changement. Rejouée sur ${tor.bt?.n ?? 0} semaines à Toronto, la méthode s’est trompée de ${cf(tor.bt?.mae ?? 0)} en moyenne, contre ${cf(tor.bt?.maeNaive ?? 0)} en répétant le dernier prix.`,
+    faqs: [
+      { q: 'À quelle heure le prix de l’essence change-t-il pour le lendemain ?', a: 'Il n’y a pas d’heure unique. Bien des stations changent leur prix pendant la nuit, après que leur fournisseur a mis à jour le prix de gros à la rampe, et les régulateurs de l’Atlantique font entrer leurs nouveaux maximums en vigueur à 0 h 01, d’habitude le vendredi. L’estimation de cette page est refaite chaque jour avec les sources publiées le matin : elle décrit la journée de demain, pas une heure précise.' },
+      { q: 'Pourquoi l’estimation de demain est-elle parfois égale au prix du jour ?', a: 'Quand aucun prix de gros plus récent que le dernier relevé officiel n’a été publié, ou quand un prix maximal réglementé n’est pas refixé demain, rien ne permet de déplacer le chiffre. La page montre alors le prix officiel inchangé et dit pourquoi, au lieu d’inventer une hausse ou une baisse qu’aucune source n’appuie.' },
+      { q: 'Peut-on se fier à une prévision du prix de l’essence à un jour ?', a: `C’est une estimation informée dont l’écart est connu. Pour l’essence ordinaire à Toronto, la méthode publiée s’est trompée de ${cf(tor.bt?.mae ?? 0)} en moyenne sur le relevé suivant, ${F.p(gain, 0)} de moins qu’une prévision « sans changement ». Pour le diesel, elle ne fait pas mieux, ce que chaque page de ville affiche. Aucune méthode ne sait ce qu’une station affichera.` },
+      { q: 'Le retour de la taxe d’accise fédérale est-il compté dans l’estimation ?', a: 'Oui. Le calendrier de la taxe d’accise fédérale est saisi avec ses dates : zéro jusqu’au 31 janvier 2027, demi-taux le 1er février 2027 et plein taux le 1er avril 2027 selon l’avant-projet de loi. La veille de chaque date, l’estimation du lendemain ajoute le changement, taxe de vente comprise, dans toutes les provinces.' },
+    ],
+    body: (h) => `
+<h2>De quoi est faite l’estimation</h2>
+<p>Trois choses peuvent déplacer un prix à la pompe entre un chiffre officiel et demain : le prix de l’essence sur le marché de gros, les marges des grossistes et des détaillants, et les taxes. Les marges ne sont pas publiées : la méthode suppose qu’elles restent là où elles étaient au dernier relevé. Le prix de gros et les taxes sont publiés, et la méthode utilise les deux.</p>
+<p>Pour le prix de gros, le gouvernement de l’Ontario publie chaque jour le prix à la rampe de Toronto, Thunder Bay et Edmonton, mais avec environ une semaine de retard. C’est assez pour mettre à jour une moyenne mensuelle de Statistique Canada, rarement pour les jours qui suivent un relevé du lundi. Pour ces jours-là, la méthode lit la Régie de l’énergie du Québec, dont le relevé des prix affichés dans la région de Montréal paraît chaque matin de semaine. Une fois retirées la TPS, la TVQ, la taxe québécoise sur les carburants, la taxe de l’ARTM et l’accise fédérale, le reste suit le marché de gros qui approvisionne l’Ontario, le Québec et l’Atlantique. La variation de ce chiffre avant taxes depuis le dernier relevé, multipliée par un plus la taxe de vente locale, forme la partie « marché » de l’estimation.</p>
+<p>Les taxes sont plus simples : elles changent à des dates fixées par la loi. L’accise fédérale, le taux trimestriel de la taxe albertaine et la suspension de la taxe à l’Île-du-Prince-Édouard sont saisis avec leurs dates : l’estimation du jour où un changement entre en vigueur l’inclut au cent près.</p>
+${h.mini('demain', { p: ['v'], d: { v: 'quebec-city' }, t: 'Demain dans une autre ville' })}
+<h2>Trois sortes de point de départ</h2>
+<p>Au Québec, le point de départ est le relevé du matin de la Régie, déjà un chiffre du jour : l’estimation du lendemain ne peut y ajouter qu’un changement de taxe, et Montréal se trouve à ${h.cpl(mtl.latest.value)}. En Ontario, c’est le relevé du lundi : celui d’Ottawa était de ${h.cpl(ott.latest.value)} le ${h.day(ott.latest.date)}. Dans l’Atlantique, c’est un maximum légal qui change à des jours connus : le plafond de ${h.cpl(hal.latest.value)} d’Halifax s’applique depuis le ${h.day(hal.latest.date)} et reste en place jusqu’à la révision du vendredi, sauf intervention de la régie en semaine. Dans l’Ouest, faute de source ouverte quotidienne ou hebdomadaire, le point de départ est la moyenne de Statistique Canada de ${K.month(cal.latest.date, 'fr')}, ramenée à aujourd’hui par le prix de gros d’Edmonton.</p>
+<h2>Ce qu’a valu l’estimation</h2>
+<p>La méthode est rejouée sur le passé pour chaque ville et chaque carburant : à partir de chaque relevé, elle estime le suivant avec ce qui était publié la veille seulement, semaine de retard des prix de gros comprise, puis compare au chiffre réellement publié. Chaque page de ville affiche l’écart moyen à côté de celui d’une prévision « sans changement ». Quand la méthode ne fait pas mieux, comme pour le diesel, la page le dit. Le tableau complet est sur la ${h.a('method', 'page Méthode')}.</p>
+<p>L’écart est mesuré sur des moyennes officielles. Une station donnée peut se situer plusieurs cents au-dessus ou en dessous de la moyenne de sa ville et changer son affichage à toute heure : l’estimation dit où va la moyenne, pas ce qu’une station affichera.</p>
+<h2>S’en servir pour choisir le jour du plein</h2>
+<p>Comparez l’écart entre le chiffre du jour et l’estimation de demain avec l’écart habituel de la méthode dans votre ville. Un écart nettement plus grand traduit un mouvement du marché que les sources montrent déjà ; un écart plus petit reste dans le bruit, et les deux jours se valent. Sur un plein de 55 litres, chaque cent vaut 55 cents : à Toronto, l’écart entre le dernier relevé et l’estimation de demain représente ${h.usd(Math.abs(tor.est.value - tor.latest.value) * 0.55)}. Pour la suite, que personne ne peut connaître, voyez ce qui est déjà prévu dans la ${h.a('taxes', 'page sur les taxes de l’essence')}.</p>
+`,
+  },
+});

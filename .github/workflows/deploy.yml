@@ -1,0 +1,75 @@
+name: Daily data update and deploy
+
+# Chaque jour vers 10 h (heure de l'Est) : la Régie de l'énergie a publié son relevé du matin, l'Ontario ses prix de gros,
+# les régulateurs de l'Atlantique leurs prix maximaux. Les séries mises à jour sont versionnées, puis le site est
+# reconstruit (estimations du lendemain comprises) et publié sur GitHub Pages.
+on:
+  schedule:
+    - cron: "15 14 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          npm ci --legacy-peer-deps
+          pip install pypdf
+
+      - name: Fetch official data (scheduled and manual runs)
+        if: github.event_name != 'push'
+        run: python3 scripts/update-data.py
+
+      - name: Tests
+        run: node scripts/build-snapshot.ts && npx vitest run
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit updated series
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/series src/data/snapshot.json src/data/snapshot-hist.json src/data/site-config.ts
+          git diff --cached --quiet || (git commit -m "Données du $(date -u +%F)" && git push)
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
