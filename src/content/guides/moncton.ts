@@ -51,8 +51,8 @@ ${h.mini('plein', { p: ['p', 'r', 'e'], d: { p: Math.round(r.latest.value * 10) 
 <h2>The weekly cycle</h2>
 <p>The Board sets the new maximums on Friday at 12:01 a.m. The current ones date from ${h.day(r.latest.date)}, and the next scheduled change is on ${h.day(nextReset)}. ${r.regChangesTomorrow === false ? `For ${h.day(K.TOMORROW)} there is no reset, so the estimate repeats the cap.` : ''} Because each new ceiling follows the wholesale market of the previous days, the ${h.a('tomorrow', 'tomorrow page')} and the wholesale trend give a hint of the direction of the next one, but only the Board's publication fixes it.</p>
 
-<p>The cap also moves with tax changes dated in advance. The return of the federal excise, at half rate on February 1, 2027 and in full on April 1, 2027 under Finance Canada's draft legislation, would raise the ceiling itself, since the published maximum includes every tax, with HST at 15% charged on top of the excise.</p>
-${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NB' }, t: 'The 2027 excise return in New Brunswick' })}
+<p>The cap also moves with tax changes dated in advance. The return of the federal excise, at half rate on February 1, 2027 and in full on April 1, 2027 under Finance Canada's draft legislation (proposed, not enacted), would raise the ceiling itself, since the published maximum includes every tax, with HST at 15% charged on top of the excise.</p>
+${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NB' }, t: 'The proposed excise return in New Brunswick' })}
 
 <h2>What a Moncton litre pays in tax</h2>
 <p>New Brunswick's gasoline tax is ${h.n(nbTax, 2)} cents a litre and its motive fuel tax on diesel ${h.n(nbTaxD, 2)} cents. HST at 15% applies to the full price. At the current caps, taxes are ${h.p(br.taxShare)} of a litre of regular and ${h.p(brD.taxShare)} of a litre of diesel.</p>

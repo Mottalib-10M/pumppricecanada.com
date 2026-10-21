@@ -24,7 +24,7 @@ export default defineGuide({
   sources: [...sourcesOf(ID), 'nrcan-weekly'],
   en: {
     slug: 'gas-prices-regina',
-    nav: 'Regina', card: 'Saskatchewan 15-cent tax, pickup budget, excise in 2027',
+    nav: 'Regina', card: 'Saskatchewan 15-cent tax, pickup budget, proposed excise return',
     title: 'Gas Prices Regina 2026, Saskatchewan Tax and Truck Budget',
     description: 'Gas prices in Regina in 2026: the Statistics Canada monthly average, today\'s estimate, the 15-cent Saskatchewan fuel tax and a year of pickup driving.',
     h1: 'Gas prices in Regina',
@@ -52,7 +52,7 @@ ${h.mini('budget', { p: ['u', 'k'], d: { v: ID, u: 'pickup-standard', k: km }, t
 <p>The ratings come from Natural Resources Canada's fuel consumption guide for 2026 models. Towing, winter driving and gravel roads push real consumption above them.</p>
 
 <h2>When the excise returns</h2>
-<p>Finance Canada's draft legislation keeps the federal excise at zero until January 31, 2027, then charges half of it in February and March and all 10 cents from April 1, 2027. For the pickup above, the full rate with GST would add ${h.usd(lit * exFull / 100, 0)} over a year. The calculator measures it for your own monthly litres.</p>
+<p>Finance Canada's draft legislation (proposed, not enacted) keeps the federal excise at zero until January 31, 2027, then charges half of it in February and March and all 10 cents from April 1, 2027. For the pickup above, the full rate with GST would add ${h.usd(lit * exFull / 100, 0)} over a year. The calculator measures it for your own monthly litres.</p>
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'SK' }, t: 'The excise return in Saskatchewan' })}
 <p>The draft is not law yet; the ${h.a('forecast', 'forecast page')} follows it.</p>
 

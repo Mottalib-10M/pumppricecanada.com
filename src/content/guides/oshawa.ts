@@ -54,7 +54,7 @@ ${h.mini('demain', { p: ['c'], d: { v: ID }, t: 'Tomorrow in Oshawa' })}
 
 <h2>The tax in an Oshawa litre</h2>
 <p>Ontario taxes gasoline at 9 cents a litre and adds 13% HST to the full price, so at the ${EAST} average the HST alone is ${h.cpl(br.salesTax)}. That HST share is the only tax that moves with the market; the per-litre taxes are set in cents and stay put whatever the price does. The ${h.a('taxes', 'tax page')} compares this with the other provinces.</p>
-<p>One change is already on the calendar. The federal excise tax, 10 cents a litre on gasoline before its suspension on April 20, 2026, is due back at half rate on February 1, 2027 and in full on April 1, 2027 under Finance Canada's draft legislation. With HST charged on top, a driver in Durham buying a full tank every week would feel it at every fill-up; the calculator below turns it into a monthly figure.</p>
+<p>One change is already on the calendar. The federal excise tax, 10 cents a litre on gasoline before its suspension on April 20, 2026, is due back at half rate on February 1, 2027 and in full on April 1, 2027 under Finance Canada's draft legislation (proposed, not enacted). With HST charged on top, a driver in Durham buying a full tank every week would feel it at every fill-up; the calculator below turns it into a monthly figure.</p>
 ${h.mini('accise', { p: ['m'], d: { pr: 'ON' }, t: 'The excise return for an Oshawa driver' })}
 ${taxTable(h, ID)}
 

@@ -21,17 +21,19 @@
     {
      "from": "2027-02-01",
      "regular": 5,
-     "diesel": 2
+     "diesel": 2,
+     "draft": true
     },
     {
      "from": "2027-04-01",
      "regular": 10,
-     "diesel": 4
+     "diesel": 4,
+     "draft": true
     }
    ],
    "status": {
-    "en": "Suspended since April 20, 2026. The extension to January 31, 2027, the half rate in February and March 2027 and the full rate on April 1, 2027 come from draft legislation published by Finance Canada in September 2026.",
-    "fr": "Suspendue depuis le 20 avril 2026. La prolongation jusqu'au 31 janvier 2027, le demi-taux de février et mars 2027 et le plein taux au 1er avril 2027 viennent du projet de loi publié par Finances Canada en septembre 2026."
+    "en": "Suspended since April 20, 2026. The extension to January 31, 2027, the half rate in February and March 2027 and the full rate on April 1, 2027 come from draft legislation published by Finance Canada in September 2026: proposed, not enacted. Steps marked draft are shown as proposed and are not used in the estimate until the law is passed.",
+    "fr": "Suspendue depuis le 20 avril 2026. La prolongation jusqu'au 31 janvier 2027, le demi-taux de février et mars 2027 et le plein taux au 1er avril 2027 viennent de l'avant-projet de loi publié par Finances Canada en septembre 2026 : projet de loi, non adopté. Les étapes marquées draft sont affichées comme proposées et ne servent pas à l'estimation tant que la loi n'est pas adoptée."
    },
    "sources": [
     {
@@ -44,8 +46,8 @@
     },
     {
      "label": {
-      "en": "Finance Canada, draft legislation and explanatory notes (September 2026)",
-      "fr": "Finances Canada, avant-projet de loi et notes explicatives (septembre 2026)"
+      "en": "Finance Canada, draft legislation and explanatory notes, September 2026 (proposed, not enacted)",
+      "fr": "Finances Canada, avant-projet de loi et notes explicatives, septembre 2026 (projet de loi, non adopté)"
      },
      "url": "https://www.canada.ca/en/department-finance/corporate/laws-regulations/draft-legislation/2026/09-eta-lta/note.html",
      "url_en": "https://www.canada.ca/en/department-finance/corporate/laws-regulations/draft-legislation/2026/09-eta-lta/note.html"
@@ -709,8 +711,8 @@
   },
   "excise-draft": {
    "label": {
-    "en": "Finance Canada, draft legislation and explanatory notes (September 2026)",
-    "fr": "Finances Canada, avant-projet de loi et notes explicatives (septembre 2026)"
+    "en": "Finance Canada, draft legislation and explanatory notes, September 2026 (proposed, not enacted)",
+    "fr": "Finances Canada, avant-projet de loi et notes explicatives, septembre 2026 (projet de loi, non adopté)"
    },
    "url": "https://www.canada.ca/en/department-finance/corporate/laws-regulations/draft-legislation/2026/09-eta-lta/note.html",
    "url_en": "https://www.canada.ca/en/department-finance/corporate/laws-regulations/draft-legislation/2026/09-eta-lta/note.html"

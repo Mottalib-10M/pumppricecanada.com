@@ -47,7 +47,7 @@ ${h.mini('demain', { p: ['c'], d: { v: ID }, t: 'St. John’s: the cap tomorrow'
 <h2>Diesel on the Avalon</h2>
 <p>Diesel is capped at ${h.cpl(d.latest.value)}, ${h.cpl(d.latest.value - r.latest.value)} above regular. Part of the gap is tax: the province charges ${h.n(nlTaxD, 1)} cents a litre on diesel against ${h.n(nlTax, 1)} on gasoline, rates made permanent by a statute assented on March 30, 2026, and HST at 15% then applies to a higher base. Taxes are ${h.p(brD.taxShare)} of the diesel cap.</p>
 ${taxTable(h, ID, 'diesel')}
-<p>The federal excise on diesel, 4 cents a litre before its suspension, is lower than on gasoline. When it returns in full on April 1, 2027 under Finance Canada's draft legislation, it adds ${h.cpl(exFullD, 2)} with HST on diesel and ${h.cpl(exFullR, 2)} on gasoline. The ${h.a('diesel', 'diesel page')} covers the fuel nationally.</p>
+<p>The federal excise on diesel, 4 cents a litre before its suspension, is lower than on gasoline. When it returns in full on April 1, 2027 under Finance Canada's draft legislation (proposed, not enacted), it adds ${h.cpl(exFullD, 2)} with HST on diesel and ${h.cpl(exFullR, 2)} on gasoline. The ${h.a('diesel', 'diesel page')} covers the fuel nationally.</p>
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NL', c: 'diesel' }, t: 'The excise return in Newfoundland and Labrador' })}
 
 <h2>Premium, from a different source</h2>

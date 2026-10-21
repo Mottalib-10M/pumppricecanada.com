@@ -55,7 +55,7 @@ ${h.mini('budget', { p: ['u', 'k'], d: { v: ID, u: 'suv-small', k: 15000 }, t: '
 <h2>What the tax adds in Laval</h2>
 <p>Laval belongs to the territory of the Autorité régionale de transport métropolitain, so its gasoline carries the 3-cent ARTM levy in addition to the Quebec fuel tax of 19.2 cents. GST and QST, at a combined 14.975%, are then charged on a price that already includes both. Per litre this morning, that makes ${h.cpl(fixed)} of fixed tax and ${h.cpl(brE.salesTax)} of sales tax.</p>
 ${taxTable(h, ID)}
-<p>The federal excise tax is suspended since April 20, 2026; if the draft schedule of Finance Canada is enacted, half of it returns on February 1, 2027 and all 10 cents on April 1, 2027. The ${h.a('tomorrow', 'tomorrow page')} shows how the estimate will absorb those dated changes.</p>
+<p>The federal excise tax is suspended since April 20, 2026; if the draft schedule of Finance Canada (proposed, not enacted) is enacted, half of it returns on February 1, 2027 and all 10 cents on April 1, 2027. The ${h.a('tomorrow', 'tomorrow page')} shows how the estimate will absorb those dated changes.</p>
 `,
   },
   fr: {
@@ -90,7 +90,7 @@ ${h.mini('budget', { p: ['u', 'k'], d: { v: ID, u: 'suv-small', k: 15000 }, t: '
 <h2>Ce que pèsent les taxes à Laval</h2>
 <p>Laval fait partie du territoire de l'Autorité régionale de transport métropolitain : son essence supporte la taxe de 3 ¢ de l'ARTM en plus des 19,2 ¢ de la taxe québécoise sur les carburants. La TPS et la TVQ, 14,975 % à elles deux, s'appliquent ensuite sur un prix qui contient déjà ces deux taxes. Au litre ce matin, cela représente ${h.cpl(fixed)} de taxes fixes et ${h.cpl(brF.salesTax)} de taxes de vente.</p>
 ${taxTable(h, ID)}
-<p>La taxe d'accise fédérale est suspendue depuis le 20 avril 2026 ; si le calendrier de l'avant-projet de Finances Canada est adopté, la moitié revient le 1er février 2027 et les 10 ¢ au complet le 1er avril 2027. La page ${h.a('tomorrow', 'prix de demain')} montre comment l'estimation intégrera ces changements datés.</p>
+<p>La taxe d'accise fédérale est suspendue depuis le 20 avril 2026 ; si le calendrier de l'avant-projet de Finances Canada (projet de loi, non adopté) est adopté, la moitié revient le 1er février 2027 et les 10 ¢ au complet le 1er avril 2027. La page ${h.a('tomorrow', 'prix de demain')} montre comment l'estimation intégrera ces changements datés.</p>
 `,
   },
 });

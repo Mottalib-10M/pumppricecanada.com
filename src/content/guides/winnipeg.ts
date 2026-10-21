@@ -47,7 +47,7 @@ ${facts(h, ID)}
 ${taxTable(h, ID)}
 <p>To see the tax in a litre at the price on the sign of your own station, enter it below.</p>
 ${h.mini('taxes', { p: ['p', 'c'], d: { v: ID, c: 'regular' }, t: 'Tax in a Winnipeg litre' })}
-<p>The ${h.a('taxes', 'tax page')} sets Manitoba against the other provinces and follows the return of the federal excise, planned at half rate on February 1, 2027 and in full on April 1, 2027.</p>
+<p>The ${h.a('taxes', 'tax page')} sets Manitoba against the other provinces and follows the return of the federal excise, planned (proposed, not enacted) at half rate on February 1, 2027 and in full on April 1, 2027.</p>
 
 <h2>Winnipeg against Toronto</h2>
 <p>The comparison crosses the line between the two markets the site follows: the western one, measured monthly and carried forward with the Edmonton rack price, and the central one, surveyed every week by Ontario. Keep the dates in view when reading the gap, and remember that Ontario's lower per-litre tax is partly offset by its higher sales tax.</p>

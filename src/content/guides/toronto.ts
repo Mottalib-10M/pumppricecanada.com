@@ -38,7 +38,7 @@ ${facts(h, ID)}
 ${h.mini('demain', { p: ['c'], d: { v: ID }, t: 'Tomorrow in Toronto, by fuel' })}
 
 <h2>Where a Toronto litre goes</h2>
-<p>At today's price the sales tax alone is ${h.cpl(br.salesTax)}. Ontario's gasoline tax has stayed at 9 cents since it was cut from 14.7 cents in July 2022, and the province made that rate permanent on July 1, 2025. The federal excise tax of 10 cents has been suspended since April 20, 2026; Finance Canada's draft legislation extends the suspension to January 31, 2027, then brings back half of it in February and March 2027 and all of it on April 1, 2027.</p>
+<p>At today's price the sales tax alone is ${h.cpl(br.salesTax)}. Ontario's gasoline tax has stayed at 9 cents since it was cut from 14.7 cents in July 2022, and the province made that rate permanent on July 1, 2025. The federal excise tax of 10 cents has been suspended since April 20, 2026; Finance Canada's draft legislation (proposed, not enacted) extends the suspension to January 31, 2027, then brings back half of it in February and March 2027 and all of it on April 1, 2027.</p>
 ${taxTable(h, ID)}
 <p>Whatever remains after taxes pays for the gasoline itself, the pipeline and truck to the station, the wholesaler and the retailer. That share is what changes from week to week; the taxes per litre do not.</p>
 

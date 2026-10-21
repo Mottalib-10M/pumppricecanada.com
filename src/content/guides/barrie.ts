@@ -29,16 +29,16 @@ export default defineGuide({
   sources: sourcesOf(ID),
   en: {
     slug: 'gas-prices-barrie',
-    nav: 'Barrie', card: 'Highway 400 commute, monthly budget, 2027 excise',
+    nav: 'Barrie', card: 'Highway 400 commute, monthly budget, proposed excise return',
     title: 'Gas Prices Barrie 2026: Highway 400 Commute and Budget',
-    description: 'Gas prices in Barrie for 2026: the southern Ontario average, tomorrow’s estimate, a monthly budget for a Highway 400 commute and the 2027 excise return.',
+    description: 'Gas prices in Barrie for 2026: the southern Ontario average, tomorrow’s estimate, a monthly budget for a Highway 400 commute and the proposed excise return.',
     h1: 'Gas prices in Barrie and the Highway 400 budget',
     intro: `Barrie's reference price, ${MKT}, was ${c(r.latest.value)} for regular on ${E.day(r.latest.date)}, with ${c(r.est.value)} estimated for ${E.day(K.TOMORROW)}.`,
     resume: `There is no official Barrie gas price: the Government of Ontario's Monday survey of self-serve stations does not list the city, and the published figure that covers it is ${MKT}. At the ${K.when(r, 'en')}, it stood at ${c(r.latest.value)} for regular and ${c(pr.latest.value)} for premium, taxes included, which is ${rel} the blended Toronto figure on the same day. For ${E.day(K.TOMORROW)} the estimate is ${c(r.est.value)}, obtained by adding to Monday's average the wholesale change since then in the Régie de l'énergie du Québec's daily Montreal survey; over ${r.bt?.n ?? 0} replayed weeks its average error was ${c(r.bt?.mae ?? 0)}, where a no-change guess erred by ${c(r.bt?.maeNaive ?? 0)}. For a driver who fills a ${TANK}-litre tank once a week, that price comes to about ${usd(month, 0)} a month. Taxes are ${E.p(br.taxShare)} of the pump price (Ontario's 9 cents and 13% HST), and the federal excise suspended since April 20, 2026 is due back in 2027.`,
     faqs: [
       { q: 'Is gas cheaper in Barrie than in Toronto?', a: `On the published averages the difference is small. The southern Ontario figure used for Barrie was ${c(r.latest.value)} at the latest survey and the Toronto blend ${c(tor)}, so the Barrie figure was ${rel} Toronto's. That compares a regional average with a city one, so treat it as a rough guide rather than a rule for where to fill up.` },
       { q: 'How much does a weekly Highway 400 commute from Barrie cost in fuel?', a: `It depends on your distance and vehicle, so the page gives an example: one ${TANK}-litre fill-up a week is about ${E.n(PER_MONTH)} litres a month, or ${usd(month, 0)} at tomorrow's estimate. The calculator lets you replace that with your own kilometres and consumption to get a yearly and monthly figure.` },
-      { q: 'How will the 2027 excise tax change gas prices in Barrie?', a: `Under Finance Canada's draft legislation the federal excise on gasoline returns at 5 cents on February 1, 2027 and 10 cents on April 1, 2027. With 13% HST charged on top, that is ${K.cents(exHalf, 'en', 2)} and then ${K.cents(exFull, 'en', 2)} a litre in Barrie, all else being equal, or ${usd(exFull * PER_MONTH / 100, 0)} a month for the weekly fill-up in the example.` },
+      { q: 'How would the proposed excise return change gas prices in Barrie?', a: `Under Finance Canada's draft legislation (proposed, not enacted) the federal excise on gasoline returns at 5 cents on February 1, 2027 and 10 cents on April 1, 2027. With 13% HST charged on top, that is ${K.cents(exHalf, 'en', 2)} and then ${K.cents(exFull, 'en', 2)} a litre in Barrie, all else being equal, or ${usd(exFull * PER_MONTH / 100, 0)} a month for the weekly fill-up in the example.` },
     ],
     body: (h) => `
 <h2>Where Barrie's figure comes from</h2>
@@ -54,8 +54,8 @@ ${h.mini('budget', { p: ['u', 'k', 'q'], d: { v: ID, u: 'suv-small', k: 25000 },
 <p>Commuters can fill up at either end of the trip. The published averages put the southern Ontario figure ${rel} the Toronto blend at the latest survey. On a ${TANK}-litre fill-up that is ${h.usd(Math.abs(gapTor) * TANK / 100)}, rarely worth a detour.</p>
 ${h.mini('comparer', { p: ['w'], d: { v: ID, w: 'toronto' }, t: 'Barrie against Toronto' })}
 
-<h2>The 2027 excise in the commuter's budget</h2>
-<p>The federal excise tax on gasoline, 10 cents a litre, has been suspended since April 20, 2026. Finance Canada's draft legislation extends the suspension to January 31, 2027, brings back 5 cents on February 1, 2027 and the full 10 cents on April 1, 2027. HST is charged on top of it, so in Barrie the return is worth ${h.cpl(exHalf, 2)} and then ${h.cpl(exFull, 2)} if nothing else moves. For the weekly fill-up in the example, that adds ${h.usd(exFull * PER_MONTH / 100, 0)} a month from April 2027. The ${h.a('forecast', 'outlook page')} follows the schedule.</p>
+<h2>The proposed excise return in the commuter's budget</h2>
+<p>The federal excise tax on gasoline, 10 cents a litre, has been suspended since April 20, 2026. Finance Canada's draft legislation (proposed, not enacted) extends the suspension to January 31, 2027, brings back 5 cents on February 1, 2027 and the full 10 cents on April 1, 2027. HST is charged on top of it, so in Barrie the return is worth ${h.cpl(exHalf, 2)} and then ${h.cpl(exFull, 2)} if nothing else moves. For the weekly fill-up in the example, that adds ${h.usd(exFull * PER_MONTH / 100, 0)} a month from April 2027. The ${h.a('forecast', 'outlook page')} follows the schedule.</p>
 ${h.mini('accise', { p: ['m'], d: { pr: 'ON', m: Math.round(PER_MONTH) }, t: 'What the excise return adds each month' })}
 
 <h2>Taxes in a Barrie litre today</h2>

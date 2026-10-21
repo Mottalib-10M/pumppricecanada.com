@@ -56,7 +56,7 @@ ${taxTable(h, ID)}
 ${h.mini('taxes', { p: ['p'], d: { v: ID, c: 'regular' }, t: 'Tax in a Sherbrooke litre at your price' })}
 
 <h2>What could change tomorrow</h2>
-<p>${flat ? `The estimate for ${h.day(K.TOMORROW)} repeats this morning's figure: the wholesale price the method follows is published with a delay and has nothing newer to add.` : `The estimate for ${h.day(K.TOMORROW)} moves this morning's figure by the wholesale change published since.`} The next Régie survey replaces it as soon as it is out. Longer-term changes are dated: the federal excise is scheduled to return in two steps in February and April 2027, which the ${h.a('tomorrow', 'tomorrow page')} and the ${h.a('cheapest', 'ranking')} will pick up on those dates.</p>
+<p>${flat ? `The estimate for ${h.day(K.TOMORROW)} repeats this morning's figure: the wholesale price the method follows is published with a delay and has nothing newer to add.` : `The estimate for ${h.day(K.TOMORROW)} moves this morning's figure by the wholesale change published since.`} The next Régie survey replaces it as soon as it is out. Longer-term changes are dated: the federal excise is scheduled (proposed, not enacted) to return in two steps in February and April 2027, which the ${h.a('tomorrow', 'tomorrow page')} and the ${h.a('cheapest', 'ranking')} will pick up on those dates.</p>
 `,
   },
   fr: {
@@ -90,7 +90,7 @@ ${taxTable(h, ID)}
 ${h.mini('taxes', { p: ['p'], d: { v: ID, c: 'regular' }, t: 'Les taxes d\'un litre à Sherbrooke, à votre prix' })}
 
 <h2>Ce qui peut changer demain</h2>
-<p>${flat ? `L'estimation du ${h.day(K.TOMORROW)} reprend le chiffre de ce matin : le prix de gros que suit la méthode paraît avec du retard et n'a rien de plus récent à ajouter.` : `L'estimation du ${h.day(K.TOMORROW)} corrige le chiffre de ce matin de la variation du prix de gros publiée depuis.`} Le prochain relevé de la Régie la remplace dès sa parution. Les changements à plus long terme sont datés : l'accise fédérale doit revenir en deux temps, en février puis en avril 2027, ce que la page ${h.a('tomorrow', 'prix de demain')} et le ${h.a('cheapest', 'classement')} intégreront à ces dates.</p>
+<p>${flat ? `L'estimation du ${h.day(K.TOMORROW)} reprend le chiffre de ce matin : le prix de gros que suit la méthode paraît avec du retard et n'a rien de plus récent à ajouter.` : `L'estimation du ${h.day(K.TOMORROW)} corrige le chiffre de ce matin de la variation du prix de gros publiée depuis.`} Le prochain relevé de la Régie la remplace dès sa parution. Les changements à plus long terme sont datés : l'accise fédérale doit revenir en deux temps, en février puis en avril 2027 (projet de loi, non adopté), ce que la page ${h.a('tomorrow', 'prix de demain')} et le ${h.a('cheapest', 'classement')} intégreront à ces dates.</p>
 `,
   },
 });

@@ -41,7 +41,7 @@ ${facts(h, ID)}
 
 <h2>The Detroit question</h2>
 <p>Windsor faces Detroit across the Detroit River, and filling up on the other side is a natural question. This site has no US price data and does not publish any, so it cannot settle it with a number. What it can do is list what a fair comparison needs. US pumps show US dollars per US gallon, so the price has to be converted twice, for the currency at the day's rate and for the volume, a US gallon being several litres. The crossing itself has a cost: the bridge or tunnel toll, and time at the border both ways. A gap of a few cents a litre on one tank can vanish once those are counted.</p>
-<p>On the Canadian side, the tax content of a Windsor litre is known precisely. Ontario's gasoline tax is ${h.n(fixedTax, 0)} cents a litre and HST at 13% adds ${h.cpl(br.salesTax)} at the survey price; the 10-cent federal excise is suspended until at least January 31, 2027.</p>
+<p>On the Canadian side, the tax content of a Windsor litre is known precisely. Ontario's gasoline tax is ${h.n(fixedTax, 0)} cents a litre and HST at 13% adds ${h.cpl(br.salesTax)} at the survey price; the 10-cent federal excise is suspended until at least January 31, 2027 (proposed, not enacted).</p>
 ${taxTable(h, ID)}
 
 <h2>Windsor against London</h2>

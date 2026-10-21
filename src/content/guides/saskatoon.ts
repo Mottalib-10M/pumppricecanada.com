@@ -49,7 +49,7 @@ ${h.mini('comparer', { p: ['w', 'r'], d: { v: ID, w: 'regina' }, t: 'Saskatoon a
 <p>Saskatoon pays Saskatchewan's fuel tax of 15 cents a litre and GST at 5%, ${h.cpl(br.salesTax)} at the estimated price. No municipal or transit levy applies, and the provincial sales tax is not charged on road fuel.</p>
 ${taxTable(h, ID)}
 <p>Between its neighbours, Saskatoon sits in the middle on tax: Alberta collects no provincial fuel tax under its relief program for now, and Manitoba charges 12.5 cents. With GST, the Saskatchewan rate is worth ${h.cpl(K.exciseAt(K.fuelSteps('SK'), K.TOMORROW, 'regular') * (1 + K.salesRate('SK')), 2)} at the pump, which is part of why prices in Saskatoon and Edmonton differ even though both estimates follow the same wholesale price.</p>
-<p>The next dated change is federal: the excise tax, suspended since April 20, 2026, returns at half rate on February 1, 2027 and in full on April 1, 2027 under Finance Canada's draft legislation.</p>
+<p>The next dated change is federal: the excise tax, suspended since April 20, 2026, returns at half rate on February 1, 2027 and in full on April 1, 2027 under Finance Canada's draft legislation (proposed, not enacted).</p>
 
 <h2>Thirteen months of Saskatoon prices</h2>
 <p>${first && last ? `From ${K.month(first[0], 'en')} to ${K.month(last[0], 'en')}, the Saskatoon regular average went from ${h.cpl(first[1])} to ${h.cpl(last[1])}, a change of ${h.cents(last[1] - first[1])}.` : ''} The series is under the Open Government Licence and appears below with diesel.</p>

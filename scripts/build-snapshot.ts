@@ -32,7 +32,8 @@ const KIND: Record<string, Kind> = { statcan: 'month', ontario: 'week', regie: '
 /** Sources dont la licence permet d'afficher l'historique ; pour les autres, seul le dernier chiffre daté est repris. */
 const OPEN = new Set(['statcan', 'ontario']);
 const FUELS: Fuel[] = ['regular', 'premium', 'diesel'];
-const EXCISE: ExciseStep[] = P.taxes.excise.steps;
+/** Seules les étapes en vigueur ou adoptées entrent dans l'estimation ; les étapes « draft » (projet de loi, non adopté) en sont exclues. */
+const EXCISE: ExciseStep[] = P.taxes.excise.steps.filter((s: { draft?: boolean }) => !s.draft);
 const EVENTS: string[] = P.taxes.events;
 /** Taxes au litre datées d'une province : accise fédérale + taxe provinciale sur les carburants. */
 const stepsOf = (prov: string): ExciseStep[] => combineSteps(EXCISE, P.taxes.provinces[prov].fuel.steps);

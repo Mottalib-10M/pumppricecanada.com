@@ -23,7 +23,8 @@ const group = GROUPS.find((g) => g.id === page.group)!;
 const jsonLd = [webApplicationSchema({ name: x.h1, description: x.description, path, lang }), articleSchema({ title: x.h1, description: x.description, path, lang }), webPageSchema({ name: x.h1, description: x.description, path, lang }), breadcrumbSchema([{ name: ui.breadcrumbHome, path: route('home', lang) }, { name: x.nav, path }])];
 if (x.faqs.length) jsonLd.push(faqSchema(x.faqs, lang));
 const related = page.related.filter((id) => hasRoute(id, lang)).map((id) => ({ href: route(id, lang), name: label(id, lang), description: guideById(id)?.[lang]?.card ?? '' }));
-const sources = sourceList(page.sources, lang);
+// Toute page parle de la taxe d'accise : l'avant-projet de loi de 2027 (non adopté) est toujours cité en référence.
+const sources = sourceList(page.sources.includes('excise-draft') ? page.sources : [...page.sources, 'excise-draft'], lang);
 const tag = lang === 'fr' ? 'fr-CA' : 'en-CA';
 const read = lang === 'fr' ? `sources officielles lues le ${displayDate(TODAY, tag)} · estimation pour le ${displayDate(SNAP.tomorrow, tag)}, méthode publiée` : `official sources read on ${displayDate(TODAY, tag)} · estimate for ${displayDate(SNAP.tomorrow, tag)}, published method`;
 ---

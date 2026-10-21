@@ -35,7 +35,7 @@ export default defineGuide({
     faqs: [
       { q: 'Which area does the Quebec City gas price cover?', a: 'The figure is the daily average of the Régie de l\'énergie for the Capitale-Nationale, one of Quebec\'s administrative regions. It covers Quebec City and the surrounding municipalities of the region. The Régie does not split it further, so a station in the old city and one in a suburb both feed the same average.' },
       { q: 'Does Quebec City pay the same gas tax as Montreal?', a: 'Not quite. Both pay the Quebec fuel tax of 19.2 cents per litre of gasoline and the same GST and QST, but the 3-cent levy of the Autorité régionale de transport métropolitain applies only in the Montreal area. Quebec City is outside that territory, so the tax in its litre is a little over 3 cents lower once sales taxes are counted.' },
-      { q: 'How much will diesel cost in Quebec City when the excise tax returns?', a: `Diesel carries a federal excise tax of 4 cents per litre when it is in force, against 10 cents for gasoline. Under Finance Canada's draft schedule, half returns on February 1, 2027 and all of it on April 1, 2027. With GST and QST charged on top, the full return adds ${K.cpl(excD, 'en', 2)} to a litre of diesel in Quebec City, if nothing else changes.` },
+      { q: 'How much will diesel cost in Quebec City when the excise tax returns?', a: `Diesel carries a federal excise tax of 4 cents per litre when it is in force, against 10 cents for gasoline. Under Finance Canada's draft schedule (proposed, not enacted), half returns on February 1, 2027 and all of it on April 1, 2027. With GST and QST charged on top, the full return adds ${K.cpl(excD, 'en', 2)} to a litre of diesel in Quebec City, if nothing else changes.` },
     ],
     body: (h) => `
 <h2>The Capitale-Nationale in the Régie survey</h2>
@@ -53,7 +53,7 @@ ${taxTable(h, ID)}
 <p>Premium is ${h.cpl(pr.latest.value - (mo ? mo.value : r.latest.value))} above regular in the ${K.month(pr.latest.date, 'en')} Statistics Canada averages for Quebec. Taxes are the same per litre for the two gasoline grades, so that spread is entirely in the product.</p>
 
 <h2>When the federal excise tax comes back</h2>
-<p>The federal excise tax has been suspended since April 20, 2026. Finance Canada's draft legislation keeps it at zero until January 31, 2027, charges half in February and March 2027 and the full rate from April 1, 2027. In Quebec, GST and QST are charged on top of the excise, so the full return adds ${h.cpl(excE, 2)} to a litre of gasoline and ${h.cpl(excD, 2)} to a litre of diesel.</p>
+<p>The federal excise tax has been suspended since April 20, 2026. Finance Canada's draft legislation (proposed, not enacted) keeps it at zero until January 31, 2027, charges half in February and March 2027 and the full rate from April 1, 2027. In Quebec, GST and QST are charged on top of the excise, so the full return adds ${h.cpl(excE, 2)} to a litre of gasoline and ${h.cpl(excD, 2)} to a litre of diesel.</p>
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'QC' }, t: 'The excise return for a Quebec driver' })}
 <p>The schedule is draft legislation, not law, and the ${h.a('forecast', 'price outlook page')} follows its progress along with the other dated changes that will move the Quebec City price.</p>
 `,
@@ -69,7 +69,7 @@ ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'QC' }, t: 'The excise return for a
     faqs: [
       { q: 'Quel territoire couvre le prix de l\'essence à Québec ?', a: 'Le chiffre est la moyenne quotidienne de la Régie de l\'énergie pour la Capitale-Nationale, l\'une des régions administratives du Québec. Il couvre la ville de Québec et les municipalités voisines de la région. La Régie ne le découpe pas davantage : une station du Vieux-Québec et une station de banlieue alimentent la même moyenne.' },
       { q: 'La ville de Québec paie-t-elle la même taxe sur l\'essence que Montréal ?', a: 'Pas tout à fait. Les deux paient la taxe québécoise de 19,2 ¢ le litre d\'essence ainsi que la même TPS et la même TVQ, mais la taxe de 3 ¢ de l\'Autorité régionale de transport métropolitain ne s\'applique que dans la région de Montréal. Québec est hors de ce territoire : la taxe contenue dans son litre est inférieure d\'un peu plus de 3 ¢ une fois les taxes de vente comptées.' },
-      { q: 'Combien coûtera le diesel à Québec au retour de l\'accise ?', a: `Le diesel supporte une taxe d'accise fédérale de 4 ¢ le litre lorsqu'elle est perçue, contre 10 ¢ pour l'essence. Selon le calendrier de l'avant-projet de Finances Canada, la moitié revient le 1er février 2027 et la totalité le 1er avril 2027. Avec la TPS et la TVQ calculées par-dessus, le retour complet ajoute ${K.cpl(excD, 'fr', 2)} au litre de diesel à Québec, si rien d'autre ne bouge.` },
+      { q: 'Combien coûtera le diesel à Québec au retour de l\'accise ?', a: `Le diesel supporte une taxe d'accise fédérale de 4 ¢ le litre lorsqu'elle est perçue, contre 10 ¢ pour l'essence. Selon le calendrier de l'avant-projet de Finances Canada (projet de loi, non adopté), la moitié revient le 1er février 2027 et la totalité le 1er avril 2027. Avec la TPS et la TVQ calculées par-dessus, le retour complet ajoute ${K.cpl(excD, 'fr', 2)} au litre de diesel à Québec, si rien d'autre ne bouge.` },
     ],
     body: (h) => `
 <h2>La Capitale-Nationale dans le relevé de la Régie</h2>
@@ -87,7 +87,7 @@ ${taxTable(h, ID)}
 <p>Dans les moyennes de Statistique Canada de ${K.month(pr.latest.date, 'fr')} pour Québec, la super dépasse l'ordinaire de ${h.cpl(pr.latest.value - (mo ? mo.value : r.latest.value))}. Les taxes au litre étant les mêmes pour les deux qualités d'essence, cet écart se trouve entièrement dans le produit.</p>
 
 <h2>Quand l'accise fédérale reviendra</h2>
-<p>La taxe d'accise fédérale est suspendue depuis le 20 avril 2026. L'avant-projet de loi de Finances Canada la maintient à zéro jusqu'au 31 janvier 2027, en perçoit la moitié en février et mars 2027, puis le plein taux dès le 1er avril 2027. Au Québec, la TPS et la TVQ s'appliquent par-dessus l'accise : son retour complet ajoutera ${h.cpl(excE, 2)} au litre d'essence et ${h.cpl(excD, 2)} au litre de diesel.</p>
+<p>La taxe d'accise fédérale est suspendue depuis le 20 avril 2026. L'avant-projet de loi de Finances Canada (projet de loi, non adopté) la maintient à zéro jusqu'au 31 janvier 2027, en perçoit la moitié en février et mars 2027, puis le plein taux dès le 1er avril 2027. Au Québec, la TPS et la TVQ s'appliquent par-dessus l'accise : son retour complet ajoutera ${h.cpl(excE, 2)} au litre d'essence et ${h.cpl(excD, 2)} au litre de diesel.</p>
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'QC' }, t: 'Le retour de l\'accise pour un automobiliste québécois' })}
 <p>Ce calendrier relève d'un avant-projet, pas encore d'une loi ; la page ${h.a('forecast', 'des perspectives de prix')} suit son avancement ainsi que les autres changements datés qui feront bouger le prix à Québec.</p>
 `,

@@ -57,7 +57,7 @@ ${h.table(['Vehicle', 'L/100 km', 'Price used', `Fuel for ${h.n(KM)} km`], [['St
 ${h.mini('budget', { p: ['u', 'k', 'q'], d: { v: ID, u: 'suv-standard', k: KM }, t: 'An SUV fuel budget in Kitchener-Waterloo' })}
 
 <h2>When the diesel excise comes back</h2>
-<p>Finance Canada's draft legislation restores the federal excise on diesel at 2 cents on February 1, 2027 and 4 cents on April 1, 2027, against 5 and 10 cents for gasoline. With HST on top, the return weighs less on a diesel driver per litre.</p>
+<p>Finance Canada's draft legislation (proposed, not enacted) restores the federal excise on diesel at 2 cents on February 1, 2027 and 4 cents on April 1, 2027, against 5 and 10 cents for gasoline. With HST on top, the return weighs less on a diesel driver per litre.</p>
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'ON', c: 'diesel' }, t: 'Diesel excise return for an Ontario driver' })}
 
 <h2>Recent surveys for Kitchener-Waterloo</h2>

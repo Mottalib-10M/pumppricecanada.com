@@ -47,7 +47,7 @@ ${h.mini('plein', { p: ['p', 'r', 'e'], d: { p: Math.round(r.latest.value * 10) 
 <h2>Taxes inside a Mississauga litre</h2>
 <p>Tax per litre is fixed in cents, then HST is charged on the whole price, so the HST part rises and falls with the pump price while the provincial tax does not.</p>
 ${taxTable(h, ID)}
-<p>The federal excise tax of 10 cents on gasoline is at zero for now. Finance Canada's draft legislation brings back half of it on February 1, 2027 and all of it on April 1, 2027, which would add the excise plus HST on top to every litre.</p>
+<p>The federal excise tax of 10 cents on gasoline is at zero for now. Finance Canada's draft legislation (proposed, not enacted) brings back half of it on February 1, 2027 and all of it on April 1, 2027, which would add the excise plus HST on top to every litre.</p>
 
 <h2>Recent Toronto West surveys</h2>
 <p>The Ontario series is published under an open licence, so the last ${h.n(K.HIST[ID]?.regular?.length ?? 0)} surveys used for Mississauga can be listed in full.</p>

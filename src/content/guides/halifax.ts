@@ -47,9 +47,9 @@ ${h.mini('demain', { p: ['c'], d: { v: ID }, t: 'Halifax: the cap tomorrow' })}
 <p>The cap the site reads for Zone 1 covers regular and diesel. For premium the page falls back on Statistics Canada's monthly average, ${h.cpl(pr.latest.value)} for ${K.month(pr.latest.date, 'en')}. The month is over, so the figure is carried to today with the change in the wholesale price and any dated tax change, which gives ${h.cpl(pr.est.value)}. It is an estimate, and labelled as one.</p>
 
 <h2>Taxes in a Halifax litre</h2>
-<p>Nova Scotia charges ${h.n(nsTax, 1)} cents a litre of motive fuel tax on gasoline and ${h.n(nsTaxD, 1)} cents on diesel, and HST has been 14% since April 1, 2025. The federal excise tax is suspended for now and due back in two steps in 2027.</p>
+<p>Nova Scotia charges ${h.n(nsTax, 1)} cents a litre of motive fuel tax on gasoline and ${h.n(nsTaxD, 1)} cents on diesel, and HST has been 14% since April 1, 2025. The federal excise tax is suspended for now and due back in two steps in 2027 (proposed, not enacted).</p>
 ${taxTable(h, ID)}
-${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NS' }, t: 'The 2027 excise return in Nova Scotia' })}
+${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NS' }, t: 'The proposed excise return in Nova Scotia' })}
 
 <h2>Halifax against Moncton</h2>
 <p>New Brunswick also caps prices, with one maximum for the whole province. The current New Brunswick cap for regular is ${h.cpl(mon)}, so ${h.cents(mon - r.latest.value)} relative to Halifax. Both are ceilings, so the comparison is between two maximums, not two averages. ${h.a('moncton', 'Moncton')} and ${h.a('st-johns', 'St. John’s')} have their own pages.</p>

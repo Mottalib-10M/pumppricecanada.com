@@ -46,7 +46,7 @@ ${h.mini('demain', { p: ['c'], d: { v: ID }, t: 'Montreal tomorrow' })}
 <h2>The taxes in a Montreal litre</h2>
 <p>Three layers sit on top of the product. The Quebec fuel tax is 19.2 cents per litre of gasoline, a rate that has not moved since April 2013. The ARTM adds 3 cents inside its transit territory, which covers the island and the surrounding municipalities of the metropolitan area, ${h.a('laval', 'Laval')} included. Then GST at 5% and QST at 9.975% are charged on the price that already includes those per-litre taxes, which comes to ${h.cpl(salesE)} at this morning's price.</p>
 ${taxTable(h, ID)}
-<p>The cost of Quebec's cap-and-trade system does not appear as a separate line: the province notes that it is already included in the wholesale price, so it sits in the product share. The federal excise tax of 10 cents is suspended until at least January 31, 2027 under Finance Canada's draft legislation, and the ${h.a('taxes', 'tax page')} follows its planned return.</p>
+<p>The cost of Quebec's cap-and-trade system does not appear as a separate line: the province notes that it is already included in the wholesale price, so it sits in the product share. The federal excise tax of 10 cents is suspended until at least January 31, 2027 under Finance Canada's draft legislation (proposed, not enacted), and the ${h.a('taxes', 'tax page')} follows its planned return.</p>
 
 <h2>Montreal against Toronto</h2>
 <p>Drivers who move between the two cities often wonder which one is cheaper. The comparison below uses this morning's Régie figure for Montreal and the latest Ontario survey for Toronto, so both are city averages with their dates.</p>
@@ -82,7 +82,7 @@ ${h.mini('demain', { p: ['c'], d: { v: ID }, t: 'Montréal demain' })}
 <h2>Les taxes dans un litre à Montréal</h2>
 <p>Trois étages s'ajoutent au produit. La taxe québécoise sur les carburants est de 19,2 ¢ le litre d'essence, un taux inchangé depuis avril 2013. L'ARTM prélève 3 ¢ de plus sur son territoire, qui couvre l'île et les municipalités de la région métropolitaine, ${h.a('laval', 'Laval')} comprise. Viennent enfin la TPS de 5 % et la TVQ de 9,975 %, calculées sur un prix qui contient déjà ces taxes au litre : ${h.cpl(salesF)} au prix de ce matin.</p>
 ${taxTable(h, ID)}
-<p>Le coût du marché du carbone québécois n'apparaît pas sur une ligne à part : selon la province, il est déjà compris dans le prix de gros, donc dans la part du produit. La taxe d'accise fédérale de 10 ¢ est suspendue au moins jusqu'au 31 janvier 2027 d'après l'avant-projet de loi de Finances Canada ; la page ${h.a('taxes', 'des taxes')} suit son retour prévu.</p>
+<p>Le coût du marché du carbone québécois n'apparaît pas sur une ligne à part : selon la province, il est déjà compris dans le prix de gros, donc dans la part du produit. La taxe d'accise fédérale de 10 ¢ est suspendue au moins jusqu'au 31 janvier 2027 d'après l'avant-projet de loi de Finances Canada (projet de loi, non adopté) ; la page ${h.a('taxes', 'des taxes')} suit son retour prévu.</p>
 
 <h2>Montréal ou Toronto ?</h2>
 <p>Ceux qui font souvent la route entre les deux métropoles se demandent laquelle est la moins chère. La comparaison ci-dessous oppose le chiffre de la Régie de ce matin pour Montréal au dernier relevé de l'Ontario pour Toronto : deux moyennes de ville, chacune avec sa date.</p>

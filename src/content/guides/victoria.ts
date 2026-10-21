@@ -34,7 +34,7 @@ export default defineGuide({
     faqs: [
       { q: 'Why is gas so expensive in Victoria when its tax is lower than Vancouver?', a: 'Victoria\'s motor fuel tax is 20 cents a litre, 7 cents below Metro Vancouver, yet its average pump price can be close to Vancouver\'s. When it is, the difference sits in the product share: once taxes are removed, a litre on southern Vancouver Island costs more than one on the mainland. No official source breaks that pre-tax cost down by city, so the page shows the gap without guessing its causes.' },
       { q: 'What is the BC Transit gas tax in Victoria?', a: 'In the Victoria regional transit area, 5.5 cents of every litre of gasoline go to BC Transit. Added to the 14.5-cent provincial motor fuel tax, that makes 20 cents per litre, before GST. The rate is the same for every station in the area, so it does not explain price differences between stations, only the gap with the rest of the province.' },
-      { q: 'How much will the federal excise add to gas in Victoria in 2027?', a: `Under Finance Canada\'s draft legislation, the 10-cent federal excise tax on gasoline, suspended since April 20, 2026, returns at half rate on February 1, 2027 and in full on April 1, 2027. With 5% GST on top, the full rate adds ${K.cpl(K.exciseAt(K.EXCISE, '2027-04-01', 'regular') * (1 + K.salesRate('BC')), 'en', 2)} per litre in B.C. The calculator on this page turns that into dollars a month for your own consumption.` },
+      { q: 'How much would the proposed federal excise return add to gas in Victoria?', a: `Under Finance Canada\'s draft legislation (proposed, not enacted), the 10-cent federal excise tax on gasoline, suspended since April 20, 2026, returns at half rate on February 1, 2027 and in full on April 1, 2027. With 5% GST on top, the full rate adds ${K.cpl(K.exciseAt(K.EXCISE, '2027-04-01', 'regular') * (1 + K.salesRate('BC')), 'en', 2)} per litre in B.C. The calculator on this page turns that into dollars a month for your own consumption.` },
     ],
     body: (h) => `
 <h2>Victoria's own monthly series</h2>
@@ -52,8 +52,8 @@ ${h.mini('comparer', { p: ['w'], d: { v: ID, w: 'vancouver' }, t: 'Victoria agai
 ${taxTable(h, ID)}
 <p>The B.C. carbon tax, which used to be a separate line, was eliminated on April 1, 2025. The federal excise tax has been suspended since April 20, 2026, and its return is the next dated change that will move the Victoria price.</p>
 
-<h2>The excise return in 2027</h2>
-<p>Finance Canada's draft legislation extends the suspension to January 31, 2027, then charges half the excise in February and March 2027 and all of it from April 1, 2027: 10 cents a litre on gasoline and 4 on diesel, before GST. For a household that buys a given number of litres each month, the calculator shows the extra cost.</p>
+<h2>The proposed excise return</h2>
+<p>Finance Canada's draft legislation (proposed, not enacted) extends the suspension to January 31, 2027, then charges half the excise in February and March 2027 and all of it from April 1, 2027: 10 cents a litre on gasoline and 4 on diesel, before GST. For a household that buys a given number of litres each month, the calculator shows the extra cost.</p>
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'BC' }, t: 'The excise return for a B.C. driver' })}
 <p>The draft schedule is not yet law; the ${h.a('forecast', 'forecast page')} follows it, and the ${h.a('taxes', 'tax page')} lists every rate by province.</p>
 
