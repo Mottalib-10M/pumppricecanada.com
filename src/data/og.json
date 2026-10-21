@@ -4,16 +4,16 @@
  "variants": [
   {
    "file": "og-en.png",
-   "title": "Gas prices by city in Canada\ntoday and an estimate for tomorrow",
+   "title": "Gas prices by city\ntoday and tomorrow",
    "subtitle": "Official averages · method and past error published · fill-up · taxes",
-   "badge": "Federal excise tax: 0 ¢/L until Jan 31, 2027",
+   "badge": "Federal excise tax: 0 ¢/L since April 20, 2026",
    "brand": "Pump Price Canada"
   },
   {
    "file": "og-fr.png",
-   "title": "Prix de l'essence par ville au Canada\naujourd'hui et estimation de demain",
+   "title": "Prix de l'essence par ville\naujourd'hui et demain",
    "subtitle": "Moyennes officielles · méthode et écart publiés · plein · taxes",
-   "badge": "Taxe d'accise fédérale : 0 ¢/L jusqu'au 31 janvier 2027",
+   "badge": "Taxe d'accise fédérale : 0 ¢/L depuis le 20 avril 2026",
    "brand": "Prix à la pompe Canada"
   }
  ]

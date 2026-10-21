@@ -9,7 +9,7 @@ import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
 const lang = 'fr';
 const path = route('about', lang);
 const title = 'Prix à la pompe Canada 2026 : qui publie ce site et pourquoi';
-const description = 'Prix à la pompe Canada est publié par Radif Partners : moyennes officielles 2026 de l’essence par ville, estimation du lendemain avec son écart, ni application ni compte.';
+const description = 'Prix à la pompe Canada, édité par Radif Partners : prix officiels 2026 de l’essence par ville, estimation du lendemain avec son écart, ni application ni compte.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'À propos', path }])]} breadcrumbs={[{ label: 'À propos' }]}>

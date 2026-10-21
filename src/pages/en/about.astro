@@ -8,8 +8,8 @@ import { HOME } from '../../content/home';
 import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
 const lang = 'en';
 const path = route('about', lang);
-const title = 'Pump Price Canada 2026: who publishes it and why';
-const description = 'Pump Price Canada is published by Radif Partners: official 2026 gas price averages by city, an estimate for tomorrow with its measured error, no app and no account.';
+const title = 'Pump Price Canada 2026: who publishes it, how and why';
+const description = 'Pump Price Canada is published by Radif Partners: official 2026 gas prices by city, an estimate for tomorrow with its measured error, no app and no account.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path }])]} breadcrumbs={[{ label: 'About' }]}>

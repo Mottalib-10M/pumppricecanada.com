@@ -8,8 +8,8 @@ import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
 const lang = 'en';
 const path = route('method', lang);
 const E = K.en, S = K.SNAP;
-const title = 'Gas price estimate method 2026: sources and error';
-const description = 'How the 2026 gas price figures are built: official surveys by city, the estimate for tomorrow, its error measured on past weeks, the taxes per litre and the limits.';
+const title = 'Gas price estimate method 2026: sources, taxes and error';
+const description = 'How the 2026 gas price figures are built: official surveys by city, the estimate for tomorrow, its error on past weeks, the taxes per litre and the limits.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
 const c = (x: number) => K.cpl(x, 'en');
 const rows = K.PRICED_IDS.flatMap((id) => (['regular', 'diesel'] as const).filter((f) => K.fuelOf(id, f)).map((f) => {

@@ -513,8 +513,8 @@
    },
    "bc-translink": {
     "label": {
-     "en": "TransLink motor fuel tax (Metro Vancouver)",
-     "fr": "Taxe TransLink sur les carburants (Grand Vancouver)"
+     "en": "Metro Vancouver supplement (TransLink receives 18.5¢ of the 27¢)",
+     "fr": "Supplément du Grand Vancouver (TransLink reçoit 18,5 ¢ des 27 ¢)"
     },
     "regular": 12.5,
     "diesel": 12.5,
