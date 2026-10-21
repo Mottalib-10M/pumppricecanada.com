@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'en';
+const path = route('contact', lang);
+const description = 'Write to the publisher of TFSA or RRSP about a 2026 limit, a tax rule or a source. Email only, no advice on your own situation and no product to sell.';
+---
+<PageLayout title="Contact TFSA or RRSP 2026: corrections and sources" description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path, lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. There is no form, no phone line and no account: one address, read by the people who keep the calculators up to date.</p>
+    <h2>Messages that help</h2>
+    <ul>
+      <li>A limit, bracket or rate that differs from the official publication: give the year, the province and the link to the source.</li>
+      <li>A calculator result that does not match your notice of assessment: say what you entered and the official figure.</li>
+      <li>A rule you read differently in a Canada Revenue Agency or Revenu Québec guide.</li>
+      <li>A new official figure (the 2027 TFSA limit, 2027 brackets) that we have not entered yet.</li>
+      <li>Embedding a calculator on an association site or a blog: the code is on the <a href={route('widget', lang)}>embed page</a>.</li>
+    </ul>
+    <h2>What we cannot do</h2>
+    <p>We cannot see your tax file, confirm your official room or tell you which account to use. Those questions are for the Canada Revenue Agency, Revenu Québec or a professional of your choice. We are not a public body.</p>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+  </div>
+</PageLayout>

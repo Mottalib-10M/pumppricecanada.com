@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /*?*
+
+Sitemap: https://ca-gas-prices.example/sitemap-index.xml

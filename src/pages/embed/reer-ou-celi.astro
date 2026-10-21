@@ -1,0 +1,22 @@
+---
+/** Page à intégrer (iframe) : un simulateur seul. noindex, hors sitemap (astro.config). */
+import '../../styles/global.css';
+import Tool from '../../components/Tool.astro';
+import { SITE_URL, SITE_NAMES, LANG_TAGS } from '../../data/site-config';
+const lang = 'fr';
+---
+<!doctype html>
+<html lang={LANG_TAGS[lang]}>
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REER ou CELI 2026 par province (simulateur à intégrer)</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={`${SITE_URL}/fr/`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+  <body class="bg-white p-2 text-navy-900">
+    <main><Tool kind="reerCeli" lang={lang} idPrefix="embed" /></main>
+    <p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/fr/`} target="_blank" rel="noopener" class="underline">{SITE_NAMES[lang]}</a> · tranches d’impôt 2026 · estimation indépendante, pas un conseil fiscal</p>
+  </body>
+</html>

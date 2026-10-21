@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'fr';
+const path = route('contact', lang);
+const description = 'Écrire à l’éditeur de Mon CELI REER au sujet d’un plafond 2026, d’une règle fiscale ou d’une source. Courriel seulement, sans conseil personnel ni produit.';
+---
+<PageLayout title="Contact Mon CELI REER 2026 : corrections et sources" description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path, lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Écrivez à <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Il n'y a ni formulaire, ni téléphone, ni compte à créer : une seule adresse, lue par les personnes qui tiennent les simulateurs à jour.</p>
+    <h2>Les messages utiles</h2>
+    <ul>
+      <li>Un plafond, une tranche ou un taux qui diffère de la publication officielle : donnez l'année, la province et le lien vers la source.</li>
+      <li>Un résultat de simulateur qui ne correspond pas à votre avis de cotisation : indiquez les montants saisis et le chiffre officiel.</li>
+      <li>Une règle que vous lisez autrement dans un guide de l'Agence du revenu du Canada ou de Revenu Québec.</li>
+      <li>Un nouveau chiffre officiel (plafond CELI 2027, tranches 2027) que nous n'avons pas encore intégré.</li>
+      <li>L'intégration d'un simulateur sur un site d'association ou un blogue : le code est sur la <a href={route('widget', lang)}>page d'intégration</a>.</li>
+    </ul>
+    <h2>Ce que nous ne pouvons pas faire</h2>
+    <p>Nous ne voyons pas votre dossier fiscal, ne pouvons pas confirmer vos droits officiels ni vous dire dans quel compte placer votre argent. Ces questions relèvent de l'Agence du revenu du Canada, de Revenu Québec ou d'un professionnel que vous choisissez. Nous ne sommes pas un organisme public.</p>
+    <h2>Éditeur</h2>
+    <LegalIdentity lang={lang} />
+  </div>
+</PageLayout>

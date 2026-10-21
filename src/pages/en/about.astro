@@ -1,0 +1,34 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, AUTHOR_DESC, CONTACT_EMAIL } from '../../data/site-config';
+import { srcLink } from '../../lib/helpers';
+import { HOME } from '../../content/home';
+import { KIT as K } from '../../lib/kit';
+import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
+const lang = 'en';
+const path = route('about', lang);
+const Y = K.YEAR;
+const title = `TFSA or RRSP ${Y}: who publishes this site and why`;
+const description = `TFSA or RRSP is published by Radif Partners: ${Y} TFSA room, RRSP limit and FHSA rebuilt from the sources on canada.ca, with no email asked and nothing sold.`;
+const s = (k: string, t: string) => srcLink(k, lang, t);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path }])]} breadcrumbs={[{ label: 'About' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>About TFSA or RRSP</h1>
+    <p>{AUTHOR_DESC.en}</p>
+    <h2>Why this site exists</h2>
+    <p>Someone who wants to know how much they can put in a TFSA, or whether an RRSP is worth it, mostly finds two kinds of pages. The Canada Revenue Agency's pages state the rules precisely but leave the arithmetic to you: you add up eighteen annual limits yourself and look for your tax brackets in another document. Pages from banks, insurers and comparison sites sometimes do the arithmetic, but some still show a past year's limit, give totals that contradict each other from one paragraph to the next, or lead to a product to buy.</p>
+    <p><strong>{HOME.en.valeur}</strong></p>
+    <h2>Who publishes it</h2>
+    <p>The site is published by {AUTHOR_NAME}, a company that builds calculators from public rules. It is not a public body and has no link with the Canada Revenue Agency, Revenu Québec, any provincial government, bank, insurer or broker. It sells no financial product, takes no commission, recommends no institution and asks for no name or email. Pages carry no affiliate links.</p>
+    <LegalIdentity lang={lang} />
+    <h2>Where the figures come from</h2>
+    <p>For the TFSA: the <Fragment set:html={s('cra_limits', 'table of limits on canada.ca')} /> and the <Fragment set:html={s('rc4466', 'Canada Revenue Agency TFSA pages')} /> (room, withdrawals, excess amounts, non-residents). For the RRSP: dollar limits from {Y - 4} to {Y + 1}, the rules on excess contributions, deadlines, withholding and spousal plans, on canada.ca. For the FHSA, the HBP and the LLP: the agency's pages on opening, participation room, closing, withdrawals and repayments. For income tax: the <Fragment set:html={s('cra_rates_2026', Y + ' tax rates page')} /> and the July {Y} T4127 guide, which give the brackets, rates and basic personal amounts of the federal government and the provinces, and Quebec's 16.5% abatement. Quebec's brackets come from Revenu Québec.</p>
+    <h2>What the site does not do</h2>
+    <p>It does not know your file: your official room is in My Account and on your notice of assessment. It does not compute tax credits other than the basic personal amount, the alternative minimum tax, or the tax on dividends and capital gains. It is not tax or financial advice. The <a href={route('method', lang)}>method page</a> gives every formula and limit; the <a href={route('editorial', lang)}>editorial policy</a> explains how corrections are made.</p>
+    <h2>Write to us</h2>
+    <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, to report an error or a source. We answer questions about a rule or a figure, not about your personal situation.</p>
+  </article>
+</PageLayout>

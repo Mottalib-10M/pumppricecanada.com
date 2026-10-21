@@ -1,0 +1,44 @@
+---
+/** Méthode : données, formules, contrôles et limites. Chaque chiffre vient de la trousse. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink, table } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+const lang = 'fr';
+const path = route('method', lang);
+const P = K.P, F = K.fr, Y = K.YEAR;
+const title = `CELI, REER et impôt ${Y} : méthode, sources et formules`;
+const description = `Comment les simulateurs CELI, REER et CELIAPP ${Y} calculent : plafonds et règles CELI de canada.ca, tranches du T4127, abattement du Québec, limites et tests.`;
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const jrows = K.PROVS.map((p) => { const j = K.jur(p); return [K.prov(p, 'fr'), j.rates.map((r) => F.r(r)).join(' · '), j.brackets.map((b) => F.m(b)).join(' · '), j.bpaFederal ? 'comme le fédéral' : F.m(j.bpa ?? 0)]; });
+const ex = K.tfsaRoom({ birthYear: 1998, arrival: 2019, contribBefore: 20000, withdrawBefore: 5000, contribThisYear: 3000, withdrawThisYear: 0 });
+const t = (hd: string[], r: Array<Array<string | number>>, c: string, a: Array<'l' | 'r'>) => table(hd, r, c, a, lang);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Méthode de calcul', description, path, lang }), breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'Méthode de calcul', path }])]} breadcrumbs={[{ label: 'Méthode de calcul' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>Méthode de calcul</h1>
+    <p>Tous les simulateurs du site tournent dans votre navigateur sur un même moteur et un seul fichier de paramètres. Chaque règle et chaque montant y figure avec le lien vers le texte officiel dont il vient et la date de lecture ({F.day(P.retrieved_at)} pour cette édition). Rien de ce que vous tapez ne quitte votre navigateur. Cette page décrit les données, les formules, les contrôles et ce qui est volontairement laissé de côté.</p>
+    <h2>Droits CELI</h2>
+    <p>La première année de droits est la plus tardive de trois : 2009, l'année de vos 18 ans, l'année où vous êtes devenu résident du Canada. Pour chaque année de cette première année à {Y}, le simulateur ajoute le plafond publié dans le <Fragment set:html={s('cra_limits', 'tableau des plafonds de canada.ca')} />, sans prorata, puis retire les plafonds des années civiles entières de non-résidence que vous indiquez (les plus récentes avant {Y}, par convention). Il retranche ensuite vos cotisations et ajoute vos retraits des années passées, comme le prévoient les <Fragment set:html={s('rc4466', 'pages CELI de l’Agence du revenu du Canada')} />. Les retraits de {Y} ne reviennent que le 1er janvier {Y + 1}. Un solde négatif est un excédent, imposé à 1 % par mois.</p>
+    <p>Exemple : une personne née en 1998, arrivée en 2019, qui a versé {F.m(20000)} et retiré {F.m(5000)} avant {Y}, puis versé {F.m(3000)} cette année, a {F.m(ex.accrued)} de plafonds cumulés, {F.m(ex.roomJan1)} de droits au 1er janvier et {F.m(ex.available)} disponibles aujourd'hui.</p>
+    <h2>REER</h2>
+    <p>Les nouveaux droits d'une année valent 18 % du revenu gagné de l'année précédente, sans dépasser le plafond en dollars ({F.m(K.rrspLimit(Y))} en {Y}, {F.m(K.rrspLimit(Y + 1))} en {Y + 1}), moins le facteur d'équivalence. Le simulateur ajoute les droits inutilisés que vous indiquez. Il ne calcule ni le facteur d'équivalence rectifié ni celui pour services passés, qui figurent sur votre avis de cotisation. La marge de {F.m(P.rrsp.overCushion)} et l'impôt de 1 % par mois sur la partie qui la dépasse suivent la page de l'Agence sur les cotisations excédentaires. La retenue sur un retrait applique les taux de 10, 20 et 30 % (5, 10 et 15 % au fédéral pour le Québec) selon le montant du retrait.</p>
+    <h2>CELIAPP, RAP et REEP</h2>
+    <p>Les droits CELIAPP commencent l'année d'ouverture du premier compte : {F.m(P.fhsa.annual)} la première année, puis {F.m(P.fhsa.annual)} plus la part inutilisée de l'année précédente, limitée à {F.m(P.fhsa.carryMax)}, sans dépasser le plafond à vie de {F.m(P.fhsa.lifetime)}. Le simulateur ne traite ni les retraits imposables ni les transferts désignés. Le RAP applique la limite de {F.m(P.hbp.limit)}, le remboursement sur {P.hbp.repayYears} ans et le début reporté à la cinquième année pour un premier retrait de {P.hbp.reliefFrom} à {P.hbp.reliefTo}. Le REEP applique {F.m(P.llp.annual)} par année, {F.m(P.llp.total)} au total et un remboursement sur {P.llp.repayYears} ans.</p>
+    <h2>Impôt sur le revenu {Y}</h2>
+    <p>L'impôt fédéral applique les tranches de la <Fragment set:html={s('cra_rates_2026', 'page des taux ' + Y)} /> et un crédit de 14 % sur le montant personnel de base, réduit de {F.m(P.federal.bpaMax)} à {F.m(P.federal.bpaMin)} entre {F.m(P.federal.brackets[2])} et {F.m(P.federal.brackets[3])} de revenu. Pour un résident du Québec, l'impôt fédéral de base est réduit de 16,5 % (abattement du Québec, guide <Fragment set:html={s('t4127_jul', 'T4127 de juillet ' + Y)} />). L'impôt provincial applique les tranches et le crédit au taux le plus bas de chaque juridiction, la surtaxe de l'Ontario et la réduction du montant de base du Manitoba. Le taux marginal affiché est l'impôt supplémentaire sur les 100 $ suivants ; l'économie d'une déduction est l'impôt avant moins l'impôt après.</p>
+    <Fragment set:html={t(['Juridiction', 'Taux', 'Seuils des tranches', 'Montant de base'], jrows, `Barèmes ${Y} appliqués par les simulateurs.`, ['l', 'l', 'l', 'r'])} />
+    <h2>Deux points à relire</h2>
+    <p>Québec : les taux et les seuils des tranches ont été relus sur la page des <Fragment set:html={s('rq_rates', 'taux d\'imposition de Revenu Québec')} />, et le montant personnel de base de {F.m(K.jur('QC').bpa ?? 0)} sur les <Fragment set:html={s('rq_changes_2026', 'principaux changements 2026 de Revenu Québec')} />.</p>
+    <p>Manitoba : la page des taux de canada.ca affiche des seuils indexés, alors que le guide T4127 et le gouvernement du Manitoba indiquent que les tranches ne sont plus indexées depuis 2025. Le site retient les seuils non indexés de {F.m(K.jur('MB').brackets[0])} et {F.m(K.jur('MB').brackets[1])}.</p>
+    <h2>REER contre CELI</h2>
+    <p>Le simulateur compare un effort égal. Vous indiquez l'épargne que vous pouvez sortir de votre poche ; au CELI, ce montant est placé tel quel. Au REER, on verse le montant qui, une fois le remboursement obtenu, coûte la même chose : la cotisation est majorée par itération jusqu'à ce que cotisation moins économie d'impôt égale votre épargne. Les deux comptes croissent au même rendement réel. Le REER est ensuite retiré en parts égales sur le nombre d'années choisi, chaque part imposée par-dessus votre revenu de retraite avec le barème {Y}, en dollars d'aujourd'hui. Le simulateur signale la zone du Supplément de revenu garanti et la récupération de la Sécurité de la vieillesse sans les intégrer au résultat.</p>
+    <h2>Prestations</h2>
+    <p>Allocation canadienne pour enfants : seuils et taux de réduction de la période {P.benefits.ccb.period.fr}, appliqués au revenu familial net avant et après la déduction. Sécurité de la vieillesse : 15 % du revenu net au-delà de {F.m(P.benefits.oas.threshold['2026'])} pour le revenu {Y}. Supplément de revenu garanti : seuil de {F.m(P.benefits.gis.singleMax)} pour une personne seule, utilisé comme signal seulement.</p>
+    <h2>Ce qui est laissé de côté</h2>
+    <p>Crédits non remboursables autres que le montant de base (RPC ou RRQ, assurance-emploi, montant canadien pour emploi, âge, pension), réductions d'impôt pour bas revenus de l'Ontario et de la Colombie-Britannique, contribution santé de l'Ontario, impôt minimum de remplacement, dividendes et gains en capital, Allocation famille du Québec, prestations provinciales liées au revenu. Le plafond CELI {Y + 1} n'est pas publié : il n'est ni estimé ni affiché.</p>
+    <h2>Tests</h2>
+    <p>Avant chaque publication, des tests automatiques vérifient le cumul des plafonds CELI ({F.m(K.tfsaCum(Y))}), les débuts de droits selon l'âge et l'arrivée, les retraits recrédités, la marge REER, les retenues, les droits CELIAPP et leur report, les dates de remboursement du RAP et du REEP, des taux marginaux calculés à la main (Ontario, Québec, Alberta, Colombie-Britannique) et l'égalité REER et CELI à taux constant.</p>
+  </article>
+</PageLayout>

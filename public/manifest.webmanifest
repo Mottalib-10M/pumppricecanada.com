@@ -1,0 +1,21 @@
+{
+ "name": "Pump Price Canada",
+ "short_name": "Pump Price",
+ "description": "Gas prices by Canadian city: latest official average, an estimate for tomorrow with its published method and past error, fill-up cost, yearly budget and taxes.",
+ "start_url": "/en/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#B42318",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

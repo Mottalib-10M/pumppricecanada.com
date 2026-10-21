@@ -1,0 +1,93 @@
+{
+ "_lisezmoi": "Taxes sur l'essence et le diesel en vigueur au Canada, lues sur les pages officielles le 2026-10-21 (CONTRIBUTING-DONNEES.md). Montants en cents par litre. `steps` = calendrier daté (le dernier « from » antérieur à une date s'applique). Les taxes de vente (TPS, TVH, TPS + TVQ) s'appliquent sur le prix qui comprend déjà les taxes au litre. `events` = dates où une taxe a changé et que l'estimation ne modélise pas (redevance carbone) : le calcul de l'écart passé saute les relevés qui les enjambent.",
+ "retrieved_at": "2026-10-21",
+ "taxes": {
+  "excise": {
+   "label": {"en": "Federal excise tax", "fr": "Taxe d'accise fédérale"},
+   "steps": [
+    {"from": "1995-02-28", "regular": 10, "diesel": 4},
+    {"from": "2026-04-20", "regular": 0, "diesel": 0},
+    {"from": "2027-02-01", "regular": 5, "diesel": 2},
+    {"from": "2027-04-01", "regular": 10, "diesel": 4}
+   ],
+   "status": {"en": "Suspended since April 20, 2026. The extension to January 31, 2027, the half rate in February and March 2027 and the full rate on April 1, 2027 come from draft legislation published by Finance Canada in September 2026.", "fr": "Suspendue depuis le 20 avril 2026. La prolongation jusqu'au 31 janvier 2027, le demi-taux de février et mars 2027 et le plein taux au 1er avril 2027 viennent du projet de loi publié par Finances Canada en septembre 2026."},
+   "sources": [
+    {"label": {"en": "Finance Canada, temporarily suspending the federal fuel excise tax (April 2026)", "fr": "Finances Canada, suspension temporaire de la taxe d'accise fédérale sur les carburants (avril 2026)"}, "url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/04/suspension-temporaire-de-la-taxe-daccise-federale-sur-les-carburants.html", "url_en": "https://www.canada.ca/en/department-finance/news/2026/04/temporarily-suspending-the-federal-fuel-excise-tax.html"},
+    {"label": {"en": "Finance Canada, draft legislation and explanatory notes (September 2026)", "fr": "Finances Canada, avant-projet de loi et notes explicatives (septembre 2026)"}, "url": "https://www.canada.ca/en/department-finance/corporate/laws-regulations/draft-legislation/2026/09-eta-lta/note.html", "url_en": "https://www.canada.ca/en/department-finance/corporate/laws-regulations/draft-legislation/2026/09-eta-lta/note.html"}
+   ]
+  },
+  "carbon": {
+   "label": {"en": "Federal fuel charge (consumer carbon price)", "fr": "Redevance fédérale sur les combustibles (tarification du carbone des consommateurs)"},
+   "rate": 0, "since": "2025-04-01",
+   "quote": "On March 15, 2025, the Government of Canada made regulations that cease the application of the federal fuel charge … by setting all fuel charge rates to zero.",
+   "source": {"label": {"en": "Canada Revenue Agency, fuel charge rates", "fr": "Agence du revenu du Canada, taux de la redevance sur les combustibles"}, "url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/publications/fcrates/taux-redevance-combustibles.html", "url_en": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html"}
+  },
+  "events": ["2023-04-01", "2023-07-01", "2024-01-01", "2024-04-01", "2025-01-01", "2025-04-01", "2026-04-20", "2026-09-26", "2026-10-01"],
+  "provinces": {
+   "ON": {"name": {"en": "Ontario", "fr": "Ontario"},
+    "sales": {"type": "HST", "label": {"en": "HST", "fr": "TVH"}, "rate": 0.13},
+    "fuel": {"label": {"en": "Ontario gasoline tax", "fr": "Taxe de l'Ontario sur l'essence"}, "steps": [{"from": "2022-07-01", "regular": 9, "diesel": 9}]},
+    "note": {"en": "The 9 ¢ rate (cut from 14.7 ¢ in July 2022) was made permanent on July 1, 2025.", "fr": "Le taux de 9 ¢ (baissé de 14,7 ¢ en juillet 2022) est devenu permanent le 1er juillet 2025."},
+    "source": {"label": {"en": "Ontario, fuel tax rates and pump price breakdown (Ontario open data)", "fr": "Ontario, taxe sur l'essence et composition du prix à la pompe (données ouvertes de l'Ontario)"}, "url": "https://data.ontario.ca/fr/dataset/fuels-price-survey-information", "url_en": "https://data.ontario.ca/dataset/fuels-price-survey-information"}},
+   "QC": {"name": {"en": "Quebec", "fr": "Québec"},
+    "sales": {"type": "GST+QST", "label": {"en": "GST + QST", "fr": "TPS + TVQ"}, "rate": 0.14975},
+    "fuel": {"label": {"en": "Quebec fuel tax", "fr": "Taxe québécoise sur les carburants"}, "steps": [{"from": "2013-04-01", "regular": 19.2, "diesel": 20.2}]},
+    "note": {"en": "Reduced near the Ontario, New Brunswick and US borders and in remote regions; 3 ¢ more on gasoline in the Montreal metropolitan transit territory (ARTM). The cost of Quebec's cap-and-trade system is already in the wholesale price.", "fr": "Réduite près de l'Ontario, du Nouveau-Brunswick et des États-Unis et dans les régions périphériques ; 3 ¢ de plus sur l'essence dans le territoire de l'ARTM (Montréal). Le coût du marché du carbone (SPEDE) est déjà compris dans le prix de gros."},
+    "source": {"label": {"en": "Régie de l'énergie du Québec, how the price of gasoline is set", "fr": "Régie de l'énergie du Québec, foire aux questions sur le prix de l'essence"}, "url": "https://www.regie-energie.qc.ca/fr/foire-aux-questions/produits-petroliers/prix", "url_en": "https://www.regie-energie.qc.ca/fr/foire-aux-questions/produits-petroliers/prix"}},
+   "BC": {"name": {"en": "British Columbia", "fr": "Colombie-Britannique"},
+    "sales": {"type": "GST", "label": {"en": "GST", "fr": "TPS"}, "rate": 0.05},
+    "fuel": {"label": {"en": "B.C. motor fuel tax", "fr": "Taxe de la C.-B. sur les carburants"}, "steps": [{"from": "2013-01-01", "regular": 14.5, "diesel": 15}]},
+    "note": {"en": "The B.C. carbon tax was eliminated on April 1, 2025. Provincial sales tax does not apply to road fuel.", "fr": "La taxe carbone de la C.-B. a été supprimée le 1er avril 2025. La taxe de vente provinciale ne s'applique pas au carburant routier."},
+    "source": {"label": {"en": "Government of B.C., motor fuel tax rates", "fr": "Gouvernement de la C.-B., taux de la taxe sur les carburants"}, "url": "https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/motor-fuel-tax-and-carbon-tax-rates", "url_en": "https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/motor-fuel-tax-and-carbon-tax-rates"}},
+   "AB": {"name": {"en": "Alberta", "fr": "Alberta"},
+    "sales": {"type": "GST", "label": {"en": "GST", "fr": "TPS"}, "rate": 0.05},
+    "fuel": {"label": {"en": "Alberta fuel tax", "fr": "Taxe de l'Alberta sur les carburants"}, "steps": [{"from": "2024-04-01", "regular": 13, "diesel": 13}, {"from": "2026-10-01", "regular": 0, "diesel": 0}]},
+    "note": {"en": "Fuel Tax Relief Program: the 13 ¢ tax is not collected from October 1 to at least December 31, 2026. From January 1, 2027 at the earliest, the rate will be 0, 4.5, 9 or 13 ¢ depending on the price of WTI oil, rising by 9 ¢ at most per quarter.", "fr": "Programme d'allègement de la taxe sur les carburants : la taxe de 13 ¢ n'est pas perçue du 1er octobre au 31 décembre 2026 au moins. Au plus tôt le 1er janvier 2027, le taux sera de 0, 4,5, 9 ou 13 ¢ selon le prix du pétrole WTI, avec une hausse de 9 ¢ au plus par trimestre."},
+    "source": {"label": {"en": "Government of Alberta, fuel tax information for fuel sellers", "fr": "Gouvernement de l'Alberta, taxe sur les carburants (vendeurs)"}, "url": "https://www.alberta.ca/fuel-tax-information-fuel-sellers", "url_en": "https://www.alberta.ca/fuel-tax-information-fuel-sellers"}},
+   "SK": {"name": {"en": "Saskatchewan", "fr": "Saskatchewan"},
+    "sales": {"type": "GST", "label": {"en": "GST", "fr": "TPS"}, "rate": 0.05},
+    "fuel": {"label": {"en": "Saskatchewan fuel tax", "fr": "Taxe de la Saskatchewan sur les carburants"}, "steps": [{"from": "2000-01-01", "regular": 15, "diesel": 15}]},
+    "note": {"en": "Provincial sales tax does not apply to road fuel.", "fr": "La taxe de vente provinciale ne s'applique pas au carburant routier."},
+    "source": {"label": {"en": "Natural Resources Canada, fuel consumption levies in Canada", "fr": "Ressources naturelles Canada, taxes sur les produits pétroliers"}, "url": "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada", "url_en": "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}},
+   "MB": {"name": {"en": "Manitoba", "fr": "Manitoba"},
+    "sales": {"type": "GST", "label": {"en": "GST", "fr": "TPS"}, "rate": 0.05},
+    "fuel": {"label": {"en": "Manitoba fuel tax", "fr": "Taxe du Manitoba sur les carburants"}, "steps": [{"from": "2000-01-01", "regular": 12.5, "diesel": 12.5}, {"from": "2024-01-01", "regular": 0, "diesel": 0}, {"from": "2025-01-01", "regular": 12.5, "diesel": 12.5}]},
+    "note": {"en": "The 2024 fuel tax holiday ended on January 1, 2025; the rate is 12.5 ¢ again.", "fr": "Le congé de taxe de 2024 a pris fin le 1er janvier 2025 ; le taux est de nouveau de 12,5 ¢."},
+    "source": {"label": {"en": "Natural Resources Canada, fuel consumption levies in Canada", "fr": "Ressources naturelles Canada, taxes sur les produits pétroliers"}, "url": "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada", "url_en": "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}},
+   "NS": {"name": {"en": "Nova Scotia", "fr": "Nouvelle-Écosse"},
+    "sales": {"type": "HST", "label": {"en": "HST", "fr": "TVH"}, "rate": 0.14},
+    "fuel": {"label": {"en": "Nova Scotia motive fuel tax", "fr": "Taxe de la Nouvelle-Écosse sur les carburants"}, "steps": [{"from": "2000-01-01", "regular": 15.5, "diesel": 15.4}]},
+    "note": {"en": "HST has been 14 % since April 1, 2025. Pump prices are capped by the Nova Scotia Energy Board.", "fr": "La TVH est de 14 % depuis le 1er avril 2025. Les prix à la pompe sont plafonnés par la Nova Scotia Energy Board."},
+    "source": {"label": {"en": "Nova Scotia Finance, motive fuel tax rates", "fr": "Finances de la Nouvelle-Écosse, taxe sur les carburants"}, "url": "https://www.novascotia.ca/finance/en/home/taxation/tax101/tobaccofuel.print.aspx.html", "url_en": "https://www.novascotia.ca/finance/en/home/taxation/tax101/tobaccofuel.print.aspx.html"}},
+   "NB": {"name": {"en": "New Brunswick", "fr": "Nouveau-Brunswick"},
+    "sales": {"type": "HST", "label": {"en": "HST", "fr": "TVH"}, "rate": 0.15},
+    "fuel": {"label": {"en": "New Brunswick gasoline and motive fuel tax", "fr": "Taxe du Nouveau-Brunswick sur l'essence et les carburants"}, "steps": [{"from": "2020-04-01", "regular": 10.87, "diesel": 15.45}]},
+    "note": {"en": "Pump prices are capped each week by the New Brunswick Energy and Utilities Board; a delivery charge of up to 4.75 ¢ may be added.", "fr": "Les prix à la pompe sont plafonnés chaque semaine par la Commission de l'énergie et des services publics du Nouveau-Brunswick ; des frais de livraison de 4,75 ¢ au plus peuvent s'ajouter."},
+    "source": {"label": {"en": "New Brunswick Energy and Utilities Board, current petroleum prices", "fr": "Commission de l'énergie et des services publics du N.-B., prix actuels des produits pétroliers"}, "url": "https://nbeub.ca/current-petroleum-prices-2", "url_en": "https://nbeub.ca/current-petroleum-prices-2"}},
+   "NL": {"name": {"en": "Newfoundland and Labrador", "fr": "Terre-Neuve-et-Labrador"},
+    "sales": {"type": "HST", "label": {"en": "HST", "fr": "TVH"}, "rate": 0.15},
+    "fuel": {"label": {"en": "Newfoundland and Labrador gasoline tax", "fr": "Taxe de Terre-Neuve-et-Labrador sur l'essence"}, "steps": [{"from": "2022-06-02", "regular": 7.5, "diesel": 9.5}]},
+    "note": {"en": "The 7.5 ¢ and 9.5 ¢ rates were made permanent by a statute assented on March 30, 2026. Pump prices are capped by the Board of Commissioners of Public Utilities, currently every day.", "fr": "Les taux de 7,5 ¢ et 9,5 ¢ ont été rendus permanents par une loi sanctionnée le 30 mars 2026. Les prix à la pompe sont plafonnés par la Régie des services publics (PUB), en ce moment chaque jour."},
+    "source": {"label": {"en": "Government of Newfoundland and Labrador, gasoline tax", "fr": "Gouvernement de Terre-Neuve-et-Labrador, taxe sur l'essence"}, "url": "https://www.gov.nl.ca/fin/tax-programs-incentives/business/gasolinetax/", "url_en": "https://www.gov.nl.ca/fin/tax-programs-incentives/business/gasolinetax/"}},
+   "PE": {"name": {"en": "Prince Edward Island", "fr": "Île-du-Prince-Édouard"},
+    "sales": {"type": "HST", "label": {"en": "HST", "fr": "TVH"}, "rate": 0.15},
+    "fuel": {"label": {"en": "P.E.I. gasoline tax", "fr": "Taxe de l'Î.-P.-É. sur l'essence"}, "steps": [{"from": "2000-01-01", "regular": 8.47, "diesel": 14.15}, {"from": "2026-09-26", "regular": 0, "diesel": 0}]},
+    "note": {"en": "Suspended from September 26, 2026 to January 31, 2027.", "fr": "Suspendue du 26 septembre 2026 au 31 janvier 2027."},
+    "source": {"label": {"en": "Natural Resources Canada, fuel consumption levies in Canada", "fr": "Ressources naturelles Canada, taxes sur les produits pétroliers"}, "url": "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada", "url_en": "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}}
+  },
+  "regional": {
+   "qc-cmm": {"label": {"en": "Montreal metropolitan transit levy (ARTM)", "fr": "Taxe sur l'essence de l'ARTM (Montréal)"}, "regular": 3, "diesel": 0, "province": "QC"},
+   "qc-border": {"label": {"en": "Quebec tax reduction near Ontario (0 to 15 km)", "fr": "Réduction de la taxe québécoise près de l'Ontario (0 à 15 km)"}, "regular": -6, "diesel": 0, "province": "QC"},
+   "bc-translink": {"label": {"en": "TransLink motor fuel tax (Metro Vancouver)", "fr": "Taxe TransLink sur les carburants (Grand Vancouver)"}, "regular": 12.5, "diesel": 12.5, "province": "BC", "total": {"regular": 27, "diesel": 27.5}, "transit_share": 18.5},
+   "bc-victoria": {"label": {"en": "BC Transit motor fuel tax (Victoria area)", "fr": "Taxe BC Transit sur les carburants (région de Victoria)"}, "regular": 5.5, "diesel": 5.5, "province": "BC", "total": {"regular": 20, "diesel": 20.5}, "transit_share": 5.5}
+  },
+  "regional_note": {"en": "Vancouver area: 27 ¢ in total (of which 18.5 ¢ for TransLink, with a lower general-revenue share than elsewhere); Victoria area: 20 ¢ (of which 5.5 ¢ for BC Transit). Quebec zone rates come from the Régie de l'énergie zone indicators of February 24, 2026.", "fr": "Région de Vancouver : 27 ¢ au total (dont 18,5 ¢ pour TransLink, avec une part de revenu général plus faible qu'ailleurs) ; région de Victoria : 20 ¢ (dont 5,5 ¢ pour BC Transit). Les taux par zone du Québec viennent des indicateurs de la Régie de l'énergie du 24 février 2026."}
+ },
+ "regulators": {
+  "ns-zone1": {"name": {"en": "Nova Scotia Energy Board (Zone 1, Halifax area)", "fr": "Nova Scotia Energy Board (zone 1, région d'Halifax)"}, "url": "https://nserbt.ca/nseb/mandates/gasoline-diesel-pricing/gasoline-diesel-prices-zone-map", "changeDays": [5], "schedule": {"en": "Set every Friday at 12:01 a.m., and sometimes mid-week.", "fr": "Fixé chaque vendredi à 0 h 01, parfois aussi en semaine."}},
+  "nb": {"name": {"en": "New Brunswick Energy and Utilities Board (province-wide)", "fr": "Commission de l'énergie et des services publics du Nouveau-Brunswick (toute la province)"}, "url": "https://nbeub.ca/current-petroleum-prices-2", "changeDays": [5], "schedule": {"en": "Set every Friday at 12:01 a.m.", "fr": "Fixé chaque vendredi à 0 h 01."}},
+  "nl-zone1": {"name": {"en": "Board of Commissioners of Public Utilities (Zone 1, Avalon)", "fr": "Régie des services publics de T.-N.-L. (zone 1, Avalon)"}, "url": "http://www.pub.nl.ca/PP_petroleumproducts.php", "changeDays": [0, 1, 2, 3, 4, 5, 6], "schedule": {"en": "Normally every Friday; set every day since October 2026 because of market volatility.", "fr": "Normalement chaque vendredi ; fixé chaque jour depuis octobre 2026 à cause de la volatilité du marché."}}
+ },
+ "_tank": "Réservoirs proposés par défaut dans les simulateurs (valeurs d'exemple modifiables, pas une statistique).",
+ "tank": {"compact": 45, "midsize": 55, "suv": 65, "pickup": 90}
+}

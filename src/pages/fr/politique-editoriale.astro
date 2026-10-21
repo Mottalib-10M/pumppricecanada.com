@@ -1,0 +1,21 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, REVIEW_CYCLE_MONTHS } from '../../data/site-config';
+const lang = 'fr';
+---
+<PageLayout title="Politique éditoriale Mon CELI REER 2026 : nos sources" description="Comment Mon CELI REER rédige ses pages 2026 : sources officielles, chaque chiffre tiré d’un seul fichier, annonces à venir signalées, aucun argent d’une banque." lang={lang} noindex={true} breadcrumbs={[{ label: 'Politique éditoriale' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Politique éditoriale</h1>
+    <h2>Ce qui compte comme source</h2>
+    <p>Uniquement les textes officiels : pages et guides de l'Agence du revenu du Canada (dont les pages du CELI et le guide T4127), publications de Revenu Québec, budgets et communiqués des gouvernements provinciaux, pages d'Emploi et Développement social Canada pour la Sécurité de la vieillesse et le Supplément de revenu garanti. Un article de presse, un blogue ou un autre simulateur peut nous signaler un changement ; nous ne le publions qu'après avoir lu le texte officiel.</p>
+    <h2>Comment un chiffre arrive sur une page</h2>
+    <p>Chaque montant est saisi une seule fois, dans un fichier de paramètres, avec le lien vers sa source et la date de lecture. Les pages et les simulateurs lisent ce fichier ; personne ne tape un chiffre dans une page. Quand un plafond change, toutes les pages qui le citent changent en même temps, et la date en haut de l'accueil indique l'édition que vous lisez.</p>
+    <h2>Ce qui n'est pas encore officiel</h2>
+    <p>Un plafond qui n'est pas annoncé est affiché « à venir », jamais estimé. Une mesure budgétaire annoncée mais pas encore en vigueur est datée et présentée comme telle. Une donnée que nous n'avons pas pu relire sur la source officielle est signalée sur la page de méthode.</p>
+    <h2>Indépendance</h2>
+    <p>{AUTHOR_NAME} ne reçoit rien des banques, assureurs, courtiers ou plateformes de placement, et les pages ne contiennent aucun lien d'affiliation. Le site n'est lié à aucun organisme public et ne se présente pas comme tel.</p>
+    <h2>Révision et corrections</h2>
+    <p>Chaque page est relue au moins tous les {REVIEW_CYCLE_MONTHS} mois et chaque fois qu'une règle ou un barème dont elle dépend change : en pratique à la fin de novembre (plafond CELI), en janvier (tranches indexées) et après les budgets du printemps. Une erreur signalée est vérifiée sur le texte officiel ; si nous avions tort, la page est corrigée et datée. Écrivez par la <a href={route('contact', lang)}>page de contact</a>.</p>
+  </div>
+</PageLayout>

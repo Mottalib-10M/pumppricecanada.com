@@ -1,0 +1,66 @@
+{
+ "categories": {
+  "compact": {
+   "gasoline": {
+    "median": 8.7,
+    "models": 41
+   }
+  },
+  "fullsize": {
+   "gasoline": {
+    "median": 11.4,
+    "models": 30
+   }
+  },
+  "midsize": {
+   "gasoline": {
+    "median": 8.3,
+    "models": 50
+   }
+  },
+  "minivan": {
+   "gasoline": {
+    "median": 10.6,
+    "models": 8
+   }
+  },
+  "pickup-small": {
+   "gasoline": {
+    "median": 9.7,
+    "models": 9
+   }
+  },
+  "pickup-standard": {
+   "diesel": {
+    "median": 10.3,
+    "models": 8
+   },
+   "gasoline": {
+    "median": 12.9,
+    "models": 68
+   }
+  },
+  "suv-small": {
+   "gasoline": {
+    "median": 9.1,
+    "models": 156
+   }
+  },
+  "suv-standard": {
+   "diesel": {
+    "median": 10.4,
+    "models": 8
+   },
+   "gasoline": {
+    "median": 12.4,
+    "models": 132
+   }
+  }
+ },
+ "latest": "2026",
+ "model_year": 2026,
+ "retrieved_at": "2026-10-21",
+ "source": "nrcan-fcr",
+ "unit": "L/100 km combined",
+ "url": "https://open.canada.ca/data/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64/resource/9df1b18d-d036-4783-a61c-99f1f75b3ac5/download/my2026-fuel-consumption-ratings.csv"
+}

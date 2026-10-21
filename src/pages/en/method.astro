@@ -1,0 +1,44 @@
+---
+/** Method: data, formulas, checks and limits. Every figure from the kit. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink, table } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+const lang = 'en';
+const path = route('method', lang);
+const P = K.P, E = K.en, Y = K.YEAR;
+const title = `TFSA, RRSP and tax method ${Y}: sources and formulas`;
+const description = `How the ${Y} TFSA, RRSP and FHSA calculators work: limits and TFSA rules from canada.ca, T4127 brackets, the Quebec abatement, what is left out and the tests.`;
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const jrows = K.PROVS.map((p) => { const j = K.jur(p); return [K.prov(p, 'en'), j.rates.map((r) => E.r(r)).join(' · '), j.brackets.map((b) => E.m(b)).join(' · '), j.bpaFederal ? 'same as federal' : E.m(j.bpa ?? 0)]; });
+const ex = K.tfsaRoom({ birthYear: 1998, arrival: 2019, contribBefore: 20000, withdrawBefore: 5000, contribThisYear: 3000, withdrawThisYear: 0 });
+const t = (hd: string[], r: Array<Array<string | number>>, c: string, a: Array<'l' | 'r'>) => table(hd, r, c, a, lang);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'How we calculate', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'How we calculate', path }])]} breadcrumbs={[{ label: 'How we calculate' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>How we calculate</h1>
+    <p>Every calculator on the site runs in your browser on one engine and one parameter file. Each rule and amount in it carries the link to the official text it comes from and the date it was read ({E.day(P.retrieved_at)} for this edition). Nothing you type leaves your browser. This page sets out the data, the formulas, the checks and what is deliberately left out.</p>
+    <h2>TFSA room</h2>
+    <p>Your first year of room is the latest of three: 2009, the year you turned 18, the year you became a resident of Canada. For each year from then to {Y}, the calculator adds the limit published in the <Fragment set:html={s('cra_limits', 'table of limits on canada.ca')} />, with no proration, then removes the limits of any full calendar years of non-residence you enter (the most recent ones before {Y}, by convention). It subtracts your contributions and adds back your withdrawals from earlier years, as set out in the <Fragment set:html={s('rc4466', 'Canada Revenue Agency TFSA pages')} />. Withdrawals made in {Y} only come back on January 1, {Y + 1}. A negative balance is an excess, taxed at 1% a month.</p>
+    <p>Example: someone born in 1998 who arrived in 2019, contributed {E.m(20000)} and withdrew {E.m(5000)} before {Y}, then contributed {E.m(3000)} this year, has {E.m(ex.accrued)} of accumulated limits, {E.m(ex.roomJan1)} of room on January 1 and {E.m(ex.available)} available today.</p>
+    <h2>RRSP</h2>
+    <p>New room for a year is 18% of the previous year's earned income, up to the dollar limit ({E.m(K.rrspLimit(Y))} in {Y}, {E.m(K.rrspLimit(Y + 1))} in {Y + 1}), minus the pension adjustment. The calculator adds the unused room you enter. It does not compute the pension adjustment reversal or the past service pension adjustment, which appear on your notice of assessment. The {E.m(P.rrsp.overCushion)} cushion and the 1% monthly tax on the part above it follow the agency's page on excess contributions. Withholding on a withdrawal uses the 10, 20 and 30% rates (5, 10 and 15% federal in Quebec) by withdrawal amount.</p>
+    <h2>FHSA, HBP and LLP</h2>
+    <p>FHSA room starts in the year you open your first account: {E.m(P.fhsa.annual)} in the first year, then {E.m(P.fhsa.annual)} plus the previous year's unused part, capped at {E.m(P.fhsa.carryMax)}, within the {E.m(P.fhsa.lifetime)} lifetime limit. Taxable withdrawals and designated transfers are not handled. The HBP applies the {E.m(P.hbp.limit)} limit, repayment over {P.hbp.repayYears} years and the start deferred to the fifth year for a first withdrawal from {P.hbp.reliefFrom} to {P.hbp.reliefTo}. The LLP applies {E.m(P.llp.annual)} a year, {E.m(P.llp.total)} in total and repayment over {P.llp.repayYears} years.</p>
+    <h2>{Y} income tax</h2>
+    <p>Federal tax uses the brackets on the <Fragment set:html={s('cra_rates_2026', Y + ' rates page')} /> and a 14% credit on the basic personal amount, reduced from {E.m(P.federal.bpaMax)} to {E.m(P.federal.bpaMin)} between {E.m(P.federal.brackets[2])} and {E.m(P.federal.brackets[3])} of income. For a Quebec resident, basic federal tax is reduced by 16.5% (Quebec abatement, <Fragment set:html={s('t4127_jul', 'July ' + Y + ' T4127')} />). Provincial tax applies each jurisdiction's brackets and a credit at its lowest rate, the Ontario surtax and Manitoba's reduction of the basic amount. The marginal rate shown is the extra tax on the next $100; the saving from a deduction is tax before minus tax after.</p>
+    <Fragment set:html={t(['Jurisdiction', 'Rates', 'Bracket thresholds', 'Basic amount'], jrows, `${Y} tax tables used by the calculators.`, ['l', 'l', 'l', 'r'])} />
+    <h2>Two points still to confirm</h2>
+    <p>Quebec: the rates and bracket thresholds were re-read on the <Fragment set:html={s('rq_rates', 'Revenu Québec income tax rates page')} />, and the basic personal amount of {E.m(K.jur('QC').bpa ?? 0)} on <Fragment set:html={s('rq_changes_2026', 'Revenu Québec\'s main changes for 2026')} />.</p>
+    <p>Manitoba: the canada.ca rates page shows indexed thresholds, while the T4127 guide and the Manitoba government state that brackets have not been indexed since 2025. The site uses the unindexed thresholds of {E.m(K.jur('MB').brackets[0])} and {E.m(K.jur('MB').brackets[1])}.</p>
+    <h2>RRSP vs TFSA</h2>
+    <p>The calculator compares equal effort. You enter what you can save out of pocket; in the TFSA, that amount is invested as is. In the RRSP, the contribution is the amount that costs the same once the refund arrives: it is grossed up by iteration until contribution minus tax saved equals your saving. Both accounts grow at the same real return. The RRSP is then drawn in equal parts over the number of years you choose, each part taxed on top of your retirement income with the {Y} tables, in today's dollars. The calculator flags the Guaranteed Income Supplement range and the Old Age Security recovery without building them into the result.</p>
+    <h2>Benefits</h2>
+    <p>Canada child benefit: thresholds and reduction rates for {P.benefits.ccb.period.en}, applied to family net income before and after the deduction. Old Age Security: 15% of net income above {E.m(P.benefits.oas.threshold['2026'])} for {Y} income. Guaranteed Income Supplement: the {E.m(P.benefits.gis.singleMax)} threshold for a single person, used as a flag only.</p>
+    <h2>What is left out</h2>
+    <p>Non-refundable credits other than the basic amount (CPP or QPP, EI, Canada employment amount, age, pension), the low-income tax reductions of Ontario and British Columbia, the Ontario Health Premium, the alternative minimum tax, dividends and capital gains, Quebec's Family Allowance, and provincial income-tested benefits. The {Y + 1} TFSA limit is not published: it is neither estimated nor shown.</p>
+    <h2>Tests</h2>
+    <p>Before each release, automated tests check the TFSA total ({E.m(K.tfsaCum(Y))}), the start of room by age and arrival, withdrawals added back, the RRSP cushion, withholding, FHSA room and carry-forward, the HBP and LLP repayment dates, marginal rates worked out by hand (Ontario, Quebec, Alberta, British Columbia) and the RRSP and TFSA tie when rates are equal.</p>
+  </article>
+</PageLayout>

@@ -1,0 +1,21 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, REVIEW_CYCLE_MONTHS } from '../../data/site-config';
+const lang = 'en';
+---
+<PageLayout title="Editorial policy of TFSA or RRSP 2026: sources and fixes" description="How TFSA or RRSP writes its 2026 pages: official sources only, every figure drawn from one file, pending announcements labeled, no money from banks or brokers." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial policy</h1>
+    <h2>What counts as a source</h2>
+    <p>Official texts only: Canada Revenue Agency pages and guides (including the TFSA pages and guide T4127), Revenu Québec publications, provincial budgets and releases, and Employment and Social Development Canada pages for Old Age Security and the Guaranteed Income Supplement. A news article, a blog or another calculator can point us to a change; we publish it only after reading the official text.</p>
+    <h2>How a figure reaches a page</h2>
+    <p>Each amount is entered once, in a parameter file, with the link to its source and the date it was read. Pages and calculators read that file; nobody types a figure into a page. When a limit changes, every page that cites it changes at the same time, and the date at the top of the home page tells you which edition you are reading.</p>
+    <h2>What is not official yet</h2>
+    <p>A limit that has not been announced is shown as "to come", never estimated. A budget measure announced but not yet in force is dated and described as such. Any figure we could not read on the official source is flagged on the method page.</p>
+    <h2>Independence</h2>
+    <p>{AUTHOR_NAME} receives nothing from banks, insurers, brokers or investment platforms, and the pages carry no affiliate links. The site is not linked to any public body and does not present itself as one.</p>
+    <h2>Review and corrections</h2>
+    <p>Every page is reviewed at least every {REVIEW_CYCLE_MONTHS} months and whenever a rule or table it relies on changes: in practice in late November (TFSA limit), in January (indexed brackets) and after the spring budgets. A reported error is checked against the official text; if we were wrong, the page is corrected and dated. Write through the <a href={route('contact', lang)}>contact page</a>.</p>
+  </div>
+</PageLayout>

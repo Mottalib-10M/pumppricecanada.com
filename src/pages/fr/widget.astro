@@ -1,0 +1,25 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+const lang = 'fr';
+const celi = `<iframe src="${SITE_URL}/embed/droits-celi/" title="Droits de cotisation CELI 2026" width="100%" height="900" style="border:0;max-width:900px" loading="lazy"></iframe>`;
+const reer = `<iframe src="${SITE_URL}/embed/reer-ou-celi/" title="REER ou CELI 2026" width="100%" height="1000" style="border:0;max-width:900px" loading="lazy"></iframe>`;
+---
+<PageLayout title="Intégrer les simulateurs CELI et REER 2026 sur votre site" description="Associations et blogues peuvent intégrer le simulateur de droits CELI 2026 et la comparaison REER ou CELI par province avec une ligne de code, sans cookie." lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: 'Accueil', path: route('home', lang) }, { name: 'Intégrer un simulateur', path: route('widget', lang) }])]} breadcrumbs={[{ label: 'Intégrer un simulateur' }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Intégrer un simulateur</h1>
+    <p class="mt-3 text-lg text-navy-700">Une ligne de code par simulateur. Quand un plafond change, les simulateurs intégrés suivent.</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    <h2>Droits de cotisation CELI</h2>
+    <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{celi}</code></pre>
+    <h2>REER ou CELI, avec les tranches de votre province</h2>
+    <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{reer}</code></pre>
+    <p>Les simulateurs tournent dans le navigateur du visiteur et ne transmettent rien, ni à nous ni à vous. Gardez le lien sous le simulateur : c'est par lui que les lecteurs trouvent les sources et la méthode.</p>
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src="/embed/droits-celi/" title="Droits de cotisation CELI 2026" width="100%" height="900" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>
