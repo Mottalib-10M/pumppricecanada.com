@@ -6,23 +6,26 @@
  *
  * Date de l'estimation : le lendemain du jour du build (heure de Toronto), sauf SNAPSHOT_DAY=AAAA-MM-JJ.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { estimate, backtest, averageSeries, combineSteps, exciseAt, round1, type Obs, type Kind, type Fuel, type ExciseStep } from '../src/lib/engine/estimate.ts';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const J = (p: string) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
+/** Séries « tous droits réservés » (Régie, régulateurs de l'Atlantique) : lues au build, jamais versionnées (.gitignore).
+ *  Absentes (premier build sans `update-data`), les villes retombent sur les sources ouvertes. */
+const JR = (p: string) => (existsSync(join(ROOT, p)) ? J(p) : (console.warn(`  ${p} absent : lancer python3 scripts/update-data.py`), { latest: '', retrieved_at: '', url: '', series: {} }));
 
 type SeriesFile = { latest: string; retrieved_at: string; url: string | string[]; series: Record<string, Record<string, Obs[]> | Obs[]> };
 const FILES: Record<string, SeriesFile> = {
   statcan: J('src/data/series/statcan.json'),
   ontario: J('src/data/series/ontario-retail.json'),
-  regie: J('src/data/series/regie-retail.json'),
-  atlantic: J('src/data/series/atlantic.json'),
+  regie: JR('src/data/series/regie-retail.json'),
+  atlantic: JR('src/data/series/atlantic.json'),
 };
 const RACK_ON = J('src/data/series/ontario-rack.json').series as Record<string, Record<string, Obs[]>>;
-const RACK_QC = J('src/data/series/regie-rack.json').series as Record<string, Obs[]>;
+const RACK_QC = JR('src/data/series/regie-rack.json').series as Record<string, Obs[]>;
 const P = J('src/data/params-2026.json');
 const CITIES = J('src/data/cities.json').cities as Array<Record<string, any>>;
 const KIND: Record<string, Kind> = { statcan: 'month', ontario: 'week', regie: 'day', atlantic: 'week' };

@@ -42,9 +42,14 @@ jobs:
           npm ci --legacy-peer-deps
           pip install pypdf
 
-      - name: Fetch official data (scheduled and manual runs)
+      # Régie de l'énergie et régulateurs de l'Atlantique (« tous droits réservés ») : lus à chaque build pour
+      # l'estimation, jamais versionnés (.gitignore) ni publiés ; seul le chiffre en vigueur par ville est affiché.
+      - name: Read reserved sources (every run, not committed)
+        run: python3 scripts/update-data.py --only regie,atlantic
+
+      - name: Fetch open data (scheduled and manual runs)
         if: github.event_name != 'push'
-        run: python3 scripts/update-data.py
+        run: python3 scripts/update-data.py --only statcan,ontario,vehicles
 
       - name: Tests
         run: node scripts/build-snapshot.ts && npx vitest run
@@ -57,7 +62,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/series src/data/snapshot.json src/data/snapshot-hist.json src/data/site-config.ts
+          git add src/data/series/statcan.json src/data/series/ontario-retail.json src/data/series/ontario-rack.json src/data/series/vehicles.json src/data/snapshot.json src/data/snapshot-hist.json src/data/site-config.ts
           git diff --cached --quiet || (git commit -m "Données du $(date -u +%F)" && git push)
 
       - uses: actions/upload-pages-artifact@v3
