@@ -24,7 +24,7 @@ import csv, datetime as dt, io, json, os, re, sys, urllib.request, zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'src', 'data', 'series')
-UA = {'User-Agent': 'Mozilla/5.0 (compatible; pump-price-canada data refresh; +https://ca-gas-prices.example)'}
+UA = {'User-Agent': 'Mozilla/5.0 (compatible; pump-price-canada data refresh; +https://pumppricecanada.com)'}
 TODAY = dt.date.today().isoformat()
 
 STATCAN_ZIP = 'https://www150.statcan.gc.ca/n1/tbl/csv/18100001-eng.zip'
