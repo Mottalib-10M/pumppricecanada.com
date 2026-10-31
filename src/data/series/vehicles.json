@@ -59,7 +59,7 @@
  },
  "latest": "2026",
  "model_year": 2026,
- "retrieved_at": "2026-10-30",
+ "retrieved_at": "2026-10-31",
  "source": "nrcan-fcr",
  "unit": "L/100 km combined",
  "url": "https://open.canada.ca/data/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64/resource/9df1b18d-d036-4783-a61c-99f1f75b3ac5/download/my2026-fuel-consumption-ratings.csv"
