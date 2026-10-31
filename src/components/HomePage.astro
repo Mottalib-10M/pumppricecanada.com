@@ -28,7 +28,7 @@ const cityLink = (id: string) => (hasRoute(id, lang) ? `<a href="${route(id, lan
 const rows = ids.map((id) => {
   const r = K.fuelOf(id, 'regular')!, d = K.fuelOf(id, 'diesel');
   const hr = K.headline(r);
-  return [cityLink(id), h.cpl(hr.value), d ? h.cpl(K.headline(d).value) : '', hr.isEstimate ? (fr ? `estimation (${h.when(r)})` : `estimate (${h.when(r)})`) : h.when(r), h.cpl(r.est.value)];
+  return [cityLink(id), h.cpl(hr.value), d ? h.cpl(K.headline(d).value) : '', hr.isEstimate ? (fr ? `estimation (${h.when(r)} : ${h.cpl(r.latest.value)})` : `estimate (${h.when(r)}: ${h.cpl(r.latest.value)})`) : h.when(r), h.cpl(r.est.value)];
 });
 ---
 <PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} sources={sources}>
