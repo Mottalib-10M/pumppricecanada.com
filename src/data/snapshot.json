@@ -1,23 +1,23 @@
 {
  "_lisezmoi": "Généré par scripts/build-snapshot.ts à chaque build : ne pas modifier à la main.",
- "today": "2026-11-06",
- "tomorrow": "2026-11-07",
+ "today": "2026-11-07",
+ "tomorrow": "2026-11-08",
  "sources": {
   "statcan": {
    "latest": "2026-09",
-   "retrieved_at": "2026-11-06"
+   "retrieved_at": "2026-11-07"
   },
   "ontario": {
    "latest": "2026-11-02",
-   "retrieved_at": "2026-11-06"
+   "retrieved_at": "2026-11-07"
   },
   "regie": {
    "latest": "2026-11-06",
-   "retrieved_at": "2026-11-06"
+   "retrieved_at": "2026-11-07"
   },
   "atlantic": {
-   "latest": "2026-11-06",
-   "retrieved_at": "2026-11-06"
+   "latest": "2026-11-07",
+   "retrieved_at": "2026-11-07"
   }
  },
  "signal": {
@@ -86,7 +86,7 @@
      },
      "est": {
       "value": 167.9,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -125,7 +125,7 @@
      },
      "est": {
       "value": 198.8,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -164,7 +164,7 @@
      },
      "est": {
       "value": 247.9,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -213,7 +213,7 @@
      },
      "est": {
       "value": 167.9,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -246,7 +246,7 @@
      },
      "est": {
       "value": 199,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -279,7 +279,7 @@
      },
      "est": {
       "value": 246.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -325,7 +325,7 @@
      },
      "est": {
       "value": 167.9,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -358,7 +358,7 @@
      },
      "est": {
       "value": 199,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -391,7 +391,7 @@
      },
      "est": {
       "value": 246.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -437,7 +437,7 @@
      },
      "est": {
       "value": 167.8,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -470,7 +470,7 @@
      },
      "est": {
       "value": 198.5,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -503,7 +503,7 @@
      },
      "est": {
       "value": 249.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -549,7 +549,7 @@
      },
      "est": {
       "value": 166.2,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -582,7 +582,7 @@
      },
      "est": {
       "value": 196.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -615,7 +615,7 @@
      },
      "est": {
       "value": 248,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -661,7 +661,7 @@
      },
      "est": {
       "value": 166.2,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -694,7 +694,7 @@
      },
      "est": {
       "value": 196.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -727,7 +727,7 @@
      },
      "est": {
       "value": 248,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -773,7 +773,7 @@
      },
      "est": {
       "value": 166.2,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -806,7 +806,7 @@
      },
      "est": {
       "value": 196.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -839,7 +839,7 @@
      },
      "est": {
       "value": 248,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -885,7 +885,7 @@
      },
      "est": {
       "value": 162.3,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -921,7 +921,7 @@
      },
      "est": {
       "value": 192,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -954,7 +954,7 @@
      },
      "est": {
       "value": 250,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1000,7 +1000,7 @@
      },
      "est": {
       "value": 167.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1033,7 +1033,7 @@
      },
      "est": {
       "value": 198.1,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1066,7 +1066,7 @@
      },
      "est": {
       "value": 245.3,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1112,7 +1112,7 @@
      },
      "est": {
       "value": 165.3,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1145,7 +1145,7 @@
      },
      "est": {
       "value": 195.1,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1178,7 +1178,7 @@
      },
      "est": {
       "value": 244.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1224,7 +1224,7 @@
      },
      "est": {
       "value": 164.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1257,7 +1257,7 @@
      },
      "est": {
       "value": 194.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1290,7 +1290,7 @@
      },
      "est": {
       "value": 250.6,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1336,7 +1336,7 @@
      },
      "est": {
       "value": 175.1,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1372,7 +1372,7 @@
      },
      "est": {
       "value": 204.5,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -11,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1405,7 +1405,7 @@
      },
      "est": {
       "value": 283.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1451,7 +1451,7 @@
      },
      "est": {
       "value": 175,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1484,7 +1484,7 @@
      },
      "est": {
       "value": 204.5,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -11,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1517,7 +1517,7 @@
      },
      "est": {
       "value": 283.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1563,7 +1563,7 @@
      },
      "est": {
       "value": 179.6,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1599,7 +1599,7 @@
      },
      "est": {
       "value": 200.6,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -11,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -1632,7 +1632,7 @@
      },
      "est": {
       "value": 280.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -2.9,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1678,7 +1678,7 @@
      },
      "est": {
       "value": 170,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1716,7 +1716,7 @@
      },
      "est": {
       "value": 186.6,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1754,7 +1754,7 @@
      },
      "est": {
       "value": 184.2,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1787,7 +1787,7 @@
      },
      "est": {
       "value": 210.6,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1820,7 +1820,7 @@
      },
      "est": {
       "value": 300,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 14,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1866,7 +1866,7 @@
      },
      "est": {
       "value": 184.2,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1899,7 +1899,7 @@
      },
      "est": {
       "value": 210.6,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1932,7 +1932,7 @@
      },
      "est": {
       "value": 300,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 14,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1978,7 +1978,7 @@
      },
      "est": {
       "value": 184.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2011,7 +2011,7 @@
      },
      "est": {
       "value": 211.6,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2044,7 +2044,7 @@
      },
      "est": {
       "value": 293,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 14,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2102,7 +2102,7 @@
      },
      "est": {
       "value": 128.3,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2135,7 +2135,7 @@
      },
      "est": {
       "value": 154.6,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2168,7 +2168,7 @@
      },
      "est": {
       "value": 241.9,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 14,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2214,7 +2214,7 @@
      },
      "est": {
       "value": 123.5,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2247,7 +2247,7 @@
      },
      "est": {
       "value": 150.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2280,7 +2280,7 @@
      },
      "est": {
       "value": 237.1,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 14,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2326,7 +2326,7 @@
      },
      "est": {
       "value": 148.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2359,7 +2359,7 @@
      },
      "est": {
       "value": 175.3,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2392,7 +2392,7 @@
      },
      "est": {
       "value": 255.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 14,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2438,7 +2438,7 @@
      },
      "est": {
       "value": 150.2,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2471,7 +2471,7 @@
      },
      "est": {
       "value": 176.5,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2504,7 +2504,7 @@
      },
      "est": {
       "value": 251.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 14,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2550,7 +2550,7 @@
      },
      "est": {
       "value": 146.2,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2583,7 +2583,7 @@
      },
      "est": {
       "value": 172.8,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -24.1,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2616,7 +2616,7 @@
      },
      "est": {
       "value": 256.9,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 14,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2654,15 +2654,15 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 174.7,
-      "date": "2026-11-06",
+      "value": 167.5,
+      "date": "2026-11-07",
       "kind": "week",
       "src": "atlantic",
       "key": "ns-zone1"
      },
      "est": {
-      "value": 174.7,
-      "target": "2026-11-07",
+      "value": 167.5,
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2698,7 +2698,7 @@
      },
      "est": {
       "value": 189.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -11,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -2724,14 +2724,14 @@
     "diesel": {
      "latest": {
       "value": 251.1,
-      "date": "2026-11-06",
+      "date": "2026-11-07",
       "kind": "week",
       "src": "atlantic",
       "key": "ns-zone1"
      },
      "est": {
       "value": 251.1,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2780,7 +2780,7 @@
      },
      "est": {
       "value": 172.4,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2816,7 +2816,7 @@
      },
      "est": {
       "value": 201.7,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2852,7 +2852,7 @@
      },
      "est": {
       "value": 261.5,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2893,15 +2893,15 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 184.8,
-      "date": "2026-11-06",
+      "value": 180.2,
+      "date": "2026-11-07",
       "kind": "week",
       "src": "atlantic",
       "key": "nl-zone1"
      },
      "est": {
-      "value": 184.8,
-      "target": "2026-11-07",
+      "value": 180.2,
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2937,7 +2937,7 @@
      },
      "est": {
       "value": 198.8,
-      "target": "2026-11-07",
+      "target": "2026-11-08",
       "rackDelta": -11,
       "sigDelta": -7,
       "sigFrom": "2026-11-04",
@@ -2962,15 +2962,15 @@
     },
     "diesel": {
      "latest": {
-      "value": 257.2,
-      "date": "2026-11-06",
+      "value": 264.3,
+      "date": "2026-11-07",
       "kind": "week",
       "src": "atlantic",
       "key": "nl-zone1"
      },
      "est": {
-      "value": 257.2,
-      "target": "2026-11-07",
+      "value": 264.3,
+      "target": "2026-11-08",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
