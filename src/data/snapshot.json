@@ -1,56 +1,56 @@
 {
  "_lisezmoi": "Généré par scripts/build-snapshot.ts à chaque build : ne pas modifier à la main.",
- "today": "2026-11-12",
- "tomorrow": "2026-11-13",
+ "today": "2026-11-13",
+ "tomorrow": "2026-11-14",
  "sources": {
   "statcan": {
    "latest": "2026-09",
-   "retrieved_at": "2026-11-12"
+   "retrieved_at": "2026-11-13"
   },
   "ontario": {
    "latest": "2026-11-09",
-   "retrieved_at": "2026-11-12"
+   "retrieved_at": "2026-11-13"
   },
   "regie": {
-   "latest": "2026-11-12",
-   "retrieved_at": "2026-11-12"
+   "latest": "2026-11-13",
+   "retrieved_at": "2026-11-13"
   },
   "atlantic": {
-   "latest": "2026-11-12",
-   "retrieved_at": "2026-11-12"
+   "latest": "2026-11-13",
+   "retrieved_at": "2026-11-13"
   }
  },
  "signal": {
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "racks": {
   "toronto": {
-   "date": "2026-11-04",
-   "value": 128
+   "date": "2026-11-11",
+   "value": 117.4
   },
   "edmonton": {
-   "date": "2026-11-04",
-   "value": 113.3
+   "date": "2026-11-11",
+   "value": 103.2
   },
   "thunder-bay": {
-   "date": "2026-11-04",
-   "value": 121.5
+   "date": "2026-11-11",
+   "value": 111.4
   },
   "montreal": {
-   "date": "2026-11-05",
-   "value": 120.3
+   "date": "2026-11-12",
+   "value": 116.2
   },
   "torontoDiesel": {
-   "date": "2026-11-04",
-   "value": 202.6
+   "date": "2026-11-11",
+   "value": 187.6
   },
   "edmontonDiesel": {
-   "date": "2026-11-04",
-   "value": 217.4
+   "date": "2026-11-11",
+   "value": 193.4
   },
   "montrealDiesel": {
-   "date": "2026-11-05",
-   "value": 207.4
+   "date": "2026-11-12",
+   "value": 206.3
   }
  },
  "national": {
@@ -85,16 +85,16 @@
       ]
      },
      "est": {
-      "value": 156.5,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 155.7,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -124,16 +124,16 @@
       ]
      },
      "est": {
-      "value": 187.1,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 186.3,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -163,16 +163,16 @@
       ]
      },
      "est": {
-      "value": 242.7,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 237.5,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -212,16 +212,16 @@
       "key": "toronto-west"
      },
      "est": {
-      "value": 156.5,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 155.7,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -245,16 +245,16 @@
       "key": "toronto-west"
      },
      "est": {
-      "value": 187.9,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 187.1,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -278,16 +278,16 @@
       "key": "toronto-west"
      },
      "est": {
-      "value": 244.3,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 239.1,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -324,16 +324,16 @@
       "key": "toronto-west"
      },
      "est": {
-      "value": 156.5,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 155.7,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -357,16 +357,16 @@
       "key": "toronto-west"
      },
      "est": {
-      "value": 187.9,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 187.1,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -390,16 +390,16 @@
       "key": "toronto-west"
      },
      "est": {
-      "value": 244.3,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 239.1,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -436,16 +436,16 @@
       "key": "toronto-east"
      },
      "est": {
-      "value": 156.5,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 155.7,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -469,16 +469,16 @@
       "key": "toronto-east"
      },
      "est": {
-      "value": 186.3,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 185.5,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -502,16 +502,16 @@
       "key": "toronto-east"
      },
      "est": {
-      "value": 241.1,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 235.9,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -548,16 +548,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 154.3,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 153.5,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -581,16 +581,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 184.6,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 183.8,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -614,16 +614,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 242.4,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 237.2,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -660,16 +660,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 154.3,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 153.5,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -693,16 +693,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 184.6,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 183.8,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -726,16 +726,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 242.4,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 237.2,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -772,16 +772,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 154.3,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 153.5,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -805,16 +805,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 184.6,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 183.8,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -838,16 +838,16 @@
       "key": "ontario-south"
      },
      "est": {
-      "value": 242.4,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 237.2,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -884,16 +884,16 @@
       "key": "ottawa"
      },
      "est": {
-      "value": 149,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 148.2,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -920,16 +920,16 @@
       "key": "ottawa"
      },
      "est": {
-      "value": 178.6,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 177.8,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -953,16 +953,16 @@
       "key": "ottawa"
      },
      "est": {
-      "value": 244.2,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 239,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -999,16 +999,16 @@
       "key": "london"
      },
      "est": {
-      "value": 156.6,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 155.8,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -1032,16 +1032,16 @@
       "key": "london"
      },
      "est": {
-      "value": 187.2,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 186.4,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -1065,16 +1065,16 @@
       "key": "london"
      },
      "est": {
-      "value": 240.2,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 235,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -1111,16 +1111,16 @@
       "key": "windsor"
      },
      "est": {
-      "value": 151.6,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 150.8,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -1144,16 +1144,16 @@
       "key": "windsor"
      },
      "est": {
-      "value": 182,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 181.2,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -1177,16 +1177,16 @@
       "key": "windsor"
      },
      "est": {
-      "value": 236.8,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 231.6,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -1223,16 +1223,16 @@
       "key": "st-catharines"
      },
      "est": {
-      "value": 151.2,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 150.4,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -1256,16 +1256,16 @@
       "key": "st-catharines"
      },
      "est": {
-      "value": 181,
-      "target": "2026-11-13",
-      "rackDelta": 0,
-      "sigDelta": -5.6,
-      "sigFrom": "2026-11-09",
-      "sigTo": "2026-11-12",
+      "value": 180.2,
+      "target": "2026-11-14",
+      "rackDelta": -3.7,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 123.3,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 143,
@@ -1289,16 +1289,16 @@
       "key": "st-catharines"
      },
      "est": {
-      "value": 240.5,
-      "target": "2026-11-13",
-      "rackDelta": 0,
+      "value": 235.3,
+      "target": "2026-11-14",
+      "rackDelta": -4.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 196.3,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 143,
@@ -1328,31 +1328,31 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 170.5,
-      "date": "2026-11-12",
+      "value": 170.2,
+      "date": "2026-11-13",
       "kind": "day",
       "src": "regie",
       "key": "montreal"
      },
      "est": {
-      "value": 170.5,
-      "target": "2026-11-13",
+      "value": 170.2,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 119.6,
+      "rackNow": 119.6
      },
      "bt": {
-      "n": 211,
+      "n": 212,
       "mae": 2.2,
       "maeNaive": 2.2,
       "p90": 5.4,
       "from": "2026-01-05",
-      "to": "2026-11-12",
+      "to": "2026-11-13",
       "kind": "day"
      },
      "isMax": false,
@@ -1371,16 +1371,16 @@
       "key": "montreal"
      },
      "est": {
-      "value": 212.5,
-      "target": "2026-11-13",
-      "rackDelta": -11,
-      "sigDelta": 0,
-      "sigFrom": null,
-      "sigTo": null,
+      "value": 196.7,
+      "target": "2026-11-14",
+      "rackDelta": -22.2,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 141.8,
-      "rackNow": 130.8
+      "rackNow": 119.6
      },
      "bt": {
       "n": 25,
@@ -1404,16 +1404,16 @@
       "key": "montreal"
      },
      "est": {
-      "value": 283.7,
-      "target": "2026-11-13",
-      "rackDelta": -2.9,
+      "value": 273.4,
+      "target": "2026-11-14",
+      "rackDelta": -11.9,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 203.6,
-      "rackNow": 200.7
+      "rackNow": 191.7
      },
      "bt": {
       "n": 25,
@@ -1443,31 +1443,31 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 170.1,
-      "date": "2026-11-12",
+      "value": 169.3,
+      "date": "2026-11-13",
       "kind": "day",
       "src": "regie",
       "key": "laval"
      },
      "est": {
-      "value": 170.1,
-      "target": "2026-11-13",
+      "value": 169.3,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 119.6,
+      "rackNow": 119.6
      },
      "bt": {
-      "n": 211,
+      "n": 212,
       "mae": 2.1,
       "maeNaive": 2.1,
       "p90": 5.4,
       "from": "2026-01-05",
-      "to": "2026-11-12",
+      "to": "2026-11-13",
       "kind": "day"
      },
      "isMax": false,
@@ -1483,16 +1483,16 @@
       "key": "montreal"
      },
      "est": {
-      "value": 212.5,
-      "target": "2026-11-13",
-      "rackDelta": -11,
-      "sigDelta": 0,
-      "sigFrom": null,
-      "sigTo": null,
+      "value": 196.7,
+      "target": "2026-11-14",
+      "rackDelta": -22.2,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 141.8,
-      "rackNow": 130.8
+      "rackNow": 119.6
      },
      "bt": {
       "n": 25,
@@ -1516,16 +1516,16 @@
       "key": "montreal"
      },
      "est": {
-      "value": 283.7,
-      "target": "2026-11-13",
-      "rackDelta": -2.9,
+      "value": 273.4,
+      "target": "2026-11-14",
+      "rackDelta": -11.9,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 203.6,
-      "rackNow": 200.7
+      "rackNow": 191.7
      },
      "bt": {
       "n": 25,
@@ -1555,31 +1555,31 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 175.7,
-      "date": "2026-11-12",
+      "value": 175,
+      "date": "2026-11-13",
       "kind": "day",
       "src": "regie",
       "key": "capitale-nationale"
      },
      "est": {
-      "value": 175.7,
-      "target": "2026-11-13",
+      "value": 175,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 119.6,
+      "rackNow": 119.6
      },
      "bt": {
-      "n": 211,
+      "n": 212,
       "mae": 1.2,
       "maeNaive": 1.2,
       "p90": 2.9,
       "from": "2026-01-05",
-      "to": "2026-11-12",
+      "to": "2026-11-13",
       "kind": "day"
      },
      "isMax": false,
@@ -1598,16 +1598,16 @@
       "key": "quebec"
      },
      "est": {
-      "value": 208.6,
-      "target": "2026-11-13",
-      "rackDelta": -11,
-      "sigDelta": 0,
-      "sigFrom": null,
-      "sigTo": null,
+      "value": 192.8,
+      "target": "2026-11-14",
+      "rackDelta": -22.2,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 141.8,
-      "rackNow": 130.8
+      "rackNow": 119.6
      },
      "bt": {
       "n": 25,
@@ -1631,16 +1631,16 @@
       "key": "quebec"
      },
      "est": {
-      "value": 280.7,
-      "target": "2026-11-13",
-      "rackDelta": -2.9,
+      "value": 270.4,
+      "target": "2026-11-14",
+      "rackDelta": -11.9,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 203.6,
-      "rackNow": 200.7
+      "rackNow": 191.7
      },
      "bt": {
       "n": 25,
@@ -1670,23 +1670,23 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 157.7,
-      "date": "2026-11-12",
+      "value": 154.6,
+      "date": "2026-11-13",
       "kind": "day",
       "src": "regie",
       "key": "gatineau"
      },
      "est": {
-      "value": 157.7,
-      "target": "2026-11-13",
+      "value": 154.6,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 119.6,
+      "rackNow": 119.6
      },
      "bt": null,
      "isMax": false,
@@ -1708,23 +1708,23 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 178.5,
-      "date": "2026-11-12",
+      "value": 174.9,
+      "date": "2026-11-13",
       "kind": "day",
       "src": "regie",
       "key": "sherbrooke"
      },
      "est": {
-      "value": 178.5,
-      "target": "2026-11-13",
+      "value": 174.9,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 119.6,
+      "rackNow": 119.6
      },
      "bt": null,
      "isMax": false,
@@ -1753,16 +1753,16 @@
       "key": "vancouver"
      },
      "est": {
-      "value": 184.2,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 176.3,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -1786,16 +1786,16 @@
       "key": "vancouver"
      },
      "est": {
-      "value": 210.6,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 202.7,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -1819,16 +1819,16 @@
       "key": "vancouver"
      },
      "est": {
-      "value": 300,
-      "target": "2026-11-13",
-      "rackDelta": 14,
+      "value": 274.5,
+      "target": "2026-11-14",
+      "rackDelta": -10.2,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 206.2,
-      "rackNow": 220.2
+      "rackNow": 195.9
      },
      "bt": {
       "n": 25,
@@ -1865,16 +1865,16 @@
       "key": "vancouver"
      },
      "est": {
-      "value": 184.2,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 176.3,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -1898,16 +1898,16 @@
       "key": "vancouver"
      },
      "est": {
-      "value": 210.6,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 202.7,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -1931,16 +1931,16 @@
       "key": "vancouver"
      },
      "est": {
-      "value": 300,
-      "target": "2026-11-13",
-      "rackDelta": 14,
+      "value": 274.5,
+      "target": "2026-11-14",
+      "rackDelta": -10.2,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 206.2,
-      "rackNow": 220.2
+      "rackNow": 195.9
      },
      "bt": {
       "n": 25,
@@ -1977,16 +1977,16 @@
       "key": "victoria"
      },
      "est": {
-      "value": 184.7,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 176.8,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2010,16 +2010,16 @@
       "key": "victoria"
      },
      "est": {
-      "value": 211.6,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 203.7,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2043,16 +2043,16 @@
       "key": "victoria"
      },
      "est": {
-      "value": 293,
-      "target": "2026-11-13",
-      "rackDelta": 14,
+      "value": 267.5,
+      "target": "2026-11-14",
+      "rackDelta": -10.2,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 206.2,
-      "rackNow": 220.2
+      "rackNow": 195.9
      },
      "bt": {
       "n": 25,
@@ -2101,16 +2101,16 @@
       "key": "calgary"
      },
      "est": {
-      "value": 128.3,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 120.5,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": -13.6,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2134,16 +2134,16 @@
       "key": "calgary"
      },
      "est": {
-      "value": 154.6,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 146.8,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": -13.6,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2167,16 +2167,16 @@
       "key": "calgary"
      },
      "est": {
-      "value": 241.9,
-      "target": "2026-11-13",
-      "rackDelta": 14,
+      "value": 216.4,
+      "target": "2026-11-14",
+      "rackDelta": -10.2,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": -13.6,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 206.2,
-      "rackNow": 220.2
+      "rackNow": 195.9
      },
      "bt": {
       "n": 25,
@@ -2213,16 +2213,16 @@
       "key": "edmonton"
      },
      "est": {
-      "value": 123.5,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 115.7,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": -13.6,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2246,16 +2246,16 @@
       "key": "edmonton"
      },
      "est": {
-      "value": 150.4,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 142.6,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": -13.6,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2279,16 +2279,16 @@
       "key": "edmonton"
      },
      "est": {
-      "value": 237.1,
-      "target": "2026-11-13",
-      "rackDelta": 14,
+      "value": 211.6,
+      "target": "2026-11-14",
+      "rackDelta": -10.2,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": -13.6,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 206.2,
-      "rackNow": 220.2
+      "rackNow": 195.9
      },
      "bt": {
       "n": 25,
@@ -2325,16 +2325,16 @@
       "key": "regina"
      },
      "est": {
-      "value": 148.7,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 140.8,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2358,16 +2358,16 @@
       "key": "regina"
      },
      "est": {
-      "value": 175.3,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 167.4,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2391,16 +2391,16 @@
       "key": "regina"
      },
      "est": {
-      "value": 255.7,
-      "target": "2026-11-13",
-      "rackDelta": 14,
+      "value": 230.2,
+      "target": "2026-11-14",
+      "rackDelta": -10.2,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 206.2,
-      "rackNow": 220.2
+      "rackNow": 195.9
      },
      "bt": {
       "n": 25,
@@ -2437,16 +2437,16 @@
       "key": "saskatoon"
      },
      "est": {
-      "value": 150.2,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 142.3,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2470,16 +2470,16 @@
       "key": "saskatoon"
      },
      "est": {
-      "value": 176.5,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 168.6,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2503,16 +2503,16 @@
       "key": "saskatoon"
      },
      "est": {
-      "value": 251.4,
-      "target": "2026-11-13",
-      "rackDelta": 14,
+      "value": 225.9,
+      "target": "2026-11-14",
+      "rackDelta": -10.2,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 206.2,
-      "rackNow": 220.2
+      "rackNow": 195.9
      },
      "bt": {
       "n": 25,
@@ -2549,16 +2549,16 @@
       "key": "winnipeg"
      },
      "est": {
-      "value": 146.2,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 138.3,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2582,16 +2582,16 @@
       "key": "winnipeg"
      },
      "est": {
-      "value": 172.8,
-      "target": "2026-11-13",
-      "rackDelta": -24.1,
+      "value": 164.9,
+      "target": "2026-11-14",
+      "rackDelta": -31.6,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 138,
-      "rackNow": 113.8
+      "rackNow": 106.4
      },
      "bt": {
       "n": 25,
@@ -2615,16 +2615,16 @@
       "key": "winnipeg"
      },
      "est": {
-      "value": 256.9,
-      "target": "2026-11-13",
-      "rackDelta": 14,
+      "value": 231.4,
+      "target": "2026-11-14",
+      "rackDelta": -10.2,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 206.2,
-      "rackNow": 220.2
+      "rackNow": 195.9
      },
      "bt": {
       "n": 25,
@@ -2654,23 +2654,23 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 167.5,
-      "date": "2026-11-07",
+      "value": 162.6,
+      "date": "2026-11-13",
       "kind": "week",
       "src": "atlantic",
       "key": "ns-zone1"
      },
      "est": {
-      "value": 167.5,
-      "target": "2026-11-13",
+      "value": 162.6,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": null,
+      "rackRef": null,
+      "rackNow": null
      },
      "bt": {
       "n": 25,
@@ -2682,7 +2682,7 @@
       "kind": "month"
      },
      "isMax": true,
-     "regChangesTomorrow": true,
+     "regChangesTomorrow": false,
      "monthly": {
       "date": "2026-09",
       "value": 193.2
@@ -2697,16 +2697,16 @@
       "key": "halifax"
      },
      "est": {
-      "value": 197.6,
-      "target": "2026-11-13",
-      "rackDelta": -11,
-      "sigDelta": 0,
-      "sigFrom": null,
-      "sigTo": null,
+      "value": 182,
+      "target": "2026-11-14",
+      "rackDelta": -22.2,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 141.8,
-      "rackNow": 130.8
+      "rackNow": 119.6
      },
      "bt": {
       "n": 25,
@@ -2723,23 +2723,23 @@
     },
     "diesel": {
      "latest": {
-      "value": 251.1,
-      "date": "2026-11-07",
+      "value": 248.2,
+      "date": "2026-11-13",
       "kind": "week",
       "src": "atlantic",
       "key": "ns-zone1"
      },
      "est": {
-      "value": 251.1,
-      "target": "2026-11-13",
+      "value": 248.2,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": null,
+      "rackRef": null,
+      "rackNow": null
      },
      "bt": {
       "n": 25,
@@ -2751,7 +2751,7 @@
       "kind": "month"
      },
      "isMax": true,
-     "regChangesTomorrow": true,
+     "regChangesTomorrow": false,
      "monthly": {
       "date": "2026-09",
       "value": 263.4
@@ -2772,23 +2772,23 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 168.3,
-      "date": "2026-11-12",
+      "value": 167.5,
+      "date": "2026-11-13",
       "kind": "week",
       "src": "atlantic",
       "key": "nb"
      },
      "est": {
-      "value": 168.3,
-      "target": "2026-11-13",
+      "value": 167.5,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": null,
+      "rackRef": null,
+      "rackNow": null
      },
      "bt": {
       "n": 25,
@@ -2800,7 +2800,7 @@
       "kind": "month"
      },
      "isMax": true,
-     "regChangesTomorrow": true,
+     "regChangesTomorrow": false,
      "monthly": {
       "date": "2026-09",
       "value": 192.5
@@ -2808,23 +2808,23 @@
     },
     "premium": {
      "latest": {
-      "value": 197.7,
-      "date": "2026-11-12",
+      "value": 195.7,
+      "date": "2026-11-13",
       "kind": "week",
       "src": "atlantic",
       "key": "nb"
      },
      "est": {
-      "value": 197.7,
-      "target": "2026-11-13",
+      "value": 195.7,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": null,
+      "rackRef": null,
+      "rackNow": null
      },
      "bt": {
       "n": 25,
@@ -2836,7 +2836,7 @@
       "kind": "month"
      },
      "isMax": true,
-     "regChangesTomorrow": true,
+     "regChangesTomorrow": false,
      "monthly": {
       "date": "2026-09",
       "value": 218.5
@@ -2844,23 +2844,23 @@
     },
     "diesel": {
      "latest": {
-      "value": 251.7,
-      "date": "2026-11-12",
+      "value": 258.4,
+      "date": "2026-11-13",
       "kind": "week",
       "src": "atlantic",
       "key": "nb"
      },
      "est": {
-      "value": 251.7,
-      "target": "2026-11-13",
+      "value": 258.4,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": null,
+      "rackRef": null,
+      "rackNow": null
      },
      "bt": {
       "n": 25,
@@ -2872,7 +2872,7 @@
       "kind": "month"
      },
      "isMax": true,
-     "regChangesTomorrow": true,
+     "regChangesTomorrow": false,
      "monthly": {
       "date": "2026-09",
       "value": 262.3
@@ -2893,23 +2893,23 @@
    "fuels": {
     "regular": {
      "latest": {
-      "value": 176.6,
-      "date": "2026-11-11",
+      "value": 174.9,
+      "date": "2026-11-13",
       "kind": "week",
       "src": "atlantic",
       "key": "nl-zone1"
      },
      "est": {
-      "value": 174,
-      "target": "2026-11-13",
+      "value": 174.9,
+      "target": "2026-11-14",
       "rackDelta": 0,
-      "sigDelta": -2.3,
-      "sigFrom": "2026-11-11",
-      "sigTo": "2026-11-12",
+      "sigDelta": 0,
+      "sigFrom": null,
+      "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 130.8,
-      "rackNow": 130.8
+      "rackNowLast": "2026-11-11",
+      "rackRef": 119.6,
+      "rackNow": 119.6
      },
      "bt": {
       "n": 25,
@@ -2936,16 +2936,16 @@
       "key": "st-johns"
      },
      "est": {
-      "value": 206.8,
-      "target": "2026-11-13",
-      "rackDelta": -11,
-      "sigDelta": 0,
-      "sigFrom": null,
-      "sigTo": null,
+      "value": 191,
+      "target": "2026-11-14",
+      "rackDelta": -22.2,
+      "sigDelta": -2.6,
+      "sigFrom": "2026-11-11",
+      "sigTo": "2026-11-13",
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
+      "rackNowLast": "2026-11-11",
       "rackRef": 141.8,
-      "rackNow": 130.8
+      "rackNow": 119.6
      },
      "bt": {
       "n": 25,
@@ -2962,23 +2962,23 @@
     },
     "diesel": {
      "latest": {
-      "value": 258.6,
-      "date": "2026-11-11",
+      "value": 250.1,
+      "date": "2026-11-13",
       "kind": "week",
       "src": "atlantic",
       "key": "nl-zone1"
      },
      "est": {
-      "value": 258.6,
-      "target": "2026-11-13",
+      "value": 250.1,
+      "target": "2026-11-14",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
       "sigTo": null,
       "taxDelta": 0,
-      "rackNowLast": "2026-11-04",
-      "rackRef": 200.7,
-      "rackNow": 200.7
+      "rackNowLast": "2026-11-11",
+      "rackRef": 191.7,
+      "rackNow": 191.7
      },
      "bt": {
       "n": 25,
