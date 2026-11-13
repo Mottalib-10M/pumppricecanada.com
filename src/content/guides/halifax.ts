@@ -51,7 +51,7 @@ ${h.mini('demain', { p: ['c'], d: { v: ID }, t: 'Halifax: the cap tomorrow' })}
 ${taxTable(h, ID)}
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NS' }, t: 'The proposed excise return in Nova Scotia' })}
 
-<h2>Halifax against Moncton</h2>
+<h2>Halifax gas prices against Moncton</h2>
 <p>New Brunswick also caps prices, with one maximum for the whole province. The current New Brunswick cap for regular is ${h.cpl(mon)}, so ${h.cents(mon - r.latest.value)} relative to Halifax. Both are ceilings, so the comparison is between two maximums, not two averages. ${h.a('moncton', 'Moncton')} and ${h.a('st-johns', 'St. John’s')} have their own pages.</p>
 ${h.mini('comparer', { p: ['w', 'c'], d: { v: ID, w: 'moncton' }, t: 'Halifax against Moncton' })}
 `,

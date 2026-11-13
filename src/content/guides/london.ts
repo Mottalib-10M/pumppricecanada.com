@@ -27,7 +27,7 @@ export default defineGuide({
     title: 'Gas Prices London Ontario 2026: Regular, Premium, Diesel',
     description: 'Gas prices in London, Ontario in 2026: the weekly survey for regular, premium and diesel, tomorrow’s estimate, the premium gap and the Highway 401 corridor.',
     h1: 'Gas prices in London, Ontario',
-    intro: `Regular gasoline in London averaged ${c(r.latest.value)} at the ${E.day(r.latest.date)} survey and is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
+    intro: `Regular gas prices in London, Ontario averaged ${c(r.latest.value)} at the ${E.day(r.latest.date)} survey and is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
     resume: `London is surveyed as its own market by the Government of Ontario, which records self-serve prices there every Monday for three fuels. At the ${K.when(r, 'en')}, regular gasoline averaged ${c(r.latest.value)}, premium ${c(pr.latest.value)} and diesel ${c(d.latest.value)}, taxes included, so premium cost ${c(spread)} more than regular. Since the province publishes only once a week, the site moves Monday's figure forward with the pre-tax change in the Montreal survey that the Régie de l'énergie du Québec posts every morning, and adds HST; for ${E.day(K.TOMORROW)} that gives ${c(r.est.value)} for regular. Replayed on ${r.bt?.n ?? 0} past weeks of the London series, the estimate missed the next survey by ${c(r.bt?.mae ?? 0)} on average, while repeating the old price missed by ${c(r.bt?.maeNaive ?? 0)}. Out of a litre of regular, ${E.p(br.taxShare)} is tax, from Ontario's 9-cent gasoline tax and the 13% HST, the federal excise being suspended since April 20, 2026.`,
     faqs: [
       { q: 'How much more does premium gas cost in London, Ontario?', a: `At the latest survey premium was ${c(spread)} above regular in London. For a mid-size car rated at the class median and driven ${E.n(KM)} km a year, that gap adds up to ${K.dollars(extraYear, 'en', 0)} over the year. The owner's manual says whether premium is required or only recommended for your engine.` },
@@ -35,7 +35,7 @@ export default defineGuide({
       { q: 'Does London, Ontario have its own official gas price?', a: `Yes. London is one of the markets that the Government of Ontario names in its weekly fuel price survey, with separate averages for regular, premium and diesel. That makes it different from cities such as Kitchener-Waterloo or Hamilton, which only appear in the broader southern Ontario average.` },
     ],
     body: (h) => `
-<h2>London's weekly survey</h2>
+<h2>London, Ontario's weekly gas price survey</h2>
 <p>London appears under its own name in the provincial survey, so the figures below describe the city's stations rather than a regional mix. Each line gives the survey date, the estimate the method expects for ${h.day(K.TOMORROW)} and the size of its past errors.</p>
 ${facts(h, ID)}
 

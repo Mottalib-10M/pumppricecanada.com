@@ -28,7 +28,7 @@ const en: HomeLang = {
   title: 'Gas Prices in Canada Today and Tomorrow by City, 2026',
   description: 'Gas prices in Canada in 2026: the latest official average by city, an estimate for tomorrow with its measured error, the cost of a fill-up and taxes per litre.',
   h1: 'Gas prices in Canada today and tomorrow',
-  intro: `Pick a city: the latest official average, the estimate for ${E.day(K.TOMORROW)}, what your fill-up costs and how much of a litre is tax.`,
+  intro: `Pick a city for its gas prices: the latest official average, the estimate for tomorrow, ${E.day(K.TOMORROW)}, what your fill-up costs and how much of a litre is tax.`,
   facts: [
     { k: 'Canada, regular, Statistics Canada', v: `${cE(nat.value)} (${K.month(nat.date, 'en')})` },
     { k: 'Federal excise tax', v: '0¢ since April 20, 2026' },
@@ -42,7 +42,7 @@ const en: HomeLang = {
 <h2>Why a dated official figure changes everything</h2>
 <p>Most gas price pages show a number without saying where it comes from or when it was taken. A figure reported by drivers in an app can be an hour old or a week old, and can describe one station or a whole city. The figures here are official surveys and orders, each with its date, and they are not all the same kind of number. Ontario's is a Monday snapshot of stations in 14 markets. The Régie de l'énergie surveys Quebec every weekday morning. Nova Scotia, New Brunswick and Newfoundland and Labrador set a legal maximum that stations cannot exceed. Statistics Canada publishes a monthly average for the large cities of the West and the Atlantic about three weeks after the month ends.</p>
 <p>Knowing which kind you are looking at matters more than a decimal. A Monday average in Toronto says little about Thursday if wholesale prices have dropped since. A maximum in Halifax is a ceiling: many stations sell a few cents under it. A September average in Calgary does not include the Alberta fuel tax pause that started on October 1. This site moves each figure to tomorrow with a published rule, and says how good that rule has been.</p>
-<h2>Tomorrow, with the error printed</h2>
+<h2>Gas prices in Canada tomorrow, with the error printed</h2>
 <p>An estimate without a track record is only an opinion. For every city and fuel, the site replays its own method over the past: it starts from each official survey, adds what was known the day before the next one, and compares the result with what was actually published. In Toronto, over ${tor.bt?.n ?? 0} weeks, the average miss was ${h.cents(tor.bt?.mae ?? 0).replace('+', '')} a litre, against ${h.cents(tor.bt?.maeNaive ?? 0).replace('+', '')} for simply repeating the last price. Where the method does no better than "no change", for diesel for example, the page says so instead of hiding it.</p>
 ${h.mini('demain', { p: ['v'], d: { v: 'toronto' }, t: 'Tomorrow in your city' })}
 <h2>The same litre, very different taxes</h2>
@@ -71,7 +71,7 @@ const fr: HomeLang = {
   title: 'Prix de l’essence au Canada aujourd’hui et demain, 2026',
   description: 'Prix de l’essence au Canada en 2026 : moyenne officielle par ville, estimation pour demain avec son écart mesuré, coût du plein et part des taxes dans le litre.',
   h1: 'Prix de l’essence au Canada, aujourd’hui et demain',
-  intro: `Choisissez une ville : la dernière moyenne officielle, l’estimation pour le ${F.day(K.TOMORROW)}, le coût de votre plein et la part des taxes dans le litre.`,
+  intro: `Choisissez une ville pour connaître le prix de l’essence au Canada : la dernière moyenne officielle, l’estimation pour demain, le ${F.day(K.TOMORROW)}, le coût de votre plein et la part des taxes dans le litre.`,
   facts: [
     { k: 'Canada, ordinaire, Statistique Canada', v: `${cF(nat.value)} (${K.month(nat.date, 'fr')})` },
     { k: 'Taxe d’accise fédérale', v: '0 ¢ depuis le 20 avril 2026' },
@@ -85,7 +85,7 @@ const fr: HomeLang = {
 <h2>Pourquoi un chiffre officiel daté change tout</h2>
 <p>La plupart des pages sur le prix de l’essence donnent un nombre sans dire d’où il vient ni quand il a été relevé. Un prix signalé par des automobilistes dans une application peut dater d’une heure ou d’une semaine et décrire une station ou toute une ville. Les chiffres de ce site sont des relevés et des décisions officiels, chacun daté, et ils ne sont pas tous de même nature. Celui de l’Ontario est une photo du lundi dans 14 marchés. La Régie de l’énergie relève les prix du Québec chaque matin de semaine. La Nouvelle-Écosse, le Nouveau-Brunswick et Terre-Neuve-et-Labrador fixent un prix maximal que les stations ne peuvent dépasser. Statistique Canada publie une moyenne mensuelle pour les grandes villes de l’Ouest et de l’Atlantique environ trois semaines après la fin du mois.</p>
 <p>Savoir de quel chiffre il s’agit compte plus qu’une décimale. Une moyenne du lundi à Toronto dit peu de chose du jeudi si le prix de gros a baissé entre-temps. Un maximum à Halifax est un plafond : bien des stations vendent quelques cents en dessous. Une moyenne de septembre à Calgary ne tient pas compte de la pause de la taxe albertaine entrée en vigueur le 1er octobre. Ce site ramène chaque chiffre au lendemain avec une règle publiée, et dit ce que cette règle a valu.</p>
-<h2>Demain, avec l’écart affiché</h2>
+<h2>Le prix de l’essence demain au Canada, avec l’écart affiché</h2>
 <p>Une estimation sans historique n’est qu’une opinion. Pour chaque ville et chaque carburant, le site rejoue sa propre méthode sur le passé : il part de chaque relevé officiel, ajoute ce qui était connu la veille du suivant, et compare le résultat au chiffre publié. À Toronto, sur ${tor.bt?.n ?? 0} semaines, l’écart moyen a été de ${h.cents(tor.bt?.mae ?? 0).replace('+', '')} par litre, contre ${h.cents(tor.bt?.maeNaive ?? 0).replace('+', '')} en répétant simplement le dernier prix. Quand la méthode ne fait pas mieux que « sans changement », pour le diesel par exemple, la page le dit au lieu de le cacher.</p>
 ${h.mini('demain', { p: ['v'], d: { v: 'montreal' }, t: 'Demain dans votre ville' })}
 <h2>Le même litre, des taxes très différentes</h2>

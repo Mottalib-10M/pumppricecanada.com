@@ -25,7 +25,7 @@ export default defineGuide({
     title: 'Gas Prices Surrey BC 2026, Fill-Up and Yearly Fuel Cost',
     description: 'Gas prices in Surrey, B.C. in 2026: why the figure is the Vancouver average, the TransLink tax that Surrey pays, and what a fill-up or a year of driving costs.',
     h1: 'Gas prices in Surrey, B.C.',
-    intro: `Surrey has no official average of its own: the ${P} figure, ${c(r.latest.value)} in ${mon}, is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
+    intro: `Surrey has no official gas price average of its own: the ${P} figure, ${c(r.latest.value)} in ${mon}, is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
     resume: `No public body publishes a gasoline average for Surrey alone. Statistics Canada, whose monthly series is the only official source that can be reused, covers the Vancouver area as a whole, and Surrey lies inside it, in Metro Vancouver. This page therefore uses the ${P} average and says so: ${c(r.latest.value)} for regular in ${mon}, ${c(d.latest.value)} for diesel. Brought forward with the Edmonton wholesale price and dated tax changes, regular comes to ${c(r.est.value)} for ${E.day(K.TOMORROW)}; on ${r.bt?.n ?? 0} past months, that approach missed the next average by ${c(r.bt?.mae ?? 0)} on average. The tax side is not an approximation. Surrey is in the TransLink service area, so its stations charge the same ${TL.total.regular} cents of motor fuel tax per litre as Vancouver, plus 5% GST, which comes to ${E.p(br.taxShare)} of the estimated price. A 55-litre fill-up at that estimate costs ${E.m(K.fillCost(55, r.est.value))}.`,
     faqs: [
       { q: 'Is there an official gas price for Surrey?', a: 'Not a separate one. Statistics Canada publishes a monthly average for the Vancouver area, which includes Surrey, and that is the figure used here. Weekly averages from Natural Resources Canada also exist but cannot be republished. Individual stations in Surrey can sit a few cents above or below that regional average, so read it as a benchmark against the posted price.' },
@@ -33,7 +33,7 @@ export default defineGuide({
       { q: 'How much does a year of fuel cost a Surrey commuter?', a: `It depends mostly on the vehicle. The budget calculator on this page uses the median combined rating of 2026 models in each class, from Natural Resources Canada, and prices the litres at the estimate for tomorrow. At the median ratings, a full-size pickup burns ${K.num(pick / comp, 'en', 1)} times as much fuel as a compact car over the same distance, so the vehicle matters more than the station.` },
     ],
     body: (h) => `
-<h2>What the Surrey figure is</h2>
+<h2>What the Surrey gas price figure is</h2>
 <p>Surrey is part of Metro Vancouver, and in the official data it does not have a line of its own. Statistics Canada reports one average for the Vancouver area, and every number on this page that comes from it is that regional average. The table makes the borrowing visible: its source column names the Vancouver series and its month.</p>
 ${facts(h, ID)}
 <p>A regional average describes the middle of the market. Individual stations in Surrey sit above or below it, so the figure is best read as a benchmark to compare against the sign you see. The estimate column brings the ${mon} average to ${h.day(K.TOMORROW)} using the Edmonton rack price; the ${h.a('tomorrow', 'tomorrow page')} explains the method for every city.</p>

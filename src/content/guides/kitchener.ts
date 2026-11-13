@@ -32,7 +32,7 @@ export default defineGuide({
     title: 'Gas Prices Kitchener 2026: Diesel and SUV Fuel Budget',
     description: 'Gas and diesel prices in Kitchener-Waterloo in 2026: the southern Ontario average, tomorrow’s estimate and what a standard SUV costs to run on gas or diesel.',
     h1: 'Gas and diesel prices in Kitchener-Waterloo',
-    intro: `In Kitchener-Waterloo diesel stood at ${c(d.latest.value)} and regular at ${c(r.latest.value)} on the ${E.day(r.latest.date)} southern Ontario average.`,
+    intro: `In Kitchener-Waterloo diesel stood at ${c(d.latest.value)} and regular gas at ${c(r.latest.value)} on the ${E.day(r.latest.date)} southern Ontario average.`,
     resume: `Kitchener-Waterloo is not surveyed by name in the Government of Ontario's weekly fuel price report, so the official figure that applies to it is ${MKT}. At the ${K.when(d, 'en')}, that average put diesel at ${c(d.latest.value)} and regular gasoline at ${c(r.latest.value)}, a gap of ${c(d.latest.value - r.latest.value)}, taxes included. Regular is expected at ${c(r.est.value)} on ${E.day(K.TOMORROW)} once the wholesale move since Monday is added; diesel has no daily public signal, so its estimate stays at ${c(d.est.value)} until the provincial rack price catches up. Replayed over ${d.bt?.n ?? 0} weeks, the diesel method missed by ${c(d.bt?.mae ?? 0)} on average and the gasoline one by ${c(r.bt?.mae ?? 0)}. For a standard SUV driven ${E.n(KM)} km, the class medians from Natural Resources Canada give ${usd0(yG)} a year on gasoline and ${usd0(yD)} on diesel at those prices. Taxes take ${E.p(brD.taxShare)} of a litre of diesel: Ontario's 9 cents plus 13% HST, with the federal excise of 4 cents suspended since April 20, 2026.`,
     faqs: [
       { q: 'What is the diesel price in Kitchener-Waterloo this week?', a: `The latest official figure is ${c(d.latest.value)}, ${MKT} for diesel at the ${K.when(d, 'en')}. The province does not survey Kitchener-Waterloo on its own, so this is the regional average. A given station in Kitchener, Waterloo or Cambridge can sit several cents away from it, so the price on the sign is what to enter in the fill-up calculator.` },
@@ -60,7 +60,7 @@ ${h.mini('budget', { p: ['u', 'k', 'q'], d: { v: ID, u: 'suv-standard', k: KM },
 <p>Finance Canada's draft legislation (proposed, not enacted) restores the federal excise on diesel at 2 cents on February 1, 2027 and 4 cents on April 1, 2027, against 5 and 10 cents for gasoline. With HST on top, the return weighs less on a diesel driver per litre.</p>
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'ON', c: 'diesel' }, t: 'Diesel excise return for an Ontario driver' })}
 
-<h2>Recent surveys for Kitchener-Waterloo</h2>
+<h2>Recent gas price surveys for Kitchener-Waterloo</h2>
 ${histTable(h, ID)}
 <p>The same southern average serves ${h.a('hamilton', 'Hamilton')}; ${h.a('london', 'London')}, further west on Highway 401, has its own surveyed market.</p>
 `,

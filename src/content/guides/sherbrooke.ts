@@ -30,8 +30,8 @@ export default defineGuide({
     nav: 'Sherbrooke', card: 'Estrie daily average, base Quebec tax, rank in Quebec',
     title: 'Gas Prices Sherbrooke Today, Estrie Daily Figure 2026',
     description: 'Gas prices in Sherbrooke in 2026: the daily Régie de l\'énergie average for the Estrie, its rank among Quebec cities, taxes per litre and tomorrow\'s figure.',
-    h1: 'Gas prices in Sherbrooke and the Estrie',
-    intro: `Regular gasoline averaged ${c(r.latest.value)} in Sherbrooke on ${E.day(r.latest.date)}, ${cmpE(mtl, 'Montreal')}.`,
+    h1: 'Gas prices in Sherbrooke and the Estrie today',
+    intro: `The daily Estrie figure put regular gas at ${c(r.latest.value)} in Sherbrooke on ${E.day(r.latest.date)}, ${cmpE(mtl, 'Montreal')}.`,
     resume: `For Sherbrooke, the official price is the daily average of the Régie de l'énergie du Québec for the Estrie region, published every morning. On ${E.day(r.latest.date)} the Régie put regular gasoline at ${c(r.latest.value)}, taxes included, which makes Sherbrooke the ${ordE} of the five Quebec cities on this site that morning, ${cmpE(mtl, 'Montreal')} and ${cmpE(qc, 'Quebec City')}. ${flat ? `Since no wholesale price has been published after the survey, the estimate for ${E.day(K.TOMORROW)} is the same ${c(r.est.value)}` : `For ${E.day(K.TOMORROW)} the estimate is ${c(r.est.value)}`}; the Sherbrooke series is too short here to replay the method and measure its error. The city pays the Quebec fuel tax at its base rate of 19.2 cents a litre, with no ARTM levy and no border reduction applied, then GST and QST, so ${E.p(brE.taxShare)} of the pump price is tax. Only regular gasoline is surveyed for Sherbrooke.`,
     faqs: [
       { q: 'Which region does the Sherbrooke gas price represent?', a: 'It is the Régie de l\'énergie average for the Estrie, the administrative region around Sherbrooke, also known as the Eastern Townships. The Régie publishes one figure per region and per day. Stations in the city and in smaller towns of the region both feed that average, so a station in the centre of Sherbrooke can sit a few cents away from it.' },
@@ -39,7 +39,7 @@ export default defineGuide({
       { q: 'Is there a diesel price for Sherbrooke?', a: 'No open official source publishes one. The Régie de l\'énergie surveys regular gasoline only, and Statistics Canada\'s monthly city series for Quebec cover Montreal and Quebec City but not Sherbrooke. This page therefore shows regular only. For a sense of diesel prices in the province, the Quebec City page shows the Statistics Canada monthly figure.' },
     ],
     body: (h) => `
-<h2>The Estrie in the Régie survey</h2>
+<h2>The daily Estrie figure for Sherbrooke gas prices</h2>
 <p>Quebec's energy board publishes a gasoline average for each administrative region, every day. Sherbrooke falls in the Estrie, and the Estrie figure is the one shown here. It is a regional number: the Régie does not publish a separate average for the city itself, and the same regional figure also covers stations in towns such as Magog or Coaticook.</p>
 ${facts(h, ID)}
 <p>Two things are missing from the table, and both are deliberate. There is no premium or diesel line, because the Régie surveys regular only and Statistics Canada has no Sherbrooke series. There is no measured error yet, because the Sherbrooke series on this site is still too short to replay the estimate. For older days, the ${h.src('regie', 'Régie survey')} keeps its own archive.</p>
@@ -64,8 +64,8 @@ ${h.mini('taxes', { p: ['p'], d: { v: ID, c: 'regular' }, t: 'Tax in a Sherbrook
     nav: 'Sherbrooke', card: 'Moyenne quotidienne de l\'Estrie, taxe de base, rang au Québec',
     title: 'Prix essence Sherbrooke aujourd\'hui, Estrie et taxes 2026',
     description: 'Prix de l\'essence à Sherbrooke en 2026 : moyenne quotidienne de la Régie en l\'Estrie, rang parmi les villes du Québec, taxes au litre et ce qui change demain.',
-    h1: 'Prix de l\'essence à Sherbrooke et en Estrie',
-    intro: `L'essence ordinaire s'affichait en moyenne à ${cf(r.latest.value)} à Sherbrooke le ${F.day(r.latest.date)}, ${cmpF(mtl, 'Montréal')}.`,
+    h1: 'Prix de l\'essence à Sherbrooke et en Estrie aujourd\'hui',
+    intro: `En Estrie, le prix de l'essence ordinaire s'affichait en moyenne à ${cf(r.latest.value)} à Sherbrooke le ${F.day(r.latest.date)}, taxes comprises, ${cmpF(mtl, 'Montréal')}.`,
     resume: `À Sherbrooke, le prix officiel est la moyenne quotidienne de la Régie de l'énergie du Québec pour la région de l'Estrie, publiée chaque matin. Le ${F.day(r.latest.date)}, la Régie situait l'essence ordinaire à ${cf(r.latest.value)}, taxes comprises : Sherbrooke était ce matin-là ${ordF} des cinq villes québécoises de ce site, ${cmpF(mtl, 'Montréal')} et ${cmpF(qc, 'Québec')}. ${flat ? `Aucun prix de gros n'ayant paru depuis le relevé, l'estimation du ${F.day(K.TOMORROW)} reste à ${cf(r.est.value)}` : `Pour le ${F.day(K.TOMORROW)}, l'estimation est de ${cf(r.est.value)}`} ; la série de Sherbrooke est encore trop courte ici pour rejouer la méthode et mesurer son écart. La ville paie la taxe québécoise sur les carburants au taux de base de 19,2 ¢ le litre, sans taxe de l'ARTM ni réduction frontalière, puis la TPS et la TVQ : les taxes représentent ${F.p(brF.taxShare)} du prix à la pompe. Seule l'essence ordinaire est relevée à Sherbrooke.`,
     faqs: [
       { q: 'Quelle région représente le prix de l\'essence à Sherbrooke ?', a: 'Il s\'agit de la moyenne de la Régie de l\'énergie pour l\'Estrie, la région administrative de Sherbrooke, aussi appelée les Cantons-de-l\'Est. La Régie publie un chiffre par région et par jour. Les stations de la ville comme celles des localités voisines alimentent cette moyenne : une station du centre de Sherbrooke peut donc s\'en écarter de quelques cents.' },
@@ -83,7 +83,7 @@ ${facts(h, ID)}
 ${h.mini('classement', { p: ['z'], d: { z: 'QC' }, t: 'Les villes du Québec, de la moins chère à la plus chère' })}
 <p>Les taxes n'expliquent pas à elles seules le rang de Sherbrooke. Montréal et Laval paient 3 ¢ de plus le litre avec la taxe de l'ARTM, Gatineau 6 ¢ de moins grâce à la réduction frontalière ; Sherbrooke et Québec paient le taux de base. Quand Sherbrooke dépasse malgré tout Montréal, la différence se loge dans le prix du produit livré en Estrie et dans les marges locales.</p>
 
-<h2>La taxe au taux de base québécois</h2>
+<h2>Prix de l'essence et taxes en Estrie : Sherbrooke au taux de base</h2>
 <p>Un litre vendu à Sherbrooke supporte la taxe québécoise sur les carburants de 19,2 ¢ et, tant que l'accise fédérale reste suspendue, aucune autre taxe au litre : ${h.cpl(fixed)} au total. La TPS de 5 % et la TVQ de 9,975 % s'appliquent ensuite sur l'ensemble du prix, ce qui ajoute ${h.cpl(brF.salesTax)} à la moyenne de ce matin.</p>
 ${taxTable(h, ID)}
 <p>Le Québec abaisse sa taxe sur les carburants près des frontières de l'Ontario, du Nouveau-Brunswick et des États-Unis ainsi que dans les régions périphériques. La page applique le taux de base à Sherbrooke ; une station bien plus proche de la frontière américaine que la ville peut être moins taxée. Pour tester un autre prix affiché, le calculateur de taxes refait la décomposition.</p>

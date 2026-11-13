@@ -34,7 +34,7 @@ export default defineGuide({
       { q: 'Should Brampton commuters fill up in Toronto instead?', a: `On regional averages the difference is small: the Toronto figure, which blends West and East, was ${c(tor)} at the latest survey, against ${c(r.latest.value)} for ${MKT}. On a 55-litre fill-up that is ${K.dollars(Math.abs(r.latest.value - tor) * 0.55, 'en')}. Detouring for it rarely pays; a cheaper station on your usual route matters more.` },
     ],
     body: (h) => `
-<h2>The regional figure behind Brampton</h2>
+<h2>The regional figure behind Brampton gas prices</h2>
 <p>Brampton's number is borrowed, and it is worth knowing from where. Each Monday the province records self-serve prices in a set of markets; ${MKT} covers the western side of the Greater Toronto Area, Peel Region included. The averages below are those of that market, dated, with the estimate for ${h.day(K.TOMORROW)} beside them.</p>
 ${facts(h, ID)}
 

@@ -57,7 +57,7 @@ ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NL', c: 'diesel' }, t: 'The excise
 <p>Because the cap is the highest price allowed, it gives an upper bound on what a fill-up can cost in St. John's this week. A ${K.P.tank.midsize}-litre tank of regular costs at most ${h.usd(K.fillCost(K.P.tank.midsize, r.latest.value))}, a ${TANK}-litre pickup tank of diesel at most ${h.usd(K.fillCost(TANK, d.latest.value))}. If the sign shows less, enter it below to see the actual bill.</p>
 ${h.mini('plein', { p: ['p', 'r', 'e'], d: { p: Math.round(r.latest.value * 10) / 10, r: K.P.tank.midsize }, t: 'A fill-up in St. John’s' })}
 
-<h2>St. John's in the Atlantic</h2>
+<h2>St. John's gas prices in the Atlantic</h2>
 <p>Nova Scotia and New Brunswick regulate too. Their current caps for regular are ${h.cpl(hfx)} in ${h.a('halifax', 'Halifax')} and ${h.cpl(mon)} across ${h.a('moncton', 'New Brunswick')}. The provincial rates are compared on the ${h.a('taxes', 'tax page')}.</p>
 ${h.mini('classement', { p: ['c'], d: { z: 'A' }, t: 'Atlantic caps, cheapest first' })}
 `,

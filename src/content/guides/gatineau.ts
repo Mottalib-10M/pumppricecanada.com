@@ -30,8 +30,8 @@ export default defineGuide({
     nav: 'Gatineau', card: 'Daily Régie figure, 6-cent border reduction, Ottawa gap',
     title: 'Gas Prices Gatineau Today vs Ottawa, Border Tax Cut 2026',
     description: 'Gas prices in Gatineau in 2026: the daily Régie de l\'énergie average, the 6-cent Quebec tax reduction near Ontario and how a fill-up compares with Ottawa.',
-    h1: 'Gas prices in Gatineau, across the river from Ottawa',
-    intro: `Regular gasoline averaged ${c(r.latest.value)} in Gatineau on ${E.day(r.latest.date)}, ${sideE}.`,
+    h1: 'Gas prices in Gatineau today, across the river from Ottawa',
+    intro: `Regular gas averaged ${c(r.latest.value)} in Gatineau on ${E.day(r.latest.date)}, ${sideE}, border tax cut included.`,
     resume: `Gatineau's official gas price is the daily average that the Régie de l'énergie du Québec publishes for the region every morning. On ${E.day(r.latest.date)} it was ${c(r.latest.value)} for regular gasoline, taxes included, ${sideE} (${E.day(ott.latest.date)}). ${flat ? `No wholesale price newer than the survey is available yet, so the estimate for ${E.day(K.TOMORROW)} repeats ${c(r.est.value)}` : `The estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}`}; the Gatineau series is too recent on this site to measure the method's past error. Because the city sits on the Ontario border, Quebec cuts its fuel tax by 6 cents a litre within 15 km of Ontario, so a Gatineau litre pays ${c(qcRate)} of provincial tax instead of 19.2 cents, plus GST and QST: ${E.p(brE.taxShare)} of the price in all. The Régie survey covers regular only, and no open official source publishes premium or diesel for Gatineau, so this page shows regular gasoline alone.`,
     faqs: [
       { q: 'Why is Quebec gas tax lower in Gatineau?', a: 'Quebec reduces its fuel tax for stations close to its borders, to limit the incentive to cross over to fill up. Within 15 km of the Ontario border, the reduction on gasoline is 6 cents a litre, which brings the 19.2-cent rate down for Gatineau stations near the Ottawa River. GST and QST are then charged on that lower base, which saves a little more than the 6 cents.' },
@@ -44,7 +44,7 @@ export default defineGuide({
 ${facts(h, ID)}
 <p>The table has a single line because the Régie surveys regular gasoline only and no other open source covers Gatineau. The "past error" column is still empty: the Gatineau series on this site does not yet cover enough days to replay the estimate. The ${h.src('regie', 'Régie\'s regional survey')} keeps the history of previous days.</p>
 
-<h2>The 6-cent border reduction</h2>
+<h2>Gas prices in Gatineau and the 6-cent border tax cut</h2>
 <p>Quebec's fuel tax is 19.2 cents a litre of gasoline in most of the province. Near its borders, the province lowers it so that stations are not left at a disadvantage against their neighbours: within 15 km of Ontario, the reduction is 6 cents. The page applies that band to Gatineau, which leaves ${h.cpl(qcRate)} of Quebec tax in each litre. With GST and QST at a combined 14.975% charged on top, the reduction is worth ${h.cpl(saved, 2)} at the pump.</p>
 ${taxTable(h, ID)}
 <p>The reduction depends on the distance between a station and the border, so a station well inside the province can be taxed differently from one close to the river. The federal excise tax, suspended since April 20, 2026, is the same on both banks; the ${h.a('taxes', 'tax page')} has its planned return in 2027.</p>
@@ -65,8 +65,8 @@ ${h.mini('plein', { p: ['p', 'r'], d: { p: Math.round(r.latest.value * 10) / 10 
     nav: 'Gatineau', card: 'Chiffre quotidien de la Régie, réduction frontalière de 6 ¢, écart avec Ottawa',
     title: 'Prix essence Gatineau aujourd\'hui, écart avec Ottawa 2026',
     description: 'Prix de l\'essence à Gatineau en 2026 : moyenne quotidienne de la Régie, taxe réduite de 6 ¢ près de l\'Ontario et comparaison d\'un plein avec celui d\'Ottawa.',
-    h1: 'Prix de l\'essence à Gatineau, face à Ottawa',
-    intro: `L'essence ordinaire s'affichait en moyenne à ${cf(r.latest.value)} à Gatineau le ${F.day(r.latest.date)}, ${sideF}.`,
+    h1: 'Prix de l\'essence à Gatineau aujourd\'hui, face à Ottawa',
+    intro: `Le prix de l'essence ordinaire s'affichait en moyenne à ${cf(r.latest.value)} à Gatineau le ${F.day(r.latest.date)}, ${sideF}, un écart qui inclut la réduction frontalière.`,
     resume: `Le prix officiel de l'essence à Gatineau est la moyenne quotidienne que la Régie de l'énergie du Québec publie chaque matin pour la région. Le ${F.day(r.latest.date)}, elle s'établissait à ${cf(r.latest.value)} pour l'ordinaire, taxes comprises, ${sideF} (${F.day(ott.latest.date)}). ${flat ? `Faute de prix de gros plus récent que le relevé, l'estimation du ${F.day(K.TOMORROW)} reprend ${cf(r.est.value)}` : `L'estimation du ${F.day(K.TOMORROW)} est de ${cf(r.est.value)}`} ; la série de Gatineau est encore trop récente sur ce site pour mesurer l'écart passé de la méthode. Comme la ville borde l'Ontario, Québec réduit sa taxe sur les carburants de 6 ¢ le litre à moins de 15 km de la frontière : un litre vendu à Gatineau paie ${cf(qcRate)} de taxe provinciale au lieu de 19,2 ¢, puis la TPS et la TVQ, soit ${F.p(brF.taxShare)} du prix. Le relevé de la Régie ne porte que sur l'ordinaire et aucune source officielle ouverte ne publie la super ni le diesel pour Gatineau : la page s'en tient donc à l'essence ordinaire.`,
     faqs: [
       { q: 'Pourquoi la taxe sur l\'essence est-elle plus basse à Gatineau ?', a: 'Le Québec réduit sa taxe sur les carburants pour les stations proches de ses frontières, afin de limiter l\'intérêt d\'aller faire le plein de l\'autre côté. À moins de 15 km de l\'Ontario, la réduction sur l\'essence est de 6 ¢ le litre, ce qui abaisse le taux de 19,2 ¢ pour les stations gatinoises proches de la rivière des Outaouais. La TPS et la TVQ portent ensuite sur cette base réduite : l\'économie dépasse légèrement les 6 ¢.' },
@@ -84,7 +84,7 @@ ${facts(h, ID)}
 ${taxTable(h, ID)}
 <p>La réduction dépend de la distance entre la station et la frontière : une station située loin à l'intérieur de la province peut être taxée autrement qu'une station proche de la rivière. La taxe d'accise fédérale, suspendue depuis le 20 avril 2026, est la même sur les deux rives ; la page ${h.a('taxes', 'des taxes')} présente son retour prévu en 2027.</p>
 
-<h2>Gatineau et Ottawa, litre contre litre</h2>
+<h2>Gatineau et Ottawa : l'écart de prix de l'essence, litre contre litre</h2>
 <p>Aux derniers chiffres officiels, les taxes prennent ${h.cpl(tax(brF))} d'un litre à Gatineau et ${h.cpl(tax(ottB))} d'un litre à Ottawa. L'Ontario prélève 9 ¢ de taxe sur l'essence et une TVH de 13 % ; le Québec, même après la réduction frontalière, perçoit davantage au litre et une taxe de vente plus élevée. Ce qui reste entre les deux prix à la pompe tient au produit et à la marge des détaillants.</p>
 ${h.mini('comparer', { p: ['w', 'r'], d: { v: ID, w: 'ottawa' }, t: 'Gatineau face à Ottawa' })}
 <p>Gardez les dates en tête en lisant le résultat : le chiffre de Gatineau date de ce matin, celui d'Ottawa du relevé du lundi. L'estimation du lendemain pour Ottawa s'appuie d'ailleurs sur le chiffre quotidien de la Régie à Montréal comme signal du marché, ce que montre la page ${h.a('ottawa', 'd\'Ottawa')}.</p>

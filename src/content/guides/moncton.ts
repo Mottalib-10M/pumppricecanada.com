@@ -58,7 +58,7 @@ ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NB' }, t: 'The proposed excise ret
 <p>New Brunswick's gasoline tax is ${h.n(nbTax, 2)} cents a litre and its motive fuel tax on diesel ${h.n(nbTaxD, 2)} cents. HST at 15% applies to the full price. At the current caps, taxes are ${h.p(br.taxShare)} of a litre of regular and ${h.p(brD.taxShare)} of a litre of diesel.</p>
 ${taxTable(h, ID)}
 
-<h2>Moncton against Halifax</h2>
+<h2>Moncton gas prices against Halifax</h2>
 <p>Nova Scotia regulates too, by zone. The Halifax cap for regular is ${h.cpl(hfx)}, which is ${h.cents(hfx - r.latest.value)} relative to New Brunswick's. The two provinces tax fuel differently, and the comparison is between ceilings, not averages. See the ${h.a('halifax', 'Halifax page')}, the ${h.a('st-johns', 'St. John’s page')} and the provincial ${h.a('taxes', 'tax comparison')}.</p>
 ${h.mini('classement', { p: ['c'], d: { z: 'A' }, t: 'Atlantic cities by price' })}
 `,

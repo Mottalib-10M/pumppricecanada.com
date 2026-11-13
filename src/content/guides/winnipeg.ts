@@ -25,7 +25,7 @@ export default defineGuide({
     title: 'Gas Prices Winnipeg 2026, Manitoba Fuel Tax and Estimate',
     description: 'Gas prices in Winnipeg in 2026: the Statistics Canada monthly average, tomorrow\'s estimate, the 12.5-cent Manitoba fuel tax and the gap with Toronto gas.',
     h1: 'Gas prices in Winnipeg',
-    intro: `Regular gasoline in Winnipeg averaged ${c(r.latest.value)} in ${mon} and is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
+    intro: `Regular gas in Winnipeg averaged ${c(r.latest.value)} in ${mon} and is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
     resume: `Winnipeg's official open gas price is a monthly one: Statistics Canada's average for ${mon} is ${c(r.latest.value)} a litre for regular, ${c(pr.latest.value)} for premium and ${c(d.latest.value)} for diesel, taxes included. Manitoba is the easternmost province whose estimate on this site follows the Edmonton wholesale price, published daily by the Government of Ontario; adding its change since ${mon}, with GST, gives ${c(r.est.value)} for ${E.day(K.TOMORROW)}. Checked against ${r.bt?.n ?? 0} past months, that estimate missed the next Statistics Canada average by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} for repeating the previous month. Manitoba's fuel tax is back at ${K.num(mb, 'en', 1)} cents a litre since the 2024 tax holiday ended on January 1, 2025; the provincial sales tax does not apply to fuel, and with the 5% GST the taxes make up ${E.p(br.taxShare)} of the estimated price. The federal excise tax has been suspended since April 20, 2026.`,
     faqs: [
       { q: 'Is the Manitoba gas tax holiday still in effect in Winnipeg?', a: 'No. Manitoba suspended its fuel tax for 2024 and the holiday ended on January 1, 2025, when the rate went back to 12.5 cents a litre. What is suspended in 2026 is the federal excise tax, since April 20, 2026, which applies across Canada. The tax table on this page shows both lines as they stand for tomorrow.' },
@@ -49,7 +49,7 @@ ${taxTable(h, ID)}
 ${h.mini('taxes', { p: ['p', 'c'], d: { v: ID, c: 'regular' }, t: 'Tax in a Winnipeg litre' })}
 <p>The ${h.a('taxes', 'tax page')} sets Manitoba against the other provinces and follows the return of the federal excise, planned (proposed, not enacted) at half rate on February 1, 2027 and in full on April 1, 2027.</p>
 
-<h2>Winnipeg against Toronto</h2>
+<h2>Winnipeg gas prices against Toronto</h2>
 <p>The comparison crosses the line between the two markets the site follows: the western one, measured monthly and carried forward with the Edmonton rack price, and the central one, surveyed every week by Ontario. Keep the dates in view when reading the gap, and remember that Ontario's lower per-litre tax is partly offset by its higher sales tax.</p>
 ${h.mini('comparer', { p: ['w', 'k'], d: { v: ID, w: 'toronto' }, t: 'Winnipeg and another city' })}
 

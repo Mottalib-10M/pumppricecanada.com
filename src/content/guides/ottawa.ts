@@ -32,7 +32,7 @@ export default defineGuide({
     title: 'Gas Prices Ottawa 2026: Today, Tomorrow and Gatineau Gap',
     description: 'Gas prices in Ottawa for 2026: the weekly Ontario survey, tomorrow’s estimate, the gap with Gatineau across the river and how Ontario and Quebec taxes differ.',
     h1: 'Gas prices in Ottawa, and the Gatineau gap',
-    intro: `Ottawa's regular gasoline averaged ${c(r.latest.value)} at the ${E.day(r.latest.date)} Ontario survey, and the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
+    intro: `Ottawa's regular gas averaged ${c(r.latest.value)} at the ${E.day(r.latest.date)} Ontario survey, and the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
     resume: `Ottawa is one of the markets that the Government of Ontario surveys by name every Monday, so the city has its own official average. At the ${K.when(r, 'en')} it was ${c(r.latest.value)} for regular and ${c(d.latest.value)} for diesel, taxes included${sc ? `; Statistics Canada's monthly average for ${K.month(sc.date, 'en')}, a separate survey, was ${c(sc.value)}` : ''}. The estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}: Monday's figure plus the pre-tax change since then in the daily Montreal survey of the Régie de l'énergie du Québec, with HST. Over ${r.bt?.n ?? 0} replayed weeks it missed the next survey by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} for a no-change guess. Across the Ottawa River, the Régie's daily average for Gatineau on ${E.day(g.latest.date)} was ${c(g.latest.value)}. Taxes make up ${E.p(br.taxShare)} of an Ottawa litre, from Ontario's 9-cent gasoline tax and 13% HST; the federal excise has been suspended since April 20, 2026.`,
     faqs: [
       { q: 'Is gas cheaper in Ottawa or in Gatineau?', a: `On the latest figures, Gatineau's daily average of ${c(g.latest.value)} (${E.day(g.latest.date)}) is ${K.cents(gapG, 'en')} from the Ottawa estimate for ${E.day(K.TOMORROW)}, ${c(r.est.value)}. Quebec taxes are heavier, but Quebec cuts its fuel tax by 6 cents within 15 km of Ontario, which narrows the gap. Compare the two sources on dates as close as possible.` },
@@ -59,7 +59,7 @@ ${h.mini('classement', { p: ['c'], d: { z: 'ON' }, t: 'Ontario cities, cheapest 
 ${taxTable(h, ID)}
 <p>The provincial rate of 9 cents was cut from 14.7 cents in July 2022 and made permanent in 2025. The ${h.a('taxes', 'tax page')} sets it beside every other province.</p>
 
-<h2>Recent Ottawa surveys</h2>
+<h2>Recent Ottawa gas price surveys</h2>
 <p>The province publishes its weekly series under an open licence, so the recent Ottawa surveys can be shown in full. They show how far the price can travel within a few months, and how much of that movement a single week can hold.</p>
 ${histTable(h, ID)}
 <p>The estimate for the coming days is explained on the ${h.a('tomorrow', 'tomorrow page')}.</p>

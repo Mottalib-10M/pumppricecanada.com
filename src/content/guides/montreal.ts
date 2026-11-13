@@ -23,8 +23,8 @@ export default defineGuide({
     nav: 'Montreal', card: 'Daily Régie average, ARTM levy, premium and diesel',
     title: 'Gas Prices Montreal Today, Daily Régie Average 2026',
     description: 'Gas prices in Montreal in 2026: the daily average of the Régie de l\'énergie, tomorrow\'s figure, the 3-cent ARTM levy and the cost of a fill-up on the island.',
-    h1: 'Gas prices in Montreal, read every morning',
-    intro: `The Régie de l'énergie put regular gasoline in Montreal at ${c(r.latest.value)} on ${E.day(r.latest.date)}.`,
+    h1: 'Gas prices in Montreal today: the daily Régie average',
+    intro: `The Régie de l'énergie's daily average put regular gas in Montreal at ${c(r.latest.value)} on ${E.day(r.latest.date)}.`,
     resume: `Montreal is one of the few Canadian cities with an official gasoline price published every day: the Régie de l'énergie du Québec surveys stations on the island and posts a regional average each morning. Its figure for ${E.day(r.latest.date)} is ${c(r.latest.value)} for regular gasoline, taxes included. ${flat ? `No wholesale data newer than that survey exists yet, so the estimate for ${E.day(K.TOMORROW)} simply carries the same ${c(r.est.value)} forward` : `The estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}`}; replayed over ${r.bt?.n ?? 0} days, this way of estimating missed the next morning's figure by ${c(r.bt?.mae ?? 0)} on average. Premium and diesel are not in the Régie survey: they come from the Statistics Canada monthly average (${K.month(pr.latest.date, 'en')}), at ${c(pr.latest.value)} and ${c(d.latest.value)}. In a Montreal litre, the Quebec fuel tax of 19.2 cents, the 3-cent ARTM transit levy and ${c(salesE)} of GST and QST add up to ${E.p(brE.taxShare)} of the price; the federal excise tax is suspended since April 20, 2026.`,
     faqs: [
       { q: 'Who publishes the official gas price for Montreal?', a: 'The Régie de l\'énergie du Québec, the provincial energy board, surveys gasoline prices across Quebec every day and publishes an average for each region, the island of Montreal among them. Its licence does not allow republishing its history, so this page shows only the figure of the day, with the date, and links to the Régie for anything older.' },
@@ -33,7 +33,7 @@ export default defineGuide({
       { q: 'Where do Montreal premium and diesel prices come from?', a: 'The Régie survey covers regular gasoline only. For premium and diesel, the only open official source is the monthly average of Statistics Canada for Montreal. This page shows the last published month and an estimate that brings it to today with the wholesale price, so treat those two lines as a monthly benchmark rather than a price of the day.' },
     ],
     body: (h) => `
-<h2>One figure a day for the island</h2>
+<h2>Gas prices in Montreal: one Régie average a day</h2>
 <p>Most Canadian cities only get a weekly or monthly official price. Montreal gets a fresh one every morning, because Quebec gave its energy board the job of watching gasoline prices. The table puts that daily figure for regular next to the monthly Statistics Canada averages used for premium and diesel, so you can see at a glance which line is from this morning and which is from last month.</p>
 ${facts(h, ID)}
 <p>The Régie publishes under its own terms of use, which do not cover reuse of its history. That is why this page has no chart of past Montreal prices: each day it shows the day's figure and its date, and the archive stays on the ${h.src('regie', 'Régie website')}. ${mo ? `As a cross-check, Statistics Canada put Montreal regular at ${h.cpl(mo.value)} on average in ${K.month(mo.date, 'en')}.` : ''}</p>
@@ -59,8 +59,8 @@ ${h.mini('comparer', { p: ['w'], d: { v: ID, w: 'toronto' }, t: 'Montreal or Tor
     nav: 'Montréal', card: 'Moyenne quotidienne de la Régie, taxe ARTM, super et diesel',
     title: 'Prix essence Montréal aujourd\'hui, relevé de la Régie 2026',
     description: 'Prix de l\'essence à Montréal en 2026 : la moyenne quotidienne de la Régie de l\'énergie, celui de demain, la taxe ARTM de 3 ¢ et le coût d\'un plein sur l\'île.',
-    h1: 'Prix de l\'essence à Montréal, relevé chaque matin',
-    intro: `La Régie de l'énergie a établi l'essence ordinaire à ${cf(r.latest.value)} à Montréal le ${F.day(r.latest.date)}.`,
+    h1: 'Prix de l\'essence à Montréal aujourd\'hui, relevé chaque matin',
+    intro: `Selon le relevé de la Régie de l'énergie, le prix de l'essence ordinaire était de ${cf(r.latest.value)} à Montréal le ${F.day(r.latest.date)}.`,
     resume: `À Montréal, le prix officiel de l'essence se lit chaque jour : la Régie de l'énergie du Québec relève les prix affichés sur l'île et publie tous les matins une moyenne régionale. Celle du ${F.day(r.latest.date)} s'établit à ${cf(r.latest.value)} pour l'ordinaire, taxes comprises. ${flat ? `Aucun prix de gros plus récent que ce relevé n'est encore paru : l'estimation du ${F.day(K.TOMORROW)} reprend donc les mêmes ${cf(r.est.value)}` : `L'estimation du ${F.day(K.TOMORROW)} est de ${cf(r.est.value)}`}. Rejouée sur ${r.bt?.n ?? 0} jours, cette façon d'estimer a manqué le chiffre du lendemain de ${cf(r.bt?.mae ?? 0)} en moyenne. La super et le diesel ne font pas partie du relevé de la Régie : leurs chiffres viennent de la moyenne mensuelle de Statistique Canada (${K.month(pr.latest.date, 'fr')}), soit ${cf(pr.latest.value)} et ${cf(d.latest.value)}. Dans un litre montréalais, la taxe sur les carburants de 19,2 ¢, la taxe de l'ARTM de 3 ¢ et ${cf(salesF)} de TPS et de TVQ représentent ${F.p(brF.taxShare)} du prix ; la taxe d'accise fédérale est suspendue depuis le 20 avril 2026.`,
     faqs: [
       { q: 'Qui publie le prix officiel de l\'essence à Montréal ?', a: 'C\'est la Régie de l\'énergie du Québec. Elle relève chaque jour les prix de l\'essence dans toutes les régions de la province et publie une moyenne pour chacune, dont l\'île de Montréal. Ses conditions d\'utilisation ne permettent pas de reprendre son historique : cette page affiche donc le chiffre du jour, daté, et renvoie au site de la Régie pour les jours précédents.' },
@@ -69,7 +69,7 @@ ${h.mini('comparer', { p: ['w'], d: { v: ID, w: 'toronto' }, t: 'Montreal or Tor
       { q: 'D\'où viennent les prix de la super et du diesel à Montréal ?', a: 'Le relevé de la Régie ne porte que sur l\'essence ordinaire. Pour la super et le diesel, la seule source officielle ouverte est la moyenne mensuelle de Statistique Canada pour Montréal. La page montre le dernier mois publié et une estimation qui le ramène à aujourd\'hui avec le prix de gros : ces deux lignes sont des repères mensuels, pas des prix du jour.' },
     ],
     body: (h) => `
-<h2>Un chiffre par jour pour l'île</h2>
+<h2>Le relevé de la Régie : un prix de l'essence par jour à Montréal</h2>
 <p>La plupart des villes canadiennes n'ont qu'un prix officiel par semaine, voire par mois. Montréal en a un nouveau chaque matin, parce que le Québec a confié à la Régie de l'énergie la surveillance du prix de l'essence. Le tableau place ce chiffre quotidien de l'ordinaire à côté des moyennes mensuelles de Statistique Canada qui servent pour la super et le diesel : on voit tout de suite quelle ligne date de ce matin et laquelle date du mois dernier.</p>
 ${facts(h, ID)}
 <p>Les conditions d'utilisation de la Régie ne couvrent pas la reprise de son historique. Voilà pourquoi cette page ne trace aucune courbe des prix passés à Montréal : elle donne chaque jour le chiffre du jour et sa date, et l'archive reste sur le ${h.src('regie', 'site de la Régie')}. ${mo ? `À titre de recoupement, Statistique Canada situait l'ordinaire à ${h.cpl(mo.value)} en moyenne à Montréal en ${K.month(mo.date, 'fr')}.` : ''}</p>

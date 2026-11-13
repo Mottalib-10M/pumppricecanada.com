@@ -50,7 +50,7 @@ ${facts(h, ID)}
 <p>A budget built this way is easier to hold to than a price watch. Knowing that the commute costs roughly a fixed amount a month, and how much a ten-cent move shifts it, tells you whether a cheaper station on the way is worth the stop. Enter your own vehicle and yearly kilometres below; the result also gives the cost per 100 km.</p>
 ${h.mini('budget', { p: ['u', 'k', 'q'], d: { v: ID, u: 'suv-small', k: 25000 }, t: 'A Barrie commuter’s fuel budget' })}
 
-<h2>Barrie against Toronto</h2>
+<h2>Barrie gas prices against Toronto</h2>
 <p>Commuters can fill up at either end of the trip. The published averages put the southern Ontario figure ${rel} the Toronto blend at the latest survey. On a ${TANK}-litre fill-up that is ${h.usd(Math.abs(gapTor) * TANK / 100)}, rarely worth a detour.</p>
 ${h.mini('comparer', { p: ['w'], d: { v: ID, w: 'toronto' }, t: 'Barrie against Toronto' })}
 

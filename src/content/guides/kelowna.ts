@@ -41,7 +41,7 @@ export default defineGuide({
       { q: 'How much would the proposed excise return add in Kelowna?', a: `Under Finance Canada's draft legislation (proposed, not enacted) the federal excise on gasoline comes back at ${E.n(exHalf)} cents on February 1, 2027 and ${E.n(exFull)} cents on April 1, 2027. With 5% GST on top, that is ${c(exHalf * (1 + gst), 2)} and then ${c(exFull * (1 + gst), 2)} in Kelowna, the same as anywhere in B.C.` },
     ],
     body: (h) => `
-<h2>Why this page has no Kelowna average</h2>
+<h2>Why this page has no Kelowna gas price average</h2>
 <p>A price page is only as good as its source. For Kelowna, the open sources run out. Statistics Canada's table 18-10-0001-01, the monthly series this site uses for western cities, includes Vancouver and Victoria for British Columbia but not the Okanagan. Natural Resources Canada does collect weekly averages by city, Kelowna among them, but those figures are not published under a licence that lets this site republish them. You can read them directly at the source: ${h.src('nrcan-weekly', 'Natural Resources Canada, average retail prices by city')}.</p>
 <p>The page therefore does three things it can do with certainty: it states the tax that applies in Kelowna, it compares that tax with the two B.C. areas that pay more, and it turns the price on a sign into the cost of a fill-up.</p>
 

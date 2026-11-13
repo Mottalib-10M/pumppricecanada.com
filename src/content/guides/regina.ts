@@ -28,7 +28,7 @@ export default defineGuide({
     title: 'Gas Prices Regina 2026, Saskatchewan Tax and Truck Budget',
     description: 'Gas prices in Regina in 2026: the Statistics Canada monthly average, today\'s estimate, the 15-cent Saskatchewan fuel tax and a year of pickup driving.',
     h1: 'Gas prices in Regina',
-    intro: `From a ${mon} average of ${c(r.latest.value)}, regular gasoline in Regina is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
+    intro: `From a ${mon} average of ${c(r.latest.value)}, regular gas in Regina is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
     resume: `Statistics Canada publishes one open official gas price for Regina, a monthly average, and its most recent month is ${mon}, at ${c(r.latest.value)} a litre for regular and ${c(d.latest.value)} for diesel. To give a figure for today, the page adds the change in the Edmonton wholesale (rack) price since that month, with 5% GST: the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}. On ${r.bt?.n ?? 0} months of history, that estimate was off by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} for assuming no change. Saskatchewan levies a fuel tax of ${K.num(sk, 'en')} cents a litre on gasoline and diesel and does not charge its provincial sales tax on road fuel, so a Regina litre carries that tax and GST: ${E.p(br.taxShare)} of the estimated price. The federal excise tax is suspended since April 20, 2026; when the draft schedule restores it in full on April 1, 2027, it will add ${c(exFull)} a litre with GST.`,
     faqs: [
       { q: 'How much is the gas tax in Regina?', a: 'Saskatchewan charges a fuel tax of 15 cents per litre on gasoline and on diesel, the same across the province, with no city or transit levy in Regina. The provincial sales tax does not apply to road fuel, but the 5% GST does, on the price that already includes the 15 cents. The federal excise is suspended since April 20, 2026.' },
@@ -36,7 +36,7 @@ export default defineGuide({
       { q: 'Is gas cheaper in Regina or in Winnipeg?', a: 'Both cities have their own monthly Statistics Canada series, and the page brings both forward with the same Edmonton rack price, so their estimates are comparable. Taxes differ: Saskatchewan charges 15 cents a litre and Manitoba 12.5 cents, both with 5% GST. The comparison calculator shows the current gap for a fill-up and for a year.' },
     ],
     body: (h) => `
-<h2>The Regina figure and how old it is</h2>
+<h2>The Regina gas price figure and how old it is</h2>
 <p>Regina's official benchmark is monthly. Statistics Canada publishes it a few weeks after each month closes, so on ${h.day(K.TODAY)} the newest month is ${mon}. The estimate column moves that figure with the Edmonton rack price, which the Government of Ontario publishes daily with about a week of delay, and with any tax change dated after the month.</p>
 ${facts(h, ID)}
 <p>Weekly city prices from Natural Resources Canada exist, but their terms do not allow them to be copied here; the ${h.src('nrcan-weekly', 'NRCan weekly table')} can be read on its own site.</p>

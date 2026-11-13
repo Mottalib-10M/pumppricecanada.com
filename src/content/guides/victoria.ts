@@ -29,7 +29,7 @@ export default defineGuide({
     title: 'Gas Prices Victoria BC 2026, Island Price and Fuel Tax',
     description: 'Gas prices in Victoria, B.C. in 2026: the Statistics Canada monthly average, today\'s estimate, the 20-cent BC Transit area tax and the gap with Vancouver.',
     h1: 'Gas prices in Victoria, B.C.',
-    intro: `Regular gasoline averaged ${c(r.latest.value)} in Victoria in ${mon}; brought to ${E.day(K.TOMORROW)}, the estimate is ${c(r.est.value)}.`,
+    intro: `Regular gas averaged ${c(r.latest.value)} in Victoria in ${mon}; brought to ${E.day(K.TOMORROW)}, the estimate is ${c(r.est.value)}.`,
     resume: `Victoria has its own Statistics Canada series, published monthly, and its latest month is ${mon}: ${c(r.latest.value)} a litre for regular gasoline and ${c(d.latest.value)} for diesel, taxes included. That is ${Math.abs(priceGap) < 0.05 ? 'level with' : `${c(Math.abs(priceGap))} ${priceGap > 0 ? 'above' : 'below'}`} Vancouver the same month, even though a Victoria litre pays ${VI.total.regular} cents of motor fuel tax against ${TL.total.regular} on the mainland: before tax, the island's fuel costs more. The page moves the monthly average to ${E.day(K.TOMORROW)} with the Edmonton wholesale price and dated tax changes, which gives ${c(r.est.value)}; over ${r.bt?.n ?? 0} months of history, this estimate was off by ${c(r.bt?.mae ?? 0)} on average, compared with ${c(r.bt?.maeNaive ?? 0)} for a simple repeat of the last month. Of the ${VI.total.regular} cents, ${VI.transit_share} fund BC Transit in the Victoria region; GST at 5% comes on top, and taxes make up ${E.p(brT.taxShare)} of the estimate.`,
     faqs: [
       { q: 'Why is gas so expensive in Victoria when its tax is lower than Vancouver?', a: 'Victoria\'s motor fuel tax is 20 cents a litre, 7 cents below Metro Vancouver, yet its average pump price can be close to Vancouver\'s. When it is, the difference sits in the product share: once taxes are removed, a litre on southern Vancouver Island costs more than one on the mainland. No official source breaks that pre-tax cost down by city, so the page shows the gap without guessing its causes.' },
@@ -57,7 +57,7 @@ ${taxTable(h, ID)}
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'BC' }, t: 'The excise return for a B.C. driver' })}
 <p>The draft schedule is not yet law; the ${h.a('forecast', 'forecast page')} follows it, and the ${h.a('taxes', 'tax page')} lists every rate by province.</p>
 
-<h2>Thirteen months in Victoria</h2>
+<h2>Thirteen months of gas prices in Victoria</h2>
 <p>The Statistics Canada series is under the Open Government Licence, so its recent months are shown below, newest first.</p>
 ${histTable(h, ID)}
 `,

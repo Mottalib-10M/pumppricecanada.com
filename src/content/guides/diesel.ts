@@ -29,8 +29,8 @@ export default defineGuide({
     nav: 'Diesel prices', card: 'Diesel by city, the gap with gasoline, a pickup’s yearly cost',
     title: 'Diesel Prices in Canada by City Today and Tomorrow, 2026',
     description: 'Diesel prices in 2026 by Canadian city: the latest official figure, tomorrow’s estimate, the gap with regular gasoline, taxes and a pickup’s yearly fuel cost.',
-    h1: 'Diesel prices by city',
-    intro: `Diesel was ${K.cpl(tor.latest.value, 'en')} in Toronto at the ${E.day(tor.latest.date)} survey, ${K.cpl(tor.latest.value - torR.latest.value, 'en')} more than regular.`,
+    h1: 'Diesel prices in Canada by city',
+    intro: `Diesel prices in Canada vary by city: ${K.cpl(tor.latest.value, 'en')} in Toronto at the ${E.day(tor.latest.date)} survey, ${K.cpl(tor.latest.value - torR.latest.value, 'en')} more than regular.`,
     resume: `Diesel costs more than regular gasoline in every city this site follows: on average ${K.cpl(avgGap, 'en')} more per litre today, from ${K.cpl(dz(lo), 'en')} in ${K.cityName(lo, 'en')} to ${K.cpl(dz(hi), 'en')} in ${K.cityName(hi, 'en')}. The gap comes from the wholesale market, not from taxes: at the Toronto rack, the last published price was ${K.cpl(rackD?.value ?? 0, 'en')} for diesel against ${K.cpl(rackG?.value ?? 0, 'en')} for gasoline (${E.day(rackD?.date ?? K.TODAY)}). Official diesel figures come from the same sources as gasoline: the weekly Ontario survey, the maximum prices of the Atlantic regulators and the monthly averages of Statistics Canada; the Régie de l'énergie's daily survey covers regular gasoline only. For the same reason, the estimate for tomorrow moves diesel only with rack prices, which Ontario publishes a week late, and on most days it equals the last official figure. Across Canada, Statistics Canada's monthly average for diesel is not used here; each city has its own figure and date.`,
     faqs: [
       { q: 'Why is diesel more expensive than gasoline in Canada in 2026?', a: `Because diesel is priced on its own wholesale market, the market for distillates that also supplies trucking, farming and heating oil. At the last published Toronto rack prices, diesel was ${K.cpl((rackD?.value ?? 0) - (rackG?.value ?? 0), 'en')} above gasoline before any tax. Per-litre taxes on diesel are similar to those on gasoline, and the federal excise is lower, so taxes do not explain the gap.` },
@@ -38,7 +38,7 @@ export default defineGuide({
       { q: 'How much does a diesel pickup cost to run per year?', a: `Natural Resources Canada’s 2026 ratings give a median of ${E.n(pick, 1)} L/100 km for standard diesel pickups, against ${E.n(pickG, 1)} for gasoline ones. Over 20,000 km at Toronto’s diesel price that is about ${K.dollars(K.fillCost(K.litresFor(20000, pick), tor.est.value), 'en', 0)} a year, against ${K.dollars(K.fillCost(K.litresFor(20000, pickG), torR.est.value), 'en', 0)} for a gasoline pickup at the regular price.` },
     ],
     body: (h) => `
-<h2>Diesel, city by city</h2>
+<h2>Diesel prices in Canada, city by city</h2>
 <p>The table ranks the cities by diesel price and shows the gap with regular gasoline on the same basis. Cities that only have a monthly Statistics Canada average show the estimate for tomorrow, labelled as such; the others show their latest official figure, with its date.</p>
 ${table(h)}
 <p>Two things stand out. First, the gap with gasoline is wide everywhere, which points to the wholesale market rather than to any provincial policy. Second, taxes shift the picture only a little: per-litre diesel taxes are higher than gasoline taxes in Quebec, New Brunswick and Newfoundland and Labrador, equal in Ontario, Alberta, Saskatchewan and Manitoba, and the 3-cent ARTM levy of the Montréal region applies to gasoline only.</p>

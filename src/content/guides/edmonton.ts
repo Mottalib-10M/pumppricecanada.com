@@ -28,7 +28,7 @@ export default defineGuide({
     title: 'Gas Prices Edmonton 2026, Wholesale Hub and Diesel Cost',
     description: 'Gas prices in Edmonton in 2026: the Statistics Canada monthly average, today\'s estimate from the local rack price, its rank in the West and the diesel gap.',
     h1: 'Gas prices in Edmonton',
-    intro: `Edmonton regular gasoline is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}, ${posTxt} of the ${WEST.length} western cities with their own official series.`,
+    intro: `Edmonton regular gas is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}, ${posTxt} of the ${WEST.length} western cities with their own official series.`,
     resume: `Edmonton plays two roles on this site. Like every western city, its official open price is the Statistics Canada monthly average, ${c(r.latest.value)} a litre for regular and ${c(d.latest.value)} for diesel in ${mon}. It is also the wholesale reference: the Government of Ontario publishes a daily rack price for Edmonton, and that price is what carries every western monthly average forward to today. For Edmonton itself, the rack change since ${mon} and any dated tax change, such as the suspension of the 13-cent Alberta fuel tax on October 1, 2026, give an estimate of ${c(r.est.value)} for ${E.day(K.TOMORROW)}. Tested on ${r.bt?.n ?? 0} months, this method was off by ${c(r.bt?.mae ?? 0)} on average, where repeating the previous month was off by ${c(r.bt?.maeNaive ?? 0)}. That puts Edmonton ${posTxt} among the ${WEST.length} western cities with a series of their own. While the Alberta tax and the federal excise are not collected, GST is the only tax in the litre: ${E.p(br.taxShare)} of the estimate.`,
     faqs: [
       { q: 'Why does this site use the Edmonton rack price for western cities?', a: 'Edmonton is the refining and pipeline hub of the Prairies, and the Government of Ontario publishes a daily wholesale (rack) price for it under an open licence. This site has found no other open daily price for Western Canada. The estimate for Vancouver, Calgary, Regina or Winnipeg adds the change in that Edmonton price since the last monthly average, so it captures market moves without inventing a local figure.' },
@@ -46,7 +46,7 @@ ${facts(h, ID)}
 ${h.mini('classement', { p: ['c'], d: { z: 'W' }, t: 'Western cities, cheapest first' })}
 <p>The full ${h.a('cheapest', 'Canada ranking')} adds Ontario, Quebec and the Atlantic provinces.</p>
 
-<h2>Edmonton and Calgary</h2>
+<h2>Gas prices in Edmonton and Calgary</h2>
 <p>Both Alberta cities pay identical taxes, and their estimates rely on the same rack price, so the comparison isolates the retail market. At the estimates for ${h.day(K.TOMORROW)}, ${Math.abs(gapCal) < 0.05 ? 'the two cities are level' : `${gapCal > 0 ? 'Calgary' : 'Edmonton'} is ${h.cpl(Math.abs(gapCal))} higher`}.</p>
 ${h.mini('comparer', { p: ['w', 'k'], d: { v: ID, w: 'calgary' }, t: 'Edmonton against Calgary or another city' })}
 <p>The ${h.a('calgary', 'Calgary page')} looks in detail at the Alberta fuel tax relief, which stopped the 13-cent provincial tax on October 1, 2026, and at what the oil-price formula could mean from January 2027.</p>

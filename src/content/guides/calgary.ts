@@ -30,7 +30,7 @@ export default defineGuide({
     title: 'Gas Prices Calgary 2026, Alberta Fuel Tax Relief Estimate',
     description: 'Gas prices in Calgary in 2026: the Statistics Canada monthly average, today\'s estimate without the suspended 13-cent Alberta fuel tax, and the 2027 outlook.',
     h1: 'Gas prices in Calgary and the Alberta tax relief',
-    intro: `With the Alberta fuel tax not collected, regular gasoline in Calgary is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}, against a ${mon} average of ${c(r.latest.value)}.`,
+    intro: `With the Alberta fuel tax not collected, regular gas in Calgary is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}, against a ${mon} average of ${c(r.latest.value)}.`,
     resume: `Calgary's open official gas price is the Statistics Canada monthly average, and the latest month published is ${mon}: ${c(r.latest.value)} a litre for regular, ${c(pr.latest.value)} for premium and ${c(d.latest.value)} for diesel. ${stale ? `Since then, one thing has changed by law: under Alberta's Fuel Tax Relief Program, the 13-cent provincial fuel tax is not collected from October 1, 2026 to at least December 31, 2026. With GST, that removes ${c(relief)} from a litre.` : `That month already reflects Alberta's Fuel Tax Relief Program, under which the 13-cent provincial fuel tax is not collected from October 1, 2026 to at least December 31, 2026.`} The page also moves the monthly figure with the Edmonton wholesale price, and the result for ${E.day(K.TOMORROW)} is ${c(r.est.value)} for regular. Over ${r.bt?.n ?? 0} past months, the method missed the next Statistics Canada figure by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} for repeating the last month. With the Alberta tax and the federal excise both at zero for now, the only tax left in a Calgary litre is the 5% GST, ${E.p(br.taxShare)} of the estimated price.`,
     faqs: [
       { q: 'Is the Alberta fuel tax still suspended in Calgary?', a: 'Yes, for now. Under the Fuel Tax Relief Program, the 13-cent tax is not collected from October 1 to at least December 31, 2026. From January 1, 2027 at the earliest, the rate will depend on the price of WTI oil: 0, 4.5, 9 or 13 cents, and it can rise by no more than 9 cents in one quarter. The page dates each step as the province confirms it.' },
@@ -54,7 +54,7 @@ ${taxTable(h, ID)}
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'AB' }, t: 'The excise return for an Alberta driver' })}
 <p>If Alberta restores its full 13 cents at some point, the combined effect with the full excise would be ${h.cpl((13 + K.exciseAt(K.EXCISE, '2027-04-01', 'regular')) * (1 + gst), 2)} per litre with GST, all else equal. Whether and when that happens depends on the oil price and the province's quarterly decisions.</p>
 
-<h2>Calgary over the last thirteen months</h2>
+<h2>Calgary gas prices over the last thirteen months</h2>
 <p>The Statistics Canada series is published under the Open Government Licence and appears in full below. ${hi && lo ? `Over the period, the highest monthly average was ${h.cpl(hi[1])} in ${K.month(hi[0], 'en')} and the lowest ${h.cpl(lo[1])} in ${K.month(lo[0], 'en')}.` : ''}</p>
 ${histTable(h, ID)}
 <p>For the latest tomorrow figures of every city, see the ${h.a('tomorrow', 'tomorrow page')}; for a side-by-side with the capital, the ${h.a('edmonton', 'Edmonton page')}.</p>

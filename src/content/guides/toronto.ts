@@ -19,7 +19,7 @@ export default defineGuide({
     title: 'Gas Prices Toronto Today and Tomorrow, Fill-Up Cost 2026',
     description: 'Gas prices in Toronto in 2026: the latest Ontario survey, an estimate for tomorrow with its measured error, what a fill-up costs and how much of a litre is tax.',
     h1: 'Gas prices in Toronto today and tomorrow',
-    intro: `Regular gasoline averaged ${c(r.latest.value)} in Toronto at the ${E.day(r.latest.date)} survey; the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
+    intro: `Regular gas averaged ${c(r.latest.value)} in Toronto at the ${E.day(r.latest.date)} survey; tomorrow, ${E.day(K.TOMORROW)}, the estimate is ${c(r.est.value)}, and the calculator gives your fill-up cost.`,
     resume: `Toronto's official pump price comes from the Government of Ontario, which surveys self-serve stations every Monday and publishes one average for Toronto West and one for Toronto East; this page uses the mean of the two. The latest survey, dated ${E.day(r.latest.date)}, puts regular gasoline at ${c(r.latest.value)} and diesel at ${c(d.latest.value)}, taxes included. Between two Monday surveys the price moves with the wholesale market, so the page carries the figure forward with the daily survey of the Régie de l'énergie du Québec, which follows the same New York Harbor market and is published every morning. For ${E.day(K.TOMORROW)} that gives ${c(r.est.value)}. Replayed over ${r.bt?.n ?? 0} past weeks, this method missed the next Monday survey by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} for simply repeating the last price. Taxes take ${E.p(br.taxShare)} of a litre: Ontario's 9-cent gasoline tax and the 13% HST, the federal excise tax being suspended since April 20, 2026.`,
     faqs: [
       { q: 'Why does Toronto have two official gas price averages?', a: 'The Government of Ontario reports the city as two markets in its weekly survey, Toronto West and Toronto East, each with its own regular, premium and diesel average. Neither is the whole city on its own, so this page takes the mean of the two on every survey date where both are published, and shows that blended figure as the Toronto price.' },
@@ -46,7 +46,7 @@ ${taxTable(h, ID)}
 <p>The Ontario series is published under the Open Government Licence, so its recent surveys can be shown in full. They give a sense of how far the price travels in a quarter.</p>
 ${histTable(h, ID)}
 
-<h2>What a fill-up costs</h2>
+<h2>What a fill-up costs at Toronto gas prices</h2>
 <p>A compact car with a 45-litre tank costs ${h.usd(K.fillCost(45, r.latest.value))} to fill at the last survey price, a small SUV with 60 litres ${h.usd(K.fillCost(60, r.latest.value))}. A one-cent move changes those fill-ups by 45 and 60 cents. If you are deciding between filling up today or tomorrow, the gap between the survey and the estimate on a 55-litre fill-up is ${h.usd(Math.abs(r.est.value - r.latest.value) * 0.55)}.</p>
 ${h.mini('plein', { p: ['p', 'r'], d: { p: Math.round(r.latest.value * 10) / 10 }, t: 'Your fill-up at the Toronto price' })}
 <p>Commuters who drive from ${h.a('oshawa', 'Durham Region')} or ${h.a('brampton', 'Peel')} into the city can compare the two regional averages with the ${h.a('cheapest', 'city ranking')}.</p>

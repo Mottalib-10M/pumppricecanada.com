@@ -23,7 +23,7 @@ export default defineGuide({
     title: 'Gas Prices Mississauga 2026: Toronto West Survey, Tomorrow',
     description: 'Gas prices in Mississauga for 2026: the Toronto West average the province publishes, tomorrow’s estimate, a compact car fill-up cost and the tax per litre.',
     h1: 'Gas prices in Mississauga: the Toronto West figure',
-    intro: `Mississauga drivers paid ${c(r.latest.value)} on average for regular at the ${E.day(r.latest.date)} Toronto West survey, and the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
+    intro: `Mississauga drivers paid ${c(r.latest.value)} on average for regular gas at the ${E.day(r.latest.date)} Toronto West survey, and the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
     resume: `Mississauga has no official gas price of its own: the Government of Ontario's weekly survey of self-serve stations folds the city into ${MKT}, the western half of the Toronto market, so every figure on this page is the ${MKT} average. At the ${K.when(r, 'en')}, regular gasoline there cost ${c(r.latest.value)}, premium ${c(pr.latest.value)} and diesel ${c(d.latest.value)}, taxes included. Because the province only surveys on Mondays, the site carries that number forward with the wholesale movement visible since then in the daily Montreal survey of the Régie de l'énergie du Québec, sales tax added, which gives ${c(r.est.value)} for ${E.day(K.TOMORROW)}. Replayed over ${r.bt?.n ?? 0} past weeks of ${MKT}, that projection was off by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} when the last survey is simply repeated. Tax makes up ${E.p(br.taxShare)} of the litre: Ontario's 9-cent gasoline tax and 13% HST, while the federal excise tax stays suspended since April 20, 2026.`,
     faqs: [
       { q: 'Why does the Mississauga gas price match Toronto West exactly?', a: 'The Ontario government does not publish a Mississauga average. Its weekly survey splits Greater Toronto into a western and an eastern market, and Mississauga belongs to the western one. Showing that regional figure, and saying so, is more honest than inventing a city number. A station near your home can still sit a few cents above or below it.' },
@@ -31,7 +31,7 @@ export default defineGuide({
       { q: 'Is gas in Mississauga cheaper than in central Toronto?', a: `The Toronto page blends the West and East averages, while Mississauga uses West alone. At the latest survey the blend was ${c(tor)} and ${MKT} was ${c(r.latest.value)}, a gap of ${K.cents(r.latest.value - tor, 'en')}. Real stations on either side of the city limit vary more than that, so the regional gap is a rough guide only.` },
     ],
     body: (h) => `
-<h2>Toronto West stands in for Mississauga</h2>
+<h2>Toronto West stands in for Mississauga gas prices</h2>
 <p>The provincial survey is a Monday snapshot of self-serve prices across a handful of Ontario markets. Mississauga is not one of them by name; it falls inside ${MKT}, and so do its neighbours in Peel. The table below therefore describes the western part of the Greater Toronto Area as a whole, with each figure dated and attributed.</p>
 ${facts(h, ID)}
 <p>At this survey premium sat ${h.cpl(pr.latest.value - r.latest.value)} above regular and diesel ${h.cpl(d.latest.value - r.latest.value)} above it. Those spreads come from the refined products markets, not from tax: Ontario charges the same 9 cents a litre on both gasoline grades.</p>

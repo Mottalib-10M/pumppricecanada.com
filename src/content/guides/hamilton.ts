@@ -28,7 +28,7 @@ export default defineGuide({
     title: 'Gas Prices Hamilton 2026: Southern Ontario Average, Niagara',
     description: 'Gas prices in Hamilton in 2026: the southern Ontario average the province publishes, how it compares with St. Catharines and Niagara, and tomorrow’s estimate.',
     h1: 'Gas prices in Hamilton and the southern Ontario average',
-    intro: `For Hamilton the reference is ${MKT}, which put regular at ${c(r.latest.value)} on ${E.day(r.latest.date)}; the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
+    intro: `For Hamilton gas prices the reference is ${MKT}, which put regular at ${c(r.latest.value)} on ${E.day(r.latest.date)}; the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
     resume: `Hamilton is not one of the markets in the Government of Ontario's weekly fuel price survey, so there is no official Hamilton average to quote. The closest published figure is ${MKT}, a single number that the province computes across the southern part of Ontario every Monday, and this page uses it. At the ${K.when(r, 'en')}, it was ${c(r.latest.value)} for regular, ${c(pr.latest.value)} for premium and ${c(d.latest.value)} for diesel, taxes included. The nearest surveyed city, St. Catharines and Niagara, has its own series: on that date ${cheaper}. The estimate for ${E.day(K.TOMORROW)}, ${c(r.est.value)}, adds the wholesale change seen since Monday in the daily Montreal survey; over ${r.bt?.n ?? 0} replayed weeks it was off by ${c(r.bt?.mae ?? 0)} on average, a no-change guess by ${c(r.bt?.maeNaive ?? 0)}. Taxes, 9 cents of Ontario gasoline tax plus 13% HST with the federal excise suspended since April 20, 2026, are ${E.p(br.taxShare)} of the price.`,
     faqs: [
       { q: 'Why does this page use the southern Ontario average for Hamilton?', a: `Because the province publishes nothing narrower for the city. Its weekly survey reports a handful of markets by name and two broad averages, one for the south of the province and one for the north. Hamilton falls in the southern one. Using it, and saying so, avoids presenting a city figure that no public agency produces.` },
@@ -41,7 +41,7 @@ export default defineGuide({
 ${facts(h, ID)}
 <p>Premium was ${h.cpl(pr.latest.value - r.latest.value)} above regular in the survey, diesel ${h.cpl(d.latest.value - r.latest.value)} above. Those gaps are set by the refined products markets; the provincial tax per litre is the same on both grades of gasoline.</p>
 
-<h2>Hamilton against St. Catharines and Niagara</h2>
+<h2>Hamilton gas prices against St. Catharines and Niagara</h2>
 <p>St. Catharines, a short drive along the Queen Elizabeth Way, is the closest market the province surveys by name. Its average can be set beside ${MKT} for each week where both were published.</p>
 ${h.table(['Survey', MKT.charAt(0).toUpperCase() + MKT.slice(1), 'St. Catharines and Niagara', 'Difference'], [...pairs].reverse().map(([dt, a, b]) => [h.day(dt), h.cpl(a), h.cpl(b), h.cents(b - a)]), 'Regular gasoline, Government of Ontario weekly survey, most recent first.', ['l', 'r', 'r', 'r'])}
 <p>In ${h.n(nNiagara)} of those ${h.n(pairs.length)} weeks Niagara came in below the southern average, and the mean difference was ${h.cents(avg)}. Keep in mind what is being compared: one side is a single urban market, the other an average of the whole south of the province, so a gap may say as much about the rest of southern Ontario as about either city. The full Niagara picture is on the ${h.a('st-catharines', 'St. Catharines page')}.</p>

@@ -26,7 +26,7 @@ export default defineGuide({
     title: 'Gas Prices Vancouver 2026, TransLink Tax and Estimate',
     description: 'Gas prices in Vancouver in 2026: the latest Statistics Canada monthly average, an estimate for today, the 27-cent Metro Vancouver fuel tax and diesel.',
     h1: 'Gas prices in Vancouver',
-    intro: `Regular gasoline in Vancouver is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}, from a ${mon} average of ${c(r.latest.value)}.`,
+    intro: `Regular gas in Vancouver is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}, from a ${mon} average of ${c(r.latest.value)}.`,
     resume: `The only official Vancouver gas price that can be reused freely is the monthly average of Statistics Canada, and its latest month is ${mon}: ${c(r.latest.value)} for regular gasoline, ${c(d.latest.value)} for diesel, taxes included. A month-old number is not a price for today, so this page brings it forward. It adds the change in the Edmonton wholesale (rack) price since that month, with GST, and any tax change dated in between; for ${E.day(K.TOMORROW)} that gives ${c(r.est.value)} for regular. Replayed over ${r.bt?.n ?? 0} past months, the same method missed the next Statistics Canada average by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} for repeating the previous month. In Metro Vancouver a litre of gasoline carries ${TL.total.regular} cents of motor fuel tax, ${TL.transit_share} of them for TransLink, and 5% GST: ${E.p(br.taxShare)} of the estimated price. B.C.'s carbon tax ended on April 1, 2025, and the federal excise tax is suspended since April 20, 2026.`,
     faqs: [
       { q: 'Why is the fuel tax per litre so high in Vancouver?', a: 'Metro Vancouver is the region of B.C. where a transit authority takes the largest share of the fuel tax. Of the 27 cents per litre of motor fuel tax charged on gasoline in the TransLink service area, 18.5 cents fund TransLink. Elsewhere in B.C. the provincial rate is 14.5 cents, and in the Victoria area 20 cents. GST at 5% is then charged on top.' },
@@ -50,7 +50,7 @@ ${taxTable(h, ID)}
 ${histTable(h, ID)}
 <p>Diesel follows its own refinery market, so its path in the table can differ widely from that of gasoline. At the estimates for ${h.day(K.TOMORROW)}, diesel costs ${h.cpl(d.est.value - r.est.value)} more than regular in Vancouver; the ${h.a('diesel', 'diesel page')} compares that gap with other cities.</p>
 
-<h2>Vancouver and Calgary</h2>
+<h2>Gas prices in Vancouver and Calgary</h2>
 <p>The gap between the two largest western cities is mostly a tax gap. Calgary pays no Alberta fuel tax while the province's relief program runs, and no transit levy; Vancouver pays ${TL.total.regular} cents. Both estimates use the same Edmonton rack price, so the comparison below is consistent: ${h.cpl(Math.abs(r.est.value - cal.est.value))} per litre separates the two estimates today.</p>
 ${h.mini('comparer', { p: ['w', 'k'], d: { v: ID, w: 'calgary' }, t: 'Vancouver against another city' })}
 <p>For the outlook beyond tomorrow, including the dated tax changes of 2027, see the ${h.a('forecast', 'forecast page')}. Drivers in the suburbs will find the same figures on the ${h.a('surrey', 'Surrey page')}, which shares the Vancouver average.</p>

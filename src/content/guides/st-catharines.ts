@@ -30,7 +30,7 @@ export default defineGuide({
     title: 'Gas Prices St. Catharines and Niagara 2026: Weekly Survey',
     description: 'Gas prices in St. Catharines and Niagara in 2026: the weekly Ontario survey, how much the price moves each week, tomorrow’s estimate and the tax share.',
     h1: 'Gas prices in St. Catharines and Niagara',
-    intro: `In St. Catharines and Niagara, regular averaged ${c(r.latest.value)} at the ${E.day(r.latest.date)} survey, and the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
+    intro: `In St. Catharines and Niagara, regular gas averaged ${c(r.latest.value)} at the ${E.day(r.latest.date)} survey, and the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
     resume: `The Government of Ontario surveys St. Catharines as its own market every Monday, and the figure stands for the Niagara area around it. At the ${K.when(r, 'en')}, regular gasoline there averaged ${c(r.latest.value)}, premium ${c(pr.latest.value)} and diesel ${c(d.latest.value)}, taxes included, which made Niagara ${rankTxt} of the ${onList.length} Ontario cities on this site with a surveyed market of their own. Over the last ${HV.length} surveys, the regular price moved by ${c(meanAbs)} a week on average. For ${E.day(K.TOMORROW)} the site estimates ${c(r.est.value)}, adding to Monday's price the pre-tax change in the Régie de l'énergie du Québec's daily Montreal survey with HST; replayed on ${r.bt?.n ?? 0} weeks, the method missed by ${c(r.bt?.mae ?? 0)} on average, a no-change guess by ${c(r.bt?.maeNaive ?? 0)}. Taxes, Ontario's 9 cents a litre plus 13% HST with the federal excise suspended since April 20, 2026, are ${E.p(br.taxShare)} of the price.`,
     faqs: [
       { q: 'Does the St. Catharines gas price cover Niagara Falls and Welland?', a: `The provincial survey labels the market St. Catharines, and it is the only market the province publishes for the Niagara Peninsula, so this page uses it for the area. It is an average, not a reading for each town: stations in Niagara Falls, Welland or Grimsby can post prices a few cents away from it in a given week.` },
@@ -38,7 +38,7 @@ export default defineGuide({
       { q: 'Is gas in St. Catharines cheaper than the southern Ontario average?', a: `At the latest survey St. Catharines and Niagara was at ${c(r.latest.value)} and ${SOUTH} at ${c(south)}, a difference of ${K.cents(r.latest.value - south, 'en')}. The southern figure blends many towns, so the gap varies; the Hamilton page sets the two series side by side week by week.` },
     ],
     body: (h) => `
-<h2>One market for the Niagara Peninsula</h2>
+<h2>St. Catharines gas prices: one market for the Niagara Peninsula</h2>
 <p>The province's weekly survey has a market called St. Catharines, and it is the only one of its markets on the Niagara Peninsula. This page uses it for the whole area and labels it ${NAME}. Each figure in the table is dated and attributed; the estimate column is what the method expects for ${h.day(K.TOMORROW)}.</p>
 ${facts(h, ID)}
 

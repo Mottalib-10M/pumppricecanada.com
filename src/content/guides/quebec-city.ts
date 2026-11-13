@@ -29,8 +29,8 @@ export default defineGuide({
     nav: 'Quebec City', card: 'Capitale-Nationale daily figure, no ARTM levy, diesel',
     title: 'Gas Prices Quebec City Today, Diesel and Excise 2026',
     description: 'Gas prices in Quebec City in 2026: the daily Capitale-Nationale average, why there is no ARTM levy, diesel and premium, and the excise returning in 2027.',
-    h1: 'Gas prices in Quebec City',
-    intro: `In the Capitale-Nationale region, which includes Quebec City, regular gasoline averaged ${c(r.latest.value)} on ${E.day(r.latest.date)}.`,
+    h1: 'Gas prices in Quebec City today',
+    intro: `In the Capitale-Nationale region, which includes Quebec City, regular gas averaged ${c(r.latest.value)} on ${E.day(r.latest.date)}; diesel and the federal excise follow below.`,
     resume: `The official daily price for Quebec City is the Régie de l'énergie du Québec average for the Capitale-Nationale administrative region. On ${E.day(r.latest.date)} it stood at ${c(r.latest.value)} for regular gasoline, taxes included, ${Math.abs(gap) < 0.05 ? 'level with Montreal' : `${c(Math.abs(gap))} ${gap < 0 ? 'below' : 'above'} the Montreal figure of the same morning`}. ${flat ? `With no wholesale data newer than the survey, the estimate for ${E.day(K.TOMORROW)} stays at ${c(r.est.value)}` : `The estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}`}; tested on ${r.bt?.n ?? 0} past days, that estimate missed the next figure by ${c(r.bt?.mae ?? 0)} on average. Quebec City pays the provincial fuel tax at its base rate of 19.2 cents, without the 3-cent ARTM levy charged around Montreal, plus GST and QST: in all ${E.p(brE.taxShare)} of a litre. Diesel and premium come from the Statistics Canada monthly average for Quebec, ${c(d.latest.value)} and ${c(pr.latest.value)} in ${K.month(d.latest.date, 'en')}.`,
     faqs: [
       { q: 'Which area does the Quebec City gas price cover?', a: 'The figure is the daily average of the Régie de l\'énergie for the Capitale-Nationale, one of Quebec\'s administrative regions. It covers Quebec City and the surrounding municipalities of the region. The Régie does not split it further, so a station in the old city and one in a suburb both feed the same average.' },
@@ -48,7 +48,7 @@ ${facts(h, ID)}
 ${taxTable(h, ID)}
 <p>This morning the capital's average is ${Math.abs(gap) < 0.05 ? 'level with Montreal\'s' : `${h.cpl(Math.abs(gap))} ${gap < 0 ? 'below' : 'above'} Montreal's`}. A gap smaller or larger than the levy means that station prices, not taxes, explain the rest. The ${h.a('montreal', 'Montreal page')} gives the same breakdown with the ARTM line.</p>
 
-<h2>Diesel and premium in Quebec City</h2>
+<h2>Diesel and premium gas prices in Quebec City</h2>
 <p>Both grades rely on a monthly number, so their estimate column does more than the one for regular: it adds the change in the wholesale price since that month. At the estimates for ${h.day(K.TOMORROW)}, diesel is ${h.cpl(Math.abs(dsl))} ${dsl >= 0 ? 'more' : 'less'} expensive than regular in the capital. Diesel is priced on its own refinery market, and it pays a Quebec fuel tax of 20.2 cents, one cent above gasoline, with no ARTM levy anywhere. The ${h.a('diesel', 'diesel page')} compares that spread across Canada.</p>
 <p>Premium is ${h.cpl(pr.latest.value - (mo ? mo.value : r.latest.value))} above regular in the ${K.month(pr.latest.date, 'en')} Statistics Canada averages for Quebec. Taxes are the same per litre for the two gasoline grades, so that spread is entirely in the product.</p>
 
@@ -63,8 +63,8 @@ ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'QC' }, t: 'The excise return for a
     nav: 'Québec', card: 'Chiffre quotidien de la Capitale-Nationale, sans taxe ARTM, diesel',
     title: 'Prix essence Québec aujourd\'hui, Capitale-Nationale 2026',
     description: 'Prix de l\'essence à Québec (ville) en 2026 : moyenne quotidienne de la Capitale-Nationale, absence de taxe ARTM, diesel, super et retour de l\'accise en 2027.',
-    h1: 'Prix de l\'essence à Québec',
-    intro: `Dans la Capitale-Nationale, qui comprend la ville de Québec, l'essence ordinaire s'affichait en moyenne à ${cf(r.latest.value)} le ${F.day(r.latest.date)}.`,
+    h1: 'Prix de l\'essence à Québec aujourd\'hui',
+    intro: `Dans la Capitale-Nationale, qui comprend la ville de Québec, le prix de l'essence ordinaire s'affichait en moyenne à ${cf(r.latest.value)} le ${F.day(r.latest.date)}.`,
     resume: `Le prix officiel quotidien retenu pour la ville de Québec est la moyenne de la Régie de l'énergie du Québec pour la région administrative de la Capitale-Nationale. Le ${F.day(r.latest.date)}, elle s'établissait à ${cf(r.latest.value)} pour l'ordinaire, taxes comprises, ${Math.abs(gap) < 0.05 ? 'au même niveau que Montréal' : `${cf(Math.abs(gap))} ${gap < 0 ? 'sous' : 'au-dessus du'} chiffre montréalais du même matin`}. ${flat ? `Aucun prix de gros n'étant plus récent que le relevé, l'estimation du ${F.day(K.TOMORROW)} reste à ${cf(r.est.value)}` : `L'estimation du ${F.day(K.TOMORROW)} est de ${cf(r.est.value)}`} ; vérifiée sur ${r.bt?.n ?? 0} jours passés, elle a manqué le chiffre suivant de ${cf(r.bt?.mae ?? 0)} en moyenne. Québec paie la taxe provinciale sur les carburants à son taux de base de 19,2 ¢, sans les 3 ¢ de l'ARTM prélevés dans la région de Montréal, puis la TPS et la TVQ : au total, ${F.p(brF.taxShare)} du litre. Le diesel et la super viennent de la moyenne mensuelle de Statistique Canada pour Québec, ${cf(d.latest.value)} et ${cf(pr.latest.value)} en ${K.month(d.latest.date, 'fr')}.`,
     faqs: [
       { q: 'Quel territoire couvre le prix de l\'essence à Québec ?', a: 'Le chiffre est la moyenne quotidienne de la Régie de l\'énergie pour la Capitale-Nationale, l\'une des régions administratives du Québec. Il couvre la ville de Québec et les municipalités voisines de la région. La Régie ne le découpe pas davantage : une station du Vieux-Québec et une station de banlieue alimentent la même moyenne.' },
@@ -72,7 +72,7 @@ ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'QC' }, t: 'The excise return for a
       { q: 'Combien coûtera le diesel à Québec au retour de l\'accise ?', a: `Le diesel supporte une taxe d'accise fédérale de 4 ¢ le litre lorsqu'elle est perçue, contre 10 ¢ pour l'essence. Selon le calendrier de l'avant-projet de Finances Canada (projet de loi, non adopté), la moitié revient le 1er février 2027 et la totalité le 1er avril 2027. Avec la TPS et la TVQ calculées par-dessus, le retour complet ajoute ${K.cpl(excD, 'fr', 2)} au litre de diesel à Québec, si rien d'autre ne bouge.` },
     ],
     body: (h) => `
-<h2>La Capitale-Nationale dans le relevé de la Régie</h2>
+<h2>Québec et la Capitale-Nationale : le prix de l'essence dans le relevé de la Régie</h2>
 <p>La Régie de l'énergie ne publie pas à proprement parler de moyennes par ville : elle en publie une par région administrative. Pour la ville de Québec, la région qui compte est la Capitale-Nationale, et c'est son chiffre quotidien que cette page appelle le prix de Québec. La super et le diesel ne figurent pas dans ce relevé ; ils viennent de Statistique Canada, qui publie une moyenne mensuelle pour Québec.</p>
 ${facts(h, ID)}
 <p>${mo ? `Les deux sources se recoupent. La moyenne mensuelle de Statistique Canada pour l'ordinaire à Québec était de ${h.cpl(mo.value)} en ${K.month(mo.date, 'fr')} ; la Régie donne un chiffre pour chaque jour, ce qui explique qu'il puisse se situer au-dessus ou au-dessous du chiffre mensuel. ` : ''}L'archive de la Régie n'est pas sous licence ouverte : les chiffres quotidiens plus anciens restent sur le ${h.src('regie', 'site de la Régie')}.</p>

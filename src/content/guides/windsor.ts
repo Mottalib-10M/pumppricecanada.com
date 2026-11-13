@@ -26,7 +26,7 @@ export default defineGuide({
     title: 'Gas Prices Windsor 2026: Ontario Survey and Border Facts',
     description: 'Gas prices in Windsor, Ontario in 2026: the weekly provincial survey, tomorrow’s estimate, what to check before filling up in Detroit and the tax in each litre.',
     h1: 'Gas prices in Windsor, across from Detroit',
-    intro: `Windsor's regular gasoline averaged ${c(r.latest.value)} at the ${E.day(r.latest.date)} Ontario survey; the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
+    intro: `Windsor's regular gas averaged ${c(r.latest.value)} at the ${E.day(r.latest.date)} Ontario survey; the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}.`,
     resume: `Windsor has its own line in the Government of Ontario's Monday survey of self-serve stations, so its gas price is measured directly rather than borrowed from a regional average. The ${K.when(r, 'en')} found regular gasoline at ${c(r.latest.value)} and diesel at ${c(d.latest.value)}, taxes included. To bridge the days between surveys, the site adds the pre-tax change in the Régie de l'énergie du Québec's daily Montreal price, with HST, which puts regular at ${c(r.est.value)} for ${E.day(K.TOMORROW)}. Over ${r.bt?.n ?? 0} replayed weeks that estimate erred by ${c(r.bt?.mae ?? 0)} on average, compared with ${c(r.bt?.maeNaive ?? 0)} for assuming no change. Of the pump price, ${E.p(br.taxShare)} is tax: ${E.n(fixedTax, 0)} cents of Ontario gasoline tax and ${c(br.salesTax)} of 13% HST, the federal excise having been suspended since April 20, 2026. Prices on the Detroit side are quoted in US dollars per US gallon and are not covered by any Canadian survey, so this page does not publish them.`,
     faqs: [
       { q: 'Is it cheaper to buy gas in Detroit than in Windsor?', a: 'This site does not publish US prices, so it cannot answer with a figure. To compare yourself, convert the Detroit price from US dollars per gallon to Canadian cents per litre using the day’s exchange rate and the litres in a US gallon, then count the bridge or tunnel toll and the time at the border. A few cents per litre of apparent saving can disappear once all of that is counted.' },
@@ -44,7 +44,7 @@ ${facts(h, ID)}
 <p>On the Canadian side, the tax content of a Windsor litre is known precisely. Ontario's gasoline tax is ${h.n(fixedTax, 0)} cents a litre and HST at 13% adds ${h.cpl(br.salesTax)} at the survey price; the 10-cent federal excise is suspended until at least January 31, 2027 (proposed, not enacted).</p>
 ${taxTable(h, ID)}
 
-<h2>Windsor against London</h2>
+<h2>Windsor gas prices against London</h2>
 <p>For drivers heading east on Highway 401, ${h.a('london', 'London')} is the next surveyed market. On the latest survey it was at ${h.cpl(lon)}, so ${h.cents(lon - r.latest.value)} relative to Windsor.</p>
 ${h.mini('comparer', { p: ['w', 'c'], d: { v: ID, w: 'london' }, t: 'Windsor against London' })}
 
