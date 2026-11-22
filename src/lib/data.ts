@@ -43,7 +43,7 @@ export const provName = (p: string, l: Lang) => PR[p].name[l];
 export const salesRate = (p: string) => PR[p].sales.rate;
 export const salesLabel = (p: string, l: Lang) => PR[p].sales.label[l];
 export const fuelSteps = (p: string): ExciseStep[] => PR[p].fuel.steps as ExciseStep[];
-/** Calendrier complet, étapes proposées comprises (projet de loi, non adopté) : pour les calculs explicitement étiquetés « proposé ». */
+/** Calendrier complet de l'accise, étapes de 2027 comprises (Loi sur l'abordabilité des carburants au Canada, L.C. 2026, ch. 25). */
 export const EXCISE = P.taxes.excise.steps as ExciseStep[];
 /** Étapes en vigueur ou adoptées seulement : taxes du jour et estimation. */
 export const EXCISE_LAW = (P.taxes.excise.steps as Array<ExciseStep & { draft?: boolean }>).filter((s) => !s.draft);

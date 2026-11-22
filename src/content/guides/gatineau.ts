@@ -47,7 +47,7 @@ ${facts(h, ID)}
 <h2>Gas prices in Gatineau and the 6-cent border tax cut</h2>
 <p>Quebec's fuel tax is 19.2 cents a litre of gasoline in most of the province. Near its borders, the province lowers it so that stations are not left at a disadvantage against their neighbours: within 15 km of Ontario, the reduction is 6 cents. The page applies that band to Gatineau, which leaves ${h.cpl(qcRate)} of Quebec tax in each litre. With GST and QST at a combined 14.975% charged on top, the reduction is worth ${h.cpl(saved, 2)} at the pump.</p>
 ${taxTable(h, ID)}
-<p>The reduction depends on the distance between a station and the border, so a station well inside the province can be taxed differently from one close to the river. The federal excise tax, suspended since April 20, 2026, is the same on both banks; the ${h.a('taxes', 'tax page')} has its planned return in 2027.</p>
+<p>The reduction depends on the distance between a station and the border, so a station well inside the province can be taxed differently from one close to the river. The federal excise tax, suspended since April 20, 2026, is the same on both banks; the ${h.a('taxes', 'tax page')} dates its return in 2027.</p>
 
 <h2>Gatineau and Ottawa, litre for litre</h2>
 <p>At their latest official figures, tax takes ${h.cpl(tax(brE))} of a Gatineau litre and ${h.cpl(tax(ottB))} of an Ottawa litre. Ontario charges 9 cents of gasoline tax and 13% HST; Quebec, even after the border reduction, charges more per litre and a higher sales tax. Whatever is left between the two pump prices after that is the product and the retail margin.</p>

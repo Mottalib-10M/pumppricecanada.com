@@ -51,7 +51,7 @@ ${h.mini('budget', { p: ['u', 'k'], d: { v: ID, u: 'suv-small', k: KM }, t: 'You
 <p>Drivers who work downtown sometimes wonder whether to buy fuel at either end of the trip. The provincial averages do not show a large gap: ${MKT} differs from the blended Toronto figure by ${h.cents(r.latest.value - tor)} at the latest survey. The ${h.a('toronto', 'Toronto page')} explains how that blend is made.</p>
 
 <h2>What the province and Ottawa take</h2>
-<p>Ontario's gasoline tax is 9 cents a litre, a rate made permanent on July 1, 2025, and HST at 13% is added on top of the full price. The federal excise tax is suspended for now; its planned return in 2027 is covered on the ${h.a('forecast', 'price outlook page')}.</p>
+<p>Ontario's gasoline tax is 9 cents a litre, a rate made permanent on July 1, 2025, and HST at 13% is added on top of the full price. The federal excise tax is suspended for now; its return in 2027 is covered on the ${h.a('forecast', 'price outlook page')}.</p>
 ${taxTable(h, ID, 'regular', r.est.value)}
 
 <h2>The last Monday surveys</h2>

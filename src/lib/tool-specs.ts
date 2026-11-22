@@ -203,15 +203,15 @@ export const SPECS: Record<string, (l: Lang, arg?: Args) => ToolSpec> = {
       const f = s(v, 'c') as Fuel, rate = salesRate(s(v, 'pr')), m = n(v, 'm');
       const half = exciseAt(EXCISE, '2027-02-01', f) * (1 + rate), full = exciseAt(EXCISE, '2027-04-01', f) * (1 + rate);
       return {
-        label: T(l, 'De plus par mois à partir du 1er avril 2027 (projet de loi, non adopté)', 'Extra a month from April 1, 2027 (proposed, not enacted)'), value: dollars(full * m / 100, l),
-        sub: T(l, `${cents(full, l, 2)} par litre, taxe de vente comprise : calendrier d’un projet de loi, non adopté.`, `${cents(full, l, 2)} a litre, with sales tax: schedule of a bill that is proposed, not enacted.`),
+        label: T(l, 'De plus par mois à partir du 1er avril 2027', 'Extra a month from April 1, 2027'), value: dollars(full * m / 100, l),
+        sub: T(l, `${cents(full, l, 2)} par litre, taxe de vente comprise, selon la Loi sur l’abordabilité des carburants au Canada.`, `${cents(full, l, 2)} a litre, with sales tax, under the Canadian Fuel Affordability Act.`),
         rows: [
-          [T(l, 'Jusqu’au 31 janvier 2027 (projet de loi, non adopté)', 'Until January 31, 2027 (proposed, not enacted)'), dollars(0, l)],
-          [T(l, 'Février et mars 2027, demi-taux (projet de loi, non adopté), par mois', 'February and March 2027, half rate (proposed, not enacted), a month'), dollars(half * m / 100, l)],
-          [T(l, 'À partir d’avril 2027 (projet de loi, non adopté), par an', 'From April 2027 (proposed, not enacted), a year'), dollars(full * m * 12 / 100, l, 0)],
-          [T(l, 'Taux d’accise au 1er avril 2027 (projet de loi, non adopté)', 'Excise rate on April 1, 2027 (proposed, not enacted)'), cpl(exciseAt(EXCISE, '2027-04-01', f), l, 0)],
+          [T(l, 'Jusqu’au 31 janvier 2027', 'Until January 31, 2027'), dollars(0, l)],
+          [T(l, 'Février et mars 2027, demi-taux, par mois', 'February and March 2027, half rate, a month'), dollars(half * m / 100, l)],
+          [T(l, 'À partir d’avril 2027, par an', 'From April 2027, a year'), dollars(full * m * 12 / 100, l, 0)],
+          [T(l, 'Taux d’accise au 1er avril 2027', 'Excise rate on April 1, 2027'), cpl(exciseAt(EXCISE, '2027-04-01', f), l, 0)],
         ],
-        note: T(l, 'Calendrier : Finances Canada (suspension du 20 avril 2026 ; avant-projet de loi de septembre 2026 (projet de loi, non adopté) : prolongation au 31 janvier 2027, demi-taux en février et mars, plein taux le 1er avril 2027).', 'Schedule: Finance Canada (suspension of April 20, 2026; September 2026 draft legislation (proposed, not enacted): extension to January 31, 2027, half rate in February and March, full rate on April 1, 2027).'),
+        note: T(l, 'Calendrier : Finances Canada (suspension du 20 avril 2026) et Loi sur l’abordabilité des carburants au Canada, sanctionnée le 29 octobre 2026 (prolongation au 31 janvier 2027, demi-taux en février et mars, plein taux le 1er avril 2027).', 'Schedule: Finance Canada (suspension of April 20, 2026) and the Canadian Fuel Affordability Act, Royal Assent October 29, 2026 (extension to January 31, 2027, half rate in February and March, full rate on April 1, 2027).'),
       };
     },
   }),

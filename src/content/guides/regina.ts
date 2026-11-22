@@ -24,12 +24,12 @@ export default defineGuide({
   sources: [...sourcesOf(ID), 'nrcan-weekly'],
   en: {
     slug: 'gas-prices-regina',
-    nav: 'Regina', card: 'Saskatchewan 15-cent tax, pickup budget, proposed excise return',
+    nav: 'Regina', card: 'Saskatchewan 15-cent tax, pickup budget, 2027 excise return',
     title: 'Gas Prices Regina 2026, Saskatchewan Tax and Truck Budget',
     description: 'Gas prices in Regina in 2026: the Statistics Canada monthly average, today\'s estimate, the 15-cent Saskatchewan fuel tax and a year of pickup driving.',
     h1: 'Gas prices in Regina',
     intro: `From a ${mon} average of ${c(r.latest.value)}, regular gas in Regina is estimated at ${c(r.est.value)} for ${E.day(K.TOMORROW)}.`,
-    resume: `Statistics Canada publishes one open official gas price for Regina, a monthly average, and its most recent month is ${mon}, at ${c(r.latest.value)} a litre for regular and ${c(d.latest.value)} for diesel. To give a figure for today, the page adds the change in the Edmonton wholesale (rack) price since that month, with 5% GST: the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}. On ${r.bt?.n ?? 0} months of history, that estimate was off by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} for assuming no change. Saskatchewan levies a fuel tax of ${K.num(sk, 'en')} cents a litre on gasoline and diesel and does not charge its provincial sales tax on road fuel, so a Regina litre carries that tax and GST: ${E.p(br.taxShare)} of the estimated price. The federal excise tax is suspended since April 20, 2026; when the draft schedule restores it in full on April 1, 2027, it will add ${c(exFull)} a litre with GST.`,
+    resume: `Statistics Canada publishes one open official gas price for Regina, a monthly average, and its most recent month is ${mon}, at ${c(r.latest.value)} a litre for regular and ${c(d.latest.value)} for diesel. To give a figure for today, the page adds the change in the Edmonton wholesale (rack) price since that month, with 5% GST: the estimate for ${E.day(K.TOMORROW)} is ${c(r.est.value)}. On ${r.bt?.n ?? 0} months of history, that estimate was off by ${c(r.bt?.mae ?? 0)} on average, against ${c(r.bt?.maeNaive ?? 0)} for assuming no change. Saskatchewan levies a fuel tax of ${K.num(sk, 'en')} cents a litre on gasoline and diesel and does not charge its provincial sales tax on road fuel, so a Regina litre carries that tax and GST: ${E.p(br.taxShare)} of the estimated price. The federal excise tax has been suspended since April 20, 2026; when the Canadian Fuel Affordability Act restores it in full on April 1, 2027, it will add ${c(exFull)} a litre with GST.`,
     faqs: [
       { q: 'How much is the gas tax in Regina?', a: 'Saskatchewan charges a fuel tax of 15 cents per litre on gasoline and on diesel, the same across the province, with no city or transit levy in Regina. The provincial sales tax does not apply to road fuel, but the 5% GST does, on the price that already includes the 15 cents. The federal excise is suspended since April 20, 2026.' },
       { q: 'What does a year of driving a pickup cost in Regina?', a: 'The budget calculator on this page answers with your own distance. It uses the median combined rating of 2026 full-size pickups from Natural Resources Canada and prices the litres at the Regina estimate for tomorrow. Choosing a smaller class or entering your own rating from the EnerGuide label changes the result immediately.' },
@@ -52,9 +52,9 @@ ${h.mini('budget', { p: ['u', 'k'], d: { v: ID, u: 'pickup-standard', k: km }, t
 <p>The ratings come from Natural Resources Canada's fuel consumption guide for 2026 models. Towing, winter driving and gravel roads push real consumption above them.</p>
 
 <h2>When the excise returns</h2>
-<p>Finance Canada's draft legislation (proposed, not enacted) keeps the federal excise at zero until January 31, 2027, then charges half of it in February and March and all 10 cents from April 1, 2027. For the pickup above, the full rate with GST would add ${h.usd(lit * exFull / 100, 0)} over a year. The calculator measures it for your own monthly litres.</p>
+<p>The Canadian Fuel Affordability Act, which received Royal Assent on October 29, 2026, keeps the federal excise at zero until January 31, 2027, then charges half of it in February and March and all 10 cents from April 1, 2027. For the pickup above, the full rate with GST adds ${h.usd(lit * exFull / 100, 0)} over a year. The calculator measures it for your own monthly litres.</p>
 ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'SK' }, t: 'The excise return in Saskatchewan' })}
-<p>The draft is not law yet; the ${h.a('forecast', 'forecast page')} follows it.</p>
+<p>The ${h.a('forecast', 'forecast page')} sets it against the other dated tax changes.</p>
 
 <h2>Regina, Winnipeg and the past year</h2>
 <p>At the estimates for ${h.day(K.TOMORROW)}, Regina is ${Math.abs(gapW) < 0.05 ? 'level with' : `${h.cpl(Math.abs(gapW))} ${gapW > 0 ? 'above' : 'below'}`} ${h.a('winnipeg', 'Winnipeg')}, the next capital to the east, and ${h.a('saskatoon', 'Saskatoon')} has its own page. The Statistics Canada series for Regina is published under the Open Government Licence:</p>
