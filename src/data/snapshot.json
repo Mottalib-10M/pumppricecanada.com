@@ -1,23 +1,23 @@
 {
  "_lisezmoi": "Généré par scripts/build-snapshot.ts à chaque build : ne pas modifier à la main.",
- "today": "2026-11-21",
- "tomorrow": "2026-11-22",
+ "today": "2026-11-22",
+ "tomorrow": "2026-11-23",
  "sources": {
   "statcan": {
    "latest": "2026-10",
-   "retrieved_at": "2026-11-21"
+   "retrieved_at": "2026-11-22"
   },
   "ontario": {
    "latest": "2026-11-16",
-   "retrieved_at": "2026-11-21"
+   "retrieved_at": "2026-11-22"
   },
   "regie": {
    "latest": "2026-11-20",
-   "retrieved_at": "2026-11-21"
+   "retrieved_at": "2026-11-22"
   },
   "atlantic": {
    "latest": "2026-11-20",
-   "retrieved_at": "2026-11-21"
+   "retrieved_at": "2026-11-22"
   }
  },
  "signal": {
@@ -86,7 +86,7 @@
      },
      "est": {
       "value": 144.5,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -125,7 +125,7 @@
      },
      "est": {
       "value": 175.2,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -164,7 +164,7 @@
      },
      "est": {
       "value": 236.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -213,7 +213,7 @@
      },
      "est": {
       "value": 144.6,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -246,7 +246,7 @@
      },
      "est": {
       "value": 175.2,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -279,7 +279,7 @@
      },
      "est": {
       "value": 236.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -325,7 +325,7 @@
      },
      "est": {
       "value": 144.6,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -358,7 +358,7 @@
      },
      "est": {
       "value": 175.2,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -391,7 +391,7 @@
      },
      "est": {
       "value": 236.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -437,7 +437,7 @@
      },
      "est": {
       "value": 144.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -470,7 +470,7 @@
      },
      "est": {
       "value": 175.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -503,7 +503,7 @@
      },
      "est": {
       "value": 236,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -549,7 +549,7 @@
      },
      "est": {
       "value": 143,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -582,7 +582,7 @@
      },
      "est": {
       "value": 173.3,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -615,7 +615,7 @@
      },
      "est": {
       "value": 235.7,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -661,7 +661,7 @@
      },
      "est": {
       "value": 143,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -694,7 +694,7 @@
      },
      "est": {
       "value": 173.3,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -727,7 +727,7 @@
      },
      "est": {
       "value": 235.7,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -773,7 +773,7 @@
      },
      "est": {
       "value": 143,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -806,7 +806,7 @@
      },
      "est": {
       "value": 173.3,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -839,7 +839,7 @@
      },
      "est": {
       "value": 235.7,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -885,7 +885,7 @@
      },
      "est": {
       "value": 138.5,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -921,7 +921,7 @@
      },
      "est": {
       "value": 168,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -954,7 +954,7 @@
      },
      "est": {
       "value": 238.8,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1000,7 +1000,7 @@
      },
      "est": {
       "value": 144.9,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1033,7 +1033,7 @@
      },
      "est": {
       "value": 175.5,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1066,7 +1066,7 @@
      },
      "est": {
       "value": 230.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1112,7 +1112,7 @@
      },
      "est": {
       "value": 142.5,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1145,7 +1145,7 @@
      },
      "est": {
       "value": 172.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1178,7 +1178,7 @@
      },
      "est": {
       "value": 229.7,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1224,7 +1224,7 @@
      },
      "est": {
       "value": 141,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1257,7 +1257,7 @@
      },
      "est": {
       "value": 170.7,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -6.1,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1290,7 +1290,7 @@
      },
      "est": {
       "value": 234.2,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -2.8,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1336,7 +1336,7 @@
      },
      "est": {
       "value": 162.6,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1372,7 +1372,7 @@
      },
      "est": {
       "value": 187.9,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -26.2,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1405,7 +1405,7 @@
      },
      "est": {
       "value": 268.2,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -21.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1451,7 +1451,7 @@
      },
      "est": {
       "value": 161.8,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1484,7 +1484,7 @@
      },
      "est": {
       "value": 187.9,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -26.2,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1517,7 +1517,7 @@
      },
      "est": {
       "value": 268.2,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -21.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1563,7 +1563,7 @@
      },
      "est": {
       "value": 165.2,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1599,7 +1599,7 @@
      },
      "est": {
       "value": 185.5,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -26.2,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -1632,7 +1632,7 @@
      },
      "est": {
       "value": 264.9,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -21.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1678,7 +1678,7 @@
      },
      "est": {
       "value": 144.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1716,7 +1716,7 @@
      },
      "est": {
       "value": 165.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1754,7 +1754,7 @@
      },
      "est": {
       "value": 167.8,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1787,7 +1787,7 @@
      },
      "est": {
       "value": 194.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1820,7 +1820,7 @@
      },
      "est": {
       "value": 260.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -24.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1866,7 +1866,7 @@
      },
      "est": {
       "value": 167.8,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1899,7 +1899,7 @@
      },
      "est": {
       "value": 194.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1932,7 +1932,7 @@
      },
      "est": {
       "value": 260.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -24.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -1978,7 +1978,7 @@
      },
      "est": {
       "value": 160.7,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2011,7 +2011,7 @@
      },
      "est": {
       "value": 187.5,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2044,7 +2044,7 @@
      },
      "est": {
       "value": 254.6,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -24.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2102,7 +2102,7 @@
      },
      "est": {
       "value": 118.8,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2135,7 +2135,7 @@
      },
      "est": {
       "value": 145,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2168,7 +2168,7 @@
      },
      "est": {
       "value": 205.5,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -24.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2214,7 +2214,7 @@
      },
      "est": {
       "value": 116.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2247,7 +2247,7 @@
      },
      "est": {
       "value": 143.7,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2280,7 +2280,7 @@
      },
      "est": {
       "value": 202.9,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -24.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2326,7 +2326,7 @@
      },
      "est": {
       "value": 139.8,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2359,7 +2359,7 @@
      },
      "est": {
       "value": 165.8,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2392,7 +2392,7 @@
      },
      "est": {
       "value": 223.3,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -24.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2438,7 +2438,7 @@
      },
      "est": {
       "value": 135.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2471,7 +2471,7 @@
      },
      "est": {
       "value": 161.8,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2504,7 +2504,7 @@
      },
      "est": {
       "value": 220.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -24.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2550,7 +2550,7 @@
      },
      "est": {
       "value": 133.9,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2583,7 +2583,7 @@
      },
      "est": {
       "value": 160.3,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -37.2,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2616,7 +2616,7 @@
      },
      "est": {
       "value": 223.5,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -24.5,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2662,7 +2662,7 @@
      },
      "est": {
       "value": 159,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2698,7 +2698,7 @@
      },
      "est": {
       "value": 176.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -26.2,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -2731,7 +2731,7 @@
      },
      "est": {
       "value": 236.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2780,7 +2780,7 @@
      },
      "est": {
       "value": 161.6,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2816,7 +2816,7 @@
      },
      "est": {
       "value": 190.2,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2852,7 +2852,7 @@
      },
      "est": {
       "value": 241.4,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2901,7 +2901,7 @@
      },
      "est": {
       "value": 168,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
@@ -2937,7 +2937,7 @@
      },
      "est": {
       "value": 185.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": -26.2,
       "sigDelta": -0.9,
       "sigFrom": "2026-11-18",
@@ -2970,7 +2970,7 @@
      },
      "est": {
       "value": 240.1,
-      "target": "2026-11-22",
+      "target": "2026-11-23",
       "rackDelta": 0,
       "sigDelta": 0,
       "sigFrom": null,
