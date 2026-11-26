@@ -59,7 +59,7 @@ ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NB' }, t: 'The excise return in Ne
 ${taxTable(h, ID)}
 
 <h2>Moncton gas prices against Halifax</h2>
-<p>Nova Scotia regulates too, by zone. The Halifax cap for regular is ${h.cpl(hfx)}, which is ${h.cents(hfx - r.latest.value)} relative to New Brunswick's. The two provinces tax fuel differently, and the comparison is between ceilings, not averages. See the ${h.a('halifax', 'Halifax page')}, the ${h.a('st-johns', 'St. John’s page')} and the provincial ${h.a('taxes', 'tax comparison')}.</p>
+<p>Nova Scotia regulates too, by zone. The Halifax cap for regular is ${h.cpl(hfx)}, which is ${h.cents(hfx - r.latest.value)} relative to New Brunswick's. The two provinces tax fuel differently, and the comparison is between ceilings, not averages. Stations may sell below the maximum, so the posted price at the pump can be lower than either cap, and the gap between the two cities moves each week when the regulators reset their numbers. See the ${h.a('halifax', 'Halifax page')}, the ${h.a('st-johns', 'St. John’s page')} and the provincial ${h.a('taxes', 'tax comparison')}.</p>
 ${h.mini('classement', { p: ['c'], d: { z: 'A' }, t: 'Atlantic cities by price' })}
 `,
   },

@@ -4,8 +4,8 @@
 @font-face { font-family: 'Source Serif 4'; font-style: normal; font-weight: 200 900; font-display: swap; src: url('/fonts/source-serif-4-var.woff2') format('woff2'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/inter-var.woff2') format('woff2'); }
 @theme {
-  --color-navy-50: #f8fafc; --color-navy-100: #f1f5f9; --color-navy-200: #e2e8f0; --color-navy-300: #cbd5e1; --color-navy-400: #94a3b8; --color-navy-500: #64748b; --color-navy-600: #475569; --color-navy-700: #334155; --color-navy-800: #1e293b; --color-navy-900: #0f172a; --color-navy-950: #020617;
-  --color-accent-50: #fdeeed; --color-accent-100: #fad9d6; --color-accent-200: #f4b3ae; --color-accent-300: #ed8078; --color-accent-400: #e64e42; --color-accent-500: #B42318; --color-accent-600: #991e14; --color-accent-700: #7e1911; --color-accent-800: #65140d; --color-accent-900: #4f0f0b;
+  --color-navy-50: #F9F8F8; --color-navy-100: #F0EEEE; --color-navy-200: #DFDADA; --color-navy-300: #C4BABA; --color-navy-400: #91807E; --color-navy-500: #715B59; --color-navy-600: #5E4543; --color-navy-700: #4B2F2C; --color-navy-800: #3A1B18; --color-navy-900: #2B0A07; --color-navy-950: #020617;
+  --color-accent-50: #F9EFEF; --color-accent-100: #F2E0DE; --color-accent-200: #E4BCB9; --color-accent-300: #D28F8A; --color-accent-400: #C0625C; --color-accent-500: #A51F16; --color-accent-600: #8C1A13; --color-accent-700: #771610; --color-accent-800: #60120D; --color-accent-900: #4f0f0b;
   --color-success: #15803d; --color-warning: #b45309; --color-error: #dc2626;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -88,3 +88,67 @@ h1 { font-weight: 700; } h2 { font-weight: 650; } h3 { font-weight: 600; }
   .limits dd { font-size: 1.25rem; font-weight: 700; color: var(--color-navy-900); font-variant-numeric: tabular-nums; }
 }
 .prose .not-prose table { margin-top: 0; margin-bottom: 0; }
+
+/* === Charte du pays (refonte d'identité validée par l'éditeur, appliquée le 2026-11-25) ===
+   En-tête plein, bandeau héros, simulateur en carte, sections alternées, chiffres-résultats, boutons et pied
+   aux couleurs du pays ; l'échelle --color-accent-* du @theme porte la couleur forte. */
+/* pumppricecanada.com : charte v3 (reprise du 2026-11-25) : forte #C1261B, seconde #1E1E1E, sombre #2B0A07. Rien d'appliqué. */
+header nav[aria-label] { background:#C1261B !important; border-bottom:4px solid #1E1E1E !important; }
+header nav[aria-label] > div:first-child > a, header nav[aria-label] > div:first-child > div > a, header nav[aria-label] .nav-dropdown-trigger, #mobile-menu-toggle { color:#fff !important; }
+header nav[aria-label] > div:first-child > a span.text-accent-500 { color:#FFFFFF !important; }
+header nav[aria-label] .nav-dropdown-trigger:hover, header nav[aria-label] > div:first-child > div > a:hover { background:rgba(255,255,255,.14) !important; }
+header nav[aria-label] > div:first-child a[hreflang], header nav[aria-label] > div:first-child a[lang] { border-color:rgba(255,255,255,.6) !important; }
+header nav[aria-label] img[src^="data:"] { background:#fff; border-radius:8px; padding:2px; }
+.nav-dropdown-panel a, #mobile-menu a, #mobile-menu button { color:#2B0A07 !important; }
+main > div:first-child { padding-top:0 !important; }
+main > div > header:has(h1), main > div > header:has(h1) ~ :not(section,[data-outil]):has(~ [data-outil]) { box-shadow:0 0 0 100vmax #C1261B; clip-path:inset(0 -100vmax); margin-bottom:0 !important; }
+main > div > header:has(h1) { background:#C1261B; color:#fff; padding:1.6rem 0 1.4rem; }
+main > div > header:has(h1) ~ :not(section,[data-outil]):has(~ [data-outil]) { background:#C1261B; margin-top:0 !important; margin-bottom:1rem !important; clip-path:inset(0 -100vmax -1rem) !important; }
+main > div > header:has(h1) ~ :not(section,nav,[data-outil]):has(~ [data-outil]) :is(p,span,a,label,li,time) { color:rgba(255,255,255,.92) !important; }
+main > div > header:has(h1) h1 { color:#fff !important; letter-spacing:-0.02em; }
+main > div > header:has(h1) h1 span { color:#FFFFFF !important; }
+main > div > header:has(h1) p, main > div > header:has(h1) div, main > div > header:has(h1) a, main > div > header:has(h1) time, main > div > header:has(h1) span:not(h1 span) { color:rgba(255,255,255,.92) !important; }
+main > div > header:has(h1) + nav { background:#C1261B; box-shadow:0 0 0 100vmax #C1261B; clip-path:inset(0 -100vmax); margin:0 !important; padding-bottom:.8rem; }
+main > div > header:has(h1) + nav, main > div > header:has(h1) + nav * { color:#fff !important; }
+main > div > header:has(h1) + nav a[class*="bg-white"] { background:#1E1E1E !important; border-color:#1E1E1E !important; color:#FFFFFF !important; }
+main > div > header:has(h1) + nav a[class*="bg-white"] * { color:#FFFFFF !important; }
+main > div > header:has(h1) + nav a[class*="bg-white"]:hover { background:#1A1A1A !important; }
+main [data-outil] , main > div > header:has(h1) + :not(nav,style,script,p,.clamp,[class*="amber"],[class*="border-l"]) , main > div > header:has(h1) + nav + * , main > div > header:has(h1) ~ astro-island:first-of-type > *:first-child { border-image:linear-gradient(#C1261B 0 5.5rem, transparent 5.5rem) fill 0//0 100vmax; }
+main [data-outil] > astro-island > :first-child, main [data-outil] > div:not([class*="amber"]):first-of-type, main > div > header:has(h1) ~ astro-island:first-of-type > :first-child > :first-child { background:#fff; border-top:6px solid #1E1E1E !important; border-radius:14px;  }
+main > div > section:nth-of-type(even), main > div > div.prose:nth-of-type(odd) { border-image:conic-gradient(#FBEAE8 0 0) fill 0//0 100vmax; padding-block:1.75rem; }
+main section h2, main .prose h2{color:#2B0A07!important;text-decoration:underline;text-decoration-color:#1E1E1E;text-decoration-thickness:5px;text-underline-offset:9px;text-decoration-skip-ink:none}
+main .bg-accent-50 { background:#FBEAE8 !important; border-left:6px solid #1E1E1E; }
+main [class*="tabular-nums"][class*="text-2xl"], main [class*="tabular-nums"][class*="text-3xl"], main [class*="tabular-nums"][class*="text-4xl"], main dd[class*="text-2xl"], main dd[class*="text-xl"], main [data-outil] [class*="text-3xl"], main [data-outil] [class*="text-4xl"] { font-size:2.25rem !important; line-height:1.1; color:#A51F16 !important; }
+main a[class*="border-accent"], main a[class*="bg-accent-5"], main a[class*="bg-accent-6"], main button:is([class*="bg-accent-5"],[class*="bg-accent-6"],[class*="bg-accent-7"]):not([class*="bg-accent-50"]):not(.fixed), main button[type="submit"] { background:#1E1E1E !important; color:#FFFFFF !important; border-color:#1E1E1E !important; border-radius:10px; }
+main a[class*="border-accent"]:hover, main button:is([class*="bg-accent-5"],[class*="bg-accent-6"],[class*="bg-accent-7"]):not([class*="bg-accent-50"]):not(.fixed):hover { background:#1A1A1A !important; }
+main a[class*="border-accent"] * { color:#FFFFFF !important; }
+main p a, main li > a:not([class*="rounded"]), main .prose a { color:#A51F16 !important; text-decoration:underline; }
+main table thead th { color:#2B0A07; border-bottom-color:transparent !important; box-shadow:inset 0 -3px 0 #1E1E1E; }
+body > footer, footer.mt-16 { background:#2B0A07 !important; border-top:5px solid #1E1E1E !important; }
+body > footer *, footer.mt-16 * { color:#F1F5F9 !important; border-color:rgba(255,255,255,.18) !important; }
+body > footer a, footer.mt-16 a { color:#FFB8B1 !important; }
+/* sites sans data-outil : simulateur directement dans un astro-island (carte .rechner) ou dans une section/div enveloppe */
+main > div > header:has(h1):has(~ astro-island:first-of-type > .rechner.rechner) { padding-bottom:4.5rem; }
+main > div > header:has(h1) ~ astro-island:first-of-type > .rechner.rechner { border-image:none !important; position:relative; margin-top:-3.25rem; background:#fff !important; border:1px solid #D2D6DA !important; border-top:6px solid #1E1E1E !important; border-radius:14px;  }
+main > div > header:has(h1) ~ astro-island:first-of-type > .rechner.rechner > :first-child { background:transparent !important; border-top:0 !important; box-shadow:none !important; border-radius:0; }
+main > div > header:has(h1) [class*="bg-white"], main > div > header:has(h1) [class*="bg-white"] * { color:#2B0A07 !important; }
+main > div > header:has(h1) + :is(section,div):not([data-outil]) > astro-island > :first-child { background:#fff; border-top:6px solid #1E1E1E !important; border-radius:14px;  }
+
+/* corrections v3 */
+footer .rounded-full, footer [class*="bg-"] { background:transparent !important; border-color:rgba(255,255,255,.35) !important; }
+main button[aria-pressed="true"]:not(#z) { background:#1E1E1E !important; color:#FFFFFF !important; }
+main button[aria-pressed="false"]:not(#z) { background:#fff !important; color:#2B0A07 !important; }
+.skip-link:not(#z) { background:#2B0A07 !important; color:#fff !important; }
+body button.fixed:not(#z), body button.fixed:not(#z) * { background:#FBEAE8 !important; color:#2B0A07 !important; }
+body button.fixed:not(#z) { border:0 !important; border-top:4px solid #1E1E1E !important; }
+main > div > header:has(h1) ~ :not(section,nav,[data-outil]):has(~ [data-outil]):is(p,div,time) { color:#fff !important; }
+main :is(p,li,td,caption) a:not([class*="rounded"]):not(#z) { text-decoration-thickness:auto !important; text-underline-offset:auto !important; }
+main :is(p,li,td,caption,span) > a:not([class*="rounded"]):not([class*="block"]):not([class*="flex"]) { padding-block:3px; }
+main > div > header:has(h1) + :is(section,div):not(nav,style,script,p,.clamp,[class*="amber"],[class*="border-l"]) > h2:first-child:not(#z) { color:#fff !important; text-decoration-color:#1E1E1E; }
+main > div > header:has(h1) label:not(#z) { color:#fff !important; }
+header nav[aria-label] a span[class*="text-accent"]:not(#z) { color:#FFFFFF !important; }
+.skip-link:not(:focus) { opacity:0; }
+body :is(a,div,button,aside)[class*="fixed"][class*="bottom-"]:not(nav):not(#z), body :is(a,div,button,aside)[class*="fixed"][class*="bottom-"]:not(nav):not(#z) * { background:#FBEAE8 !important; color:#2B0A07 !important; }
+/* ajouts propres au site */
+main > div > header:has(h1) + section.mt-10 { border-image:none !important; }
+/* === fin de la charte du pays === */

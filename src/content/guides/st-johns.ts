@@ -58,7 +58,7 @@ ${h.mini('accise', { p: ['c', 'm'], d: { pr: 'NL', c: 'diesel' }, t: 'The excise
 ${h.mini('plein', { p: ['p', 'r', 'e'], d: { p: Math.round(r.latest.value * 10) / 10, r: K.P.tank.midsize }, t: 'A fill-up in St. John’s' })}
 
 <h2>St. John's gas prices in the Atlantic</h2>
-<p>Nova Scotia and New Brunswick regulate too. Their current caps for regular are ${h.cpl(hfx)} in ${h.a('halifax', 'Halifax')} and ${h.cpl(mon)} across ${h.a('moncton', 'New Brunswick')}. The provincial rates are compared on the ${h.a('taxes', 'tax page')}.</p>
+<p>Nova Scotia and New Brunswick regulate too. Their current caps for regular are ${h.cpl(hfx)} in ${h.a('halifax', 'Halifax')} and ${h.cpl(mon)} across ${h.a('moncton', 'New Brunswick')}. The provincial rates are compared on the ${h.a('taxes', 'tax page')}. In all three provinces the regulator sets a maximum, not a fixed price, so a station is free to sell below it. A posted price under the cap is legal, and the fill-up calculator above works with whatever figure the sign shows.</p>
 ${h.mini('classement', { p: ['c'], d: { z: 'A' }, t: 'Atlantic caps, cheapest first' })}
 `,
   },
